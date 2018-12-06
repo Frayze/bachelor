@@ -1,0 +1,221 @@
+%!TEX TS-program = pdflatex
+\documentclass[
+%draft,
+10pt,
+%pantone312, 	% WWU-Design in hellblau
+%pantone396, 	% WWU-Design in grellem hellgrün 
+pantone315, 	% WWU-Design in dunkelblau
+%pantone3282, 	% WWU-Design in "blau"
+%pantone390, 	% WWU-Design in 
+%pantone369,	% WWU-Design in gras-grün
+%pantoneblack7, % WWU-Design in dunklem gras-grün
+%blackberry,
+%handout		% aktivieren um \pause für Druck zu ignorieren (keine neue Seite für einen neuen Punkt)
+]{beamer}
+
+\usepackage{wwustyle2}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}%
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usetikzlibrary{quotes,babel,arrows,automata,positioning,trees,graphs,shapes,calc,decorations.pathreplacing}
+\usepackage{multicol}
+\usepackage[]{todonotes}
+\usepackage{pgfpages}
+\usepackage[%
+backend=biber,
+sortlocale=auto,
+natbib,
+hyperref,
+backref,
+style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
+]%
+{biblatex}
+\addbibresource{quellen.bib} % Literaturdatei einlesen
+\setbeamertemplate{bibliography item}[text]
+
+
+\newcommand{\bet}[1]{\textbf{\textcolor{maincolor}{#1}}}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	frame=single,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\bfseries\color{maincolor!60!black},
+	commentstyle=\itshape\color{orange!75!black},
+	identifierstyle=\color{maincolor!20!black},
+	stringstyle=\color{orange!98!black},
+	backgroundcolor=\color{gray!10},	
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\lstset{literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}2
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
+
+\newcommand{\java}[1]{\colorbox{gray!20}{\lstinline!#1!}}
+
+\begin{document}
+\date{\today}
+\author{Jonas Kremer}
+\title{Operator Precedence Languages}
+\subtitle{Subtitle}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+%Wenn man vor jeder Section die Agenda sehen möchte...
+%\AtBeginSection[]
+%{
+%	\begin{frame}[t]
+%\tableofcontents[currentsection, hidesubsections, hideothersubsections,
+%	sectionstyle=show/shaded]
+%	\end{frame}
+%}
+
+\begin{frame}[plain]
+  \maketitle
+\end{frame}
+
+\begin{frame}[t]{Agenda}
+	\tableofcontents[hidesubsections, hideothersubsections]
+\end{frame}
+
+\section{Introduction}
+\begin{frame}[t]{\secname}
+	\begin{enumerate}[<+->]
+		\item
+	\end{enumerate}	
+\end{frame}
+
+\section{Preliminaries}
+\begin{frame}[t]{Definition kontextfreie Grammatik}
+	\begin{itemize}[<+->]
+		\item
+		Eine kontextfreie Grammatik ist ein 4-Tupel $G = (N, \Sigma , P, S)$
+		\begin{itemize}[<+->]
+			\item
+			N ist die Menge der Nichtterminale
+			\item
+			$\Sigma$ ist die Menge der Terminalsymbole
+			\item
+			P sind die Produktionsregeln
+			\item
+			S $\in$ N ist das Startsymbol
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}[t]{Namenskonventionen 1}
+	\begin{enumerate}
+		\item
+		$a,b,\dots\in\Sigma$ sind einzelne Terminalsymbole
+		\item 
+		$v,w,\dots\in\Sigma\textsuperscript{*}$ sind beliebige Terminalstrings
+		\item
+		$A,B,\dots\in N$ sind einzelne Nichtterminale
+		\item
+		$\alpha,\beta,\dots\in (\Sigma \cup N)\textsuperscript{*}$ sind beliebe Reststrings
+		\item
+		$A \rightarrow \epsilon $ ist die \textit{leere Regel}
+		\item
+		Eine \textit{umbenennende} Regel hat nur ein Nichtterminal als rechte Seite $\left( A \rightarrow B \right)$
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Namenskonventionen 2}
+	\begin{enumerate}
+		\item
+		Eine Regel ist in \textit{Operatorform}, wenn die rechte Seite keine benachbarten Nichtterminale hat
+		\item 
+		Jede kontextfreie Grammatik kann in eine äquivalente \textit{Operatorgrammatik (OG)} umgewandelt werden
+		
+	\end{enumerate}
+\end{frame}
+
+\section{Operator Precedence Languages}
+\subsection{Operator Precedence Grammar}
+\begin{frame}[t]{\subsecname}
+	\begin{itemize}[<+->]
+		\item
+		Wird häufig auch \textit{Floyd Grammar} genannt nach ihrem Erfinder
+		\item
+		Definition: \textit{Linke und Rechte Terminalmenge}\\
+		$\mathcal{L} \textsubscript{G} \big( A \big) = \{ a \in \Sigma | 
+		A \overset{*}{\Rightarrow}Ba \alpha \} $\\
+		$\mathcal{R} \textsubscript{G} \big( A \big) = \{ a \in \Sigma | 
+		A \overset{*}{\Rightarrow} \alpha aB \}$
+		\item
+		Es werden drei binäre Operator Precedence Relationen definiert:
+		\item
+		equal in precedence: $ a \doteq b \Leftrightarrow \exists A \rightarrow \alpha aBb \beta , 
+		B \in N \cup \{ \epsilon \}$ \\
+		takes precedence: $ a \gtrdot b \Leftrightarrow \exists A \rightarrow \alpha Db \beta , D \in N $ and $ a \in
+		\mathcal{R}\textsubscript{G}(D)$ \\
+		yields precedence: $ a \lessdot b \Leftrightarrow \exists A \rightarrow \alpha aD \beta , D \in N $ and $ b \in
+		\mathcal{L}\textsubscript{G}(D)$
+	\end{itemize}
+\end{frame}
+
+\subsection{Operator Precedence Automata}
+\begin{frame}[t]{\secname}
+	\begin{itemize}[<+->]
+		\item
+		Ein nichtdetermistischer Operator Precedence Automat ist ein 6-Tupel A = $(\Sigma, M, Q, I, F, \delta)$
+		\begin{enumerate}
+			\item
+			$(\Sigma, M)$ ist ein OP alphabet
+			\item
+			Q ist die Menge der Zustände
+			\item
+			$ I \subseteq Q$ ist die Menge der Startzustände
+			\item
+			$ F \subseteq Q$ ist die Menge der finalen Zustände
+			\item 
+			$\delta$ ist die Übergangsfunktion, die aus drei Teilen besteht: \\
+			$\delta \textsubscript{shift}: Q \times \Sigma \rightarrow \mathcal{P} (Q)$
+			$\delta \textsubscript{push}: Q \times \Sigma \rightarrow \mathcal{P} (Q)$
+			$\delta \textsubscript{pop}: Q \times Q \rightarrow \mathcal{P} (Q)$
+		\end{enumerate}
+			
+	\end{itemize}
+\end{frame}
+
+\section{(Closure-)Properties}
+\begin{frame}[t]{\secname}
+	\begin{itemize}[<+->]
+	\item 
+	OPLs sind eine große Subklasse der kontextfreien Sprachen, die Abgeschlossenheitseigenschaften von regulären Sprachen genießt
+	\item
+	Abgeschlossen unter Vereinigung, Schnitt, Komplement, Konkatenation und Kleene-*
+	\item
+	Das Leereproblem ist in PTIME lösbar, da OPLs Subklasse von kfG
+	\item Visibly Pushdown Sprachen sind in der Klasse der OPLs enthalten
+	\end{itemize}
+\end{frame}
+
+\nocite{*}
+\section*{Quellen}
+\begin{frame}{Quellen}
+	\printbibliography
+\end{frame}
+
+\end{document}
