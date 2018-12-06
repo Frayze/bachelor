@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.30)  4 DEC 2018 19:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.30)  6 DEC 2018 14:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2498,9 +2498,6 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                vortrag
 (biblatex)                and rerun LaTeX afterwards.
@@ -2512,7 +2509,7 @@ Package logreq Info: Writing requests to 'vortrag.run.xml'.
 Here is how much of TeX's memory you used:
  36389 strings out of 492990
  742174 string characters out of 6135004
- 1247288 words of memory out of 5000000
+ 1247286 words of memory out of 5000000
  39077 multiletter control sequences out of 15000+600000
  415788 words of font info for 118 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
@@ -2532,7 +2529,7 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on vortrag.pdf (25 pages, 404477 bytes).
+Output written on vortrag.pdf (25 pages, 404475 bytes).
 PDF statistics:
  277 PDF objects out of 1000 (max. 8388607)
  225 compressed objects within 3 object streams
