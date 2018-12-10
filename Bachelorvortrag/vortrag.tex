@@ -85,14 +85,13 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
 
-%Wenn man vor jeder Section die Agenda sehen möchte...
-%\AtBeginSection[]
-%{
-%	\begin{frame}[t]
-%\tableofcontents[currentsection, hidesubsections, hideothersubsections,
-%	sectionstyle=show/shaded]
-%	\end{frame}
-%}
+\AtBeginSection[]
+{
+	\begin{frame}[t]
+\tableofcontents[currentsection, hidesubsections, hideothersubsections,
+	sectionstyle=show/shaded]
+	\end{frame}
+}
 
 \begin{frame}[plain]
   \maketitle
@@ -102,7 +101,7 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 	\tableofcontents[hidesubsections, hideothersubsections]
 \end{frame}
 
-\section{Introduction}
+\section{Einleitung}
 \begin{frame}[t]{\secname}
 	\begin{enumerate}[<+->]
 		\item
@@ -111,9 +110,18 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 		Sie wurden 1963 von Robert W. Floyd vorgestellt
 		\item
 		Größte bekannte Klasse von kontextfreien Sprache, die Abschlusseigenschaften von regulären Sprachen hat
+		
+	\end{enumerate}	
+\end{frame}
+\begin{frame}[t]{Motivation}
+	\begin{enumerate}[<+->]
 		\item 
 		Als Beispiel dient eine einfache Sprache für arithmetische Ausdrücke\\
 		zB. $ n + n \times (n + n)$
+		\item 
+		Präzedenz der Multiplikation über die Addition
+		\item 
+		Parsing basiert auf Operator Präzedenz Relationen, wodurch lokales Parsing und erhöhte Parallelisierung möglich ist
 	\end{enumerate}	
 \end{frame}
 
@@ -136,13 +144,13 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 		Produktionen haben die Form $A \rightarrow \beta$, wobei $\beta \in (\Sigma \cup N) \cup \epsilon$
 		\item
 		Ableitungen werden mit $\Rightarrow$ bzw. $\xRightarrow{\text{*}}$ beschrieben
+		\item
+		Definitionen und Namenskonventionen
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Namenskonventionen 1}
 	\begin{enumerate}
-	
-	
 		\item
 		$a,b,\dots\in\Sigma$ sind einzelne Terminalsymbole
 		\item 
@@ -164,7 +172,7 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 			\item
 		Eine Grammatik ist \textit{reduziert}, wenn jede Regel benutzt werden kann um ein Wort aus $\Sigma \textsuperscript{*}$ zu erzeugen
 		\item
-		Eine Grammatik ist \textit{invertierbar}, wenn es keine identischen rechten Seiten von Produktionsregeln gibt
+		Eine. Grammatik ist \textit{invertierbar}, wenn es keine identischen rechten Seiten von Produktionsregeln gibt
 		\item
 		Eine Regel ist in \textit{Operatorform}, wenn die rechte Seite keine benachbarten Nichtterminale hat
 		\item 
@@ -174,8 +182,22 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 	\end{itemize}
 \end{frame}
 
-\section{Operator Precedence Languages}
-\subsection{Operator Precedence Grammar}
+\begin{frame}[t] {Bsp. Operator Grammatik}
+	\begin{itemize}[<+->]
+	\item
+	$N=\{E, T, F \}$\\
+	E ist das Startsymbol \\
+	$\Sigma = \{+, \times, n, (, ) \}$
+	\item 
+	Produktionsregeln:\\
+	$E \rightarrow E + T | T$ \\
+	$T \times F | F$ \\
+	$F \rightarrow n | (E)$
+	
+	\end{itemize}
+\end{frame}
+
+\section{Operator Präzedenz Grammatik}
 \begin{frame}[t]{\subsecname}
 	\begin{itemize}[<+->]
 		\item
@@ -185,7 +207,7 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 		$\mathcal{R} \textsubscript{G} \big( A \big) = \{ a \in \Sigma | 
 		A \overset{*}{\Rightarrow} \alpha aB \}$
 		\item
-		Es werden drei binäre Operator Precedence Relationen definiert:
+		Es werden drei binäre Operator Präzedenz Relationen definiert:
 		\item
 		equal in precedence: $ a \doteq b \Leftrightarrow \exists A \rightarrow \alpha aBb \beta , 
 		B \in N \cup \{ \epsilon \}$ \\
@@ -193,27 +215,56 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 		\mathcal{R}\textsubscript{G}(D)$ \\
 		yields precedence: $ a \lessdot b \Leftrightarrow \exists A \rightarrow \alpha aD \beta , D \in N $ and $ b \in
 		\mathcal{L}\textsubscript{G}(D)$
-		
+		\item Eine Operator Präzedenz Matrix (OPM) M ist eine $|\Sigma| \times |\Sigma |$ Matrix, die für jedes Paar (a,b) die Precedence Relation speichert
+		\item 
+		Eine Operator Grammatik ist eine Operator Präzedenz Grammatik, wenn M=OPM(G) \textit{konfliktfrei} ist
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t] {Beispiel}
+	\begin{itemize}[<+->]
+	\item
+	$\mathcal{L}(E)=\{+, \times, n, (\}, \mathcal{L}(T)=\{\times, n, (\}, \mathcal{L}(F)=\{n,(\}$
+	\\
+	$\mathcal{R}(E)=\{+, \times, n, )\}, \mathcal{R}(T)=\{\times, n, )\}, \mathcal{R}(F)=\{n,)\}$
+	\item
+	OPM(G):\\
+	\begin{tabular}{c | c c c c c}
+	    & + & $\times$ & ( & ) & n \\ \hline
+	  + & $\gtrdot$ & $\lessdot$ & $\lessdot$ & $\gtrdot$  &$\lessdot$ \\
+	  $\times$ & $\gtrdot$ & $\gtrdot$ & $\lessdot$ & $\gtrdot$ & $\lessdot$ \\
+	  ( & $\lessdot$ & $\lessdot$ & $\lessdot$ & $\doteq$ & $\lessdot$\\
+	  ) & $\gtrdot$ & $\gtrdot$ &  & $\gtrdot$ & \\
+	  n & $\gtrdot$ & $\gtrdot$ &  & $\gtrdot$ & \\
+	\end{tabular}
+	\\
+	\item
+	$( \lessdot \times \Leftrightarrow \exists A \rightarrow \alpha (D \beta D \in N $ and $ \times \in
+		\mathcal{L}\textsubscript{G}(D)$
+	\item
+	$ n \gtrdot + \Leftrightarrow \exists A \rightarrow \alpha D+ \beta , D \in N $ and $ n \in
+		\mathcal{R}\textsubscript{G}(D)$
+	\item
+	$ ( \doteq ) \Leftrightarrow \exists A \rightarrow \alpha (B) \beta , 
+		B \in N \cup \{ \epsilon \}$
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[t]{\subsecname}
 	\begin{itemize}[<+->]
-	\item Eine Operator Precedence Matrix (OPM) M ist eine $|\Sigma| \times |\Sigma |$ Matrix, die für jedes Paar (a,b) die Precedence Relation speichert
-	
-	\item 
-	Eine Operator Grammatik ist eine Operator Precedence Grammatik, wenn M=OPM(G) \textit{konfliktfrei} ist
 	\item
 	Eine OPG ist in \textit{Fischer Normalform}, wenn sie invertierbar ist und keine leeren (ausser Startsymbol) oder umbenennenden Regeln hat
 	\item
 	Zusätzliches Symbol $\# \notin \Sigma$ um das Ende eines Strings zu markieren\\
 	Alle anderen Symbole übernehmen Precedence über $\#$
 	\item
-	Ein Operator Precedence Alphabet ist ein Paar $(\Sigma, M)$ mit der konfliktfreien OPM $M = | \Sigma \cup \{ \# \} | \textsuperscript{2}$	
+	Ein Operator Präzedenz Alphabet ist ein Paar $(\Sigma, M)$ mit der konfliktfreien OPM $M = | \Sigma \cup \{ \# \} | \textsuperscript{2}$	
 	\end{itemize}
 \end{frame}
 
-\subsection{Operator Precedence Automata}
+
+
+\section{Operator Präzedenz Automaten}
 \begin{frame}[t]{\subsecname}
 	\begin{itemize}[<+->]
 		\item
@@ -243,7 +294,7 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 \end{frame}
 
 \begin{frame}[t]{\subsecname}
-	\begin{itemize}
+	\begin{itemize}[<+->]
 		\item
 1		Eine \textit{Konfiguration} eines OPA ist ein Tripel $C = (\Pi, q, w)$ mit dem Stack $\Pi$, dem aktuellen Zustand q und der Eingabe w
 		\item Eine Berechnung des Automaten ist eine endliche Folge von \textit{Transitionen (Moves)} $C \textsubscript{1} \vdash C \textsubscript{2}$
@@ -255,7 +306,7 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 \end{frame}
 
 \begin{frame}[t]{OPA Transitionen}
-	\begin{itemize}
+	\begin{itemize}[<+->]
 		\item
 		\textit{push move:} (Normaler Pfeil) \\
 		if $sym(\Pi) \lessdot a$ then $(\Pi, p, ax) \vdash (\Pi\left[a, p \right], q, x)$ mit 
@@ -271,7 +322,12 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 	\end{itemize}
 \end{frame}
 
-\section{Automaten Beispiel}
+\subsection*{Automaten Beispiel}
+\begin{frame}[t]{\secname}
+	\begin{figure}
+	\includegraphics[width=10cm,height=5cm]{img/opa.png}
+	\end{figure}
+\end{frame}
 \begin{frame}
 	\small
 	\begin{tabular}{| l | c | r |}
@@ -329,23 +385,104 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 	
 \end{frame}
 
-\section{(Closure-)Properties}
+
+\section{(Abschluss-) Eigenschaften von OPLs}
+\begin{frame}[t]{OPG $\rightarrow$ OPA}
+	\begin{itemize}[<+->]
+	\item
+	Zu jeder OPG G kann ein OPA A konstruiert werden, sodass gilt L(G)=L(A)
+	\item
+	Idee: \\
+	Man konstruiert einen Automaten, sodass eine erfolgreiche Berechnung \glqq bottom-up \grqq einen Ableitungsbaum erzeugt
+	\item
+	 Eine Push-Transition wird hinzugefügt, wenn das erste Terminal einer neuen rechten Seite einer Regel gelesen wird. \\
+	Ein Shift Move bei Terminalen innerhalb einer Regel.\\
+	Ein Pop Move am Ende einer rechten Seite.
+	\item
+	Jeder Zustand enthält das Präfix der rechten Seite einer Regel die gerade konstruiert wird und Informationen zu dem Zustand der vorher konstruiert wurde
+	\item
+	Sei m die Summe der Längen der rechten Seiten einer Regel. \\
+	Dann hat A O($m \textsuperscript{2}$) Zustände
+	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{OPA $\rightarrow$ OPG}
+	\begin{itemize}[<+->]
+	\item
+	Zu jedem OPA A kann eine OPG G konstruiert werden, sodass gilt L(A)=L(G)
+	\item
+	Die Nichtterminale haben die Form $\Sigma \times Q \times Q \times \Sigma$
+	\item
+	Idee: \\
+	Man definiert sogenannte Supports (Transitionspfade) für einfache und zusammengesetzte Ketten von Terminalen
+	\item
+	Eine einfache Kette ist ein String von Nichtterminalen sodass gilt: $a \textsubscript{0} \lessdot a \textsubscript{1} \doteq a \textsubscript{2} \doteq ... \doteq a \textsubscript{n} \gtrdot a \textsubscript{n+1}$ \\
+	Schreibweise:  $\textsuperscript{a \textsubscript{0}}( a \textsubscript{1},..., a \textsubscript{n}) \textsuperscript{a \textsubscript{n+1}}$
+	\item
+	Bei zusammengesetzten Ketten werden zwischen den einzelnen Terminalen einer einfachen Kette eine weitere Kette eingefügt
+	\item
+	Für jeden Support wird in einer bestimmten Weise eine Regel erzeugt 
+	
+	\end{itemize}
+\end{frame}
+
 \begin{frame}[t]{\secname}
 	\begin{itemize}[<+->]
 	\item 
-	OPLs sind eine große Subklasse der kontextfreien Sprachen, die Abgeschlossenheitseigenschaften von regulären Sprachen genießt
+	OPLs sind eine große Subklasse der kontextfreien Sprachen\\
+	$L=\{ a \textsuperscript{n} b a \textsuperscript{n} | n \geq 0\}$ kann nicht durch OPG dargestellt werden
 	\item
 	Abgeschlossen unter Vereinigung, Schnitt, Komplement, Konkatenation und Kleene-*
 	\item
-	Das Leereproblem ist in PTIME lösbar, da OPLs Subklasse von kfG
-	\item Visibly Pushdown Sprachen sind in der Klasse der OPLs enthalten
+	Das Leereproblem ist in PTIME lösbar, da OPLs Subklasse von kfG	
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Deterministischer vs Nichtdeterministischer OPA}
+	\begin{itemize}
+	\item
+	Ein OPA ist deterministisch, wenn $|I| = 1$ und $\delta \textsubscript{push}, \delta \textsubscript{shift}, \delta \textsubscript{pop}$ auf Q anstatt $\mathcal{P}(Q)$ abbilden
+	\item
+	Zu jedem nichtdeterministischen OPA mit s Zuständen kann ein äquivalenter deterministischer OPA mit $2 \textsuperscript{O(s \textsuperscript{2})}$ Zuständen erzeugt werden
+	\end{itemize}
+\end{frame}
+
+
+\section{Ausblick}
+\begin{frame}[t]{\secname}
+	\begin{itemize}[<+->]
+	\item
+	Visibly Pushdown Sprachen als Subklasse von OPL
+	\item
+	Monadic Second Order Logic Characterization
+	\item
+	$\omega$-Operator Präzedenz Sprachen
+	\item
+	Implementierung eines Operator Präzedenz Automaten
 	\end{itemize}
 \end{frame}
 
 \nocite{*}
 \section*{Quellen}
 \begin{frame}{Quellen}
-	\printbibliography
+\begin{thebibliography}{9}
+\bibitem{unimilano} 
+Violetta Lonati, Dino Mandrioli, Matteo Pradella
+\textit{Precedence Automata and Languages}. 
+Milano, Italy
+\bibitem{siam}  
+Violetta Lonati, Dino Mandrioli, Matteo Pradella, Frederica Panella
+\textit{Operator Precedence Languages: their automata-theoretic and logic characterization} 
+[\textit{SIAM J. Comput. 2015 Society for Industrial and Applied Mathematics}]. 
+
+ 
+\bibitem{property} 
+Stefano Crespi Reghizzi, Dino Mandrioli
+\textit{Operator precedence and the visibly pushdown property}
+[\textit{Journal  of Computer and System Sciences}].
+\end{thebibliography}
 \end{frame}
 
 \end{document}
