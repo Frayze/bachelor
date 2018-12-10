@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.30)  6 DEC 2018 14:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.30)  10 DEC 2018 00:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -647,7 +647,25 @@ fault.sty
 \beamer@dimb=\dimen186
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemede
-fault.sty))) (./wwustyle2.sty
+fault.sty))) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip57
+\LTright=\skip58
+\LTpre=\skip59
+\LTpost=\skip60
+\LTchunksize=\count153
+\LTcapwidth=\dimen187
+\LT@head=\box53
+\LT@firsthead=\box54
+\LT@foot=\box55
+\LT@lastfoot=\box56
+\LT@cols=\count154
+\LT@rows=\count155
+\c@LT@tables=\count156
+\c@LT@chunks=\count157
+\LT@p@ftn=\toks43
+)
+(./wwustyle2.sty
 Package: wwustyle2 
 
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
@@ -656,15 +674,15 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
-\pgfnodeparttextbox=\box53
+\pgfnodeparttextbox=\box57
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen187
-\pgf@nodesepend=\dimen188
+\pgf@nodesepstart=\dimen188
+\pgf@nodesepend=\dimen189
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -678,10 +696,10 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen189
-\pgffor@skip=\dimen190
-\pgffor@stack=\toks43
-\pgffor@toks=\toks44
+\pgffor@iter=\dimen190
+\pgffor@skip=\dimen191
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
@@ -689,31 +707,31 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count153
-\pgfplotmarksize=\dimen191
+\pgf@plot@mark@count=\count158
+\pgfplotmarksize=\dimen192
 )
-\tikz@lastx=\dimen192
-\tikz@lasty=\dimen193
-\tikz@lastxsaved=\dimen194
-\tikz@lastysaved=\dimen195
-\tikzleveldistance=\dimen196
-\tikzsiblingdistance=\dimen197
-\tikz@figbox=\box54
-\tikz@figbox@bg=\box55
-\tikz@tempbox=\box56
-\tikz@tempbox@bg=\box57
-\tikztreelevel=\count154
-\tikznumberofchildren=\count155
-\tikznumberofcurrentchild=\count156
-\tikz@fig@count=\count157
+\tikz@lastx=\dimen193
+\tikz@lasty=\dimen194
+\tikz@lastxsaved=\dimen195
+\tikz@lastysaved=\dimen196
+\tikzleveldistance=\dimen197
+\tikzsiblingdistance=\dimen198
+\tikz@figbox=\box58
+\tikz@figbox@bg=\box59
+\tikz@tempbox=\box60
+\tikz@tempbox@bg=\box61
+\tikztreelevel=\count159
+\tikznumberofchildren=\count160
+\tikznumberofcurrentchild=\count161
+\tikz@fig@count=\count162
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count158
-\pgfmatrixcurrentcolumn=\count159
-\pgf@matrix@numberofcolumns=\count160
+\pgfmatrixcurrentrow=\count163
+\pgfmatrixcurrentcolumn=\count164
+\pgf@matrix@numberofcolumns=\count165
 )
-\tikz@expandcount=\count161
+\tikz@expandcount=\count166
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -724,8 +742,8 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks45
-\inpenc@posthook=\toks46
+\inpenc@prehook=\toks46
+\inpenc@posthook=\toks47
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
@@ -1207,18 +1225,18 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2017/07/07 v2.7 Micro-typographical refinements (RS)
-\MT@toks=\toks47
-\MT@count=\count162
+\MT@toks=\toks48
+\MT@count=\count167
 LaTeX Info: Redefining \textls on input line 789.
-\MT@outer@kern=\dimen198
+\MT@outer@kern=\dimen199
 LaTeX Info: Redefining \textmicrotypecontext on input line 1334.
-\MT@listname@count=\count163
+\MT@listname@count=\count168
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2017/07/07 v2.7 Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 912.
 LaTeX Info: Redefining \lslig on input line 912.
-\MT@outer@space=\skip57
+\MT@outer@space=\skip61
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -1234,10 +1252,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks48
-\XKV@tempa@toks=\toks49
+\XKV@toks=\toks49
+\XKV@tempa@toks=\toks50
 )
-\XKV@depth=\count164
+\XKV@depth=\count169
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
@@ -1285,8 +1303,8 @@ File: babel.def 2017/06/29 3.12 Babel common definitions
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2017/06/29 3.12 Babel switching mechanism
 )
-\babel@savecnt=\count165
-\U@D=\dimen199
+\babel@savecnt=\count170
+\U@D=\dimen256
 LaTeX Info: Redefining \textlatin on input line 1672.
 )
 Package babel Info: Making " an active character on input line 125.
@@ -1300,49 +1318,82 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip58
-\multirow@cntb=\count166
-\multirow@dima=\skip59
-\bigstrutjot=\dimen256
+\multirow@colwidth=\skip62
+\multirow@cntb=\count171
+\multirow@dima=\skip63
+\bigstrutjot=\dimen257
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2017/05/24 v1.19 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count172
+\calc@Bcount=\count173
+\calc@Adimen=\dimen258
+\calc@Bdimen=\dimen259
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count174
+\calc@Cskip=\skip66
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count175
+\l_MT_multwidth_dim=\dimen260
+\origjot=\skip67
+\l_MT_shortvdotswithinadjustabove_dim=\dimen261
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen262
+\l_MT_above_intertext_sep=\dimen263
+\l_MT_below_intertext_sep=\dimen264
+\l_MT_above_shortintertext_sep=\dimen265
+\l_MT_below_shortintertext_sep=\dimen266
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen257
-\extrarowheight=\dimen258
-\NC@list=\toks50
-\extratabsurround=\skip60
-\backup@length=\skip61
+\col@sep=\dimen267
+\extrarowheight=\dimen268
+\NC@list=\toks51
+\extratabsurround=\skip68
+\backup@length=\skip69
 )
-\TX@col@width=\dimen259
-\TX@old@table=\dimen260
-\TX@old@col=\dimen261
-\TX@target=\dimen262
-\TX@delta=\dimen263
-\TX@cols=\count167
-\TX@ftn=\toks51
+\TX@col@width=\dimen269
+\TX@old@table=\dimen270
+\TX@old@col=\dimen271
+\TX@target=\dimen272
+\TX@delta=\dimen273
+\TX@cols=\count176
+\TX@ftn=\toks52
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count168
-\lst@gtempboxa=\box58
-\lst@token=\toks52
-\lst@length=\count169
-\lst@currlwidth=\dimen264
-\lst@column=\count170
-\lst@pos=\count171
-\lst@lostspace=\dimen265
-\lst@width=\dimen266
-\lst@newlines=\count172
-\lst@lineno=\count173
-\lst@maxwidth=\dimen267
+\lst@mode=\count177
+\lst@gtempboxa=\box62
+\lst@token=\toks53
+\lst@length=\count178
+\lst@currlwidth=\dimen274
+\lst@column=\count179
+\lst@pos=\count180
+\lst@lostspace=\dimen275
+\lst@width=\dimen276
+\lst@newlines=\count181
+\lst@lineno=\count182
+\lst@maxwidth=\dimen277
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count174
-\lst@skipnumbers=\count175
-\lst@framebox=\box59
+\c@lstnumber=\count183
+\lst@skipnumbers=\count184
+\lst@framebox=\box63
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -1364,10 +1415,10 @@ File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
 code.tex
 File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
-\pgfarrowinset=\dimen268
-\pgfarrowlength=\dimen269
-\pgfarrowwidth=\dimen270
-\pgfarrowlinewidth=\dimen271
+\pgfarrowinset=\dimen278
+\pgfarrowlength=\dimen279
+\pgfarrowwidth=\dimen280
+\pgfarrowlinewidth=\dimen281
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarybabel.code.tex
@@ -1380,7 +1431,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen272
+\arrowsize=\dimen282
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryautomata.code.tex
@@ -1395,26 +1446,26 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
 
-\pgfnodepartlowerbox=\box60
-\pgfnodeparttwobox=\box61
-\pgfnodepartthreebox=\box62
-\pgfnodepartfourbox=\box63
-\pgfnodeparttwentybox=\box64
-\pgfnodepartnineteenbox=\box65
-\pgfnodeparteighteenbox=\box66
-\pgfnodepartseventeenbox=\box67
-\pgfnodepartsixteenbox=\box68
-\pgfnodepartfifteenbox=\box69
-\pgfnodepartfourteenbox=\box70
-\pgfnodepartthirteenbox=\box71
-\pgfnodeparttwelvebox=\box72
-\pgfnodepartelevenbox=\box73
-\pgfnodeparttenbox=\box74
-\pgfnodepartninebox=\box75
-\pgfnodeparteightbox=\box76
-\pgfnodepartsevenbox=\box77
-\pgfnodepartsixbox=\box78
-\pgfnodepartfivebox=\box79
+\pgfnodepartlowerbox=\box64
+\pgfnodeparttwobox=\box65
+\pgfnodepartthreebox=\box66
+\pgfnodepartfourbox=\box67
+\pgfnodeparttwentybox=\box68
+\pgfnodepartnineteenbox=\box69
+\pgfnodeparteighteenbox=\box70
+\pgfnodepartseventeenbox=\box71
+\pgfnodepartsixteenbox=\box72
+\pgfnodepartfifteenbox=\box73
+\pgfnodepartfourteenbox=\box74
+\pgfnodepartthirteenbox=\box75
+\pgfnodeparttwelvebox=\box76
+\pgfnodepartelevenbox=\box77
+\pgfnodeparttenbox=\box78
+\pgfnodepartninebox=\box79
+\pgfnodeparteightbox=\box80
+\pgfnodepartsevenbox=\box81
+\pgfnodepartsixbox=\box82
+\pgfnodepartfivebox=\box83
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypositioning.code.tex
@@ -1427,8 +1478,8 @@ File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/gra
 phs/tikzlibrarygraphs.code.tex
 File: tikzlibrarygraphs.code.tex 2015/06/05 v3.0.1a (rcs-revision 1.44)
-\tikz@lib@auto@number=\count176
-\tikz@qnode@count=\count177
+\tikz@lib@auto@number=\count185
+\tikz@qnode@count=\count186
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.code.tex
@@ -1482,46 +1533,42 @@ zlibrarydecorations.pathreplacing.code.tex
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen273
-\pgfdecoratedremainingdistance=\dimen274
-\pgfdecoratedinputsegmentcompleteddistance=\dimen275
-\pgfdecoratedinputsegmentremainingdistance=\dimen276
-\pgf@decorate@distancetomove=\dimen277
-\pgf@decorate@repeatstate=\count178
-\pgfdecorationsegmentamplitude=\dimen278
-\pgfdecorationsegmentlength=\dimen279
+\pgfdecoratedcompleteddistance=\dimen283
+\pgfdecoratedremainingdistance=\dimen284
+\pgfdecoratedinputsegmentcompleteddistance=\dimen285
+\pgfdecoratedinputsegmentremainingdistance=\dimen286
+\pgf@decorate@distancetomove=\dimen287
+\pgf@decorate@repeatstate=\count187
+\pgfdecorationsegmentamplitude=\dimen288
+\pgfdecorationsegmentlength=\dimen289
 )
-\tikz@lib@dec@box=\box80
+\tikz@lib@dec@box=\box84
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
-\c@tracingmulticols=\count179
-\mult@box=\box81
-\multicol@leftmargin=\dimen280
-\c@unbalance=\count180
-\c@collectmore=\count181
-\doublecol@number=\count182
-\multicoltolerance=\count183
-\multicolpretolerance=\count184
-\full@width=\dimen281
-\page@free=\dimen282
-\premulticols=\dimen283
-\postmulticols=\dimen284
-\multicolsep=\skip62
-\multicolbaselineskip=\skip63
-\partial@page=\box82
-\last@line=\box83
-\maxbalancingoverflow=\dimen285
-\mult@rightbox=\box84
-\mult@grightbox=\box85
-\mult@gfirstbox=\box86
-\mult@firstbox=\box87
-\@tempa=\box88
-\@tempa=\box89
-\@tempa=\box90
-\@tempa=\box91
+\c@tracingmulticols=\count188
+\mult@box=\box85
+\multicol@leftmargin=\dimen290
+\c@unbalance=\count189
+\c@collectmore=\count190
+\doublecol@number=\count191
+\multicoltolerance=\count192
+\multicolpretolerance=\count193
+\full@width=\dimen291
+\page@free=\dimen292
+\premulticols=\dimen293
+\postmulticols=\dimen294
+\multicolsep=\skip70
+\multicolbaselineskip=\skip71
+\partial@page=\box86
+\last@line=\box87
+\maxbalancingoverflow=\dimen295
+\mult@rightbox=\box88
+\mult@grightbox=\box89
+\mult@gfirstbox=\box90
+\mult@firstbox=\box91
 \@tempa=\box92
 \@tempa=\box93
 \@tempa=\box94
@@ -1535,52 +1582,42 @@ Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
 \@tempa=\box102
 \@tempa=\box103
 \@tempa=\box104
-\c@columnbadness=\count185
-\c@finalcolumnbadness=\count186
-\last@try=\dimen286
-\multicolovershoot=\dimen287
-\multicolundershoot=\dimen288
-\mult@nat@firstbox=\box105
-\colbreak@box=\box106
-\mc@col@check@num=\count187
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\c@columnbadness=\count194
+\c@finalcolumnbadness=\count195
+\last@try=\dimen296
+\multicolovershoot=\dimen297
+\multicolundershoot=\dimen298
+\mult@nat@firstbox=\box109
+\colbreak@box=\box110
+\mc@col@check@num=\count196
 )
 (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
 Package: todonotes 2012/07/25
-
-(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count188
-\calc@Bcount=\count189
-\calc@Adimen=\dimen289
-\calc@Bdimen=\dimen290
-\calc@Askip=\skip64
-\calc@Bskip=\skip65
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count190
-\calc@Cskip=\skip66
-)
-\c@@todonotes@numberoftodonotes=\count191
+\c@@todonotes@numberoftodonotes=\count197
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfpages.sty
 Package: pgfpages 2011/01/05 ver 0.02
-\pgf@logicalpages=\count192
-\pgf@firstshipout=\count193
-\pgf@lastshipout=\count194
-\pgf@currentshipout=\count195
-\pgf@cpn=\count196
-\pgf@shipoutnextto=\count197
-\pgfphysicalheight=\dimen291
-\pgfphysicalwidth=\dimen292
-\pgfpages@shipoutbox=\box107
+\pgf@logicalpages=\count198
+\pgf@firstshipout=\count199
+\pgf@lastshipout=\count266
+\pgf@currentshipout=\count267
+\pgf@cpn=\count268
+\pgf@shipoutnextto=\count269
+\pgfphysicalheight=\dimen299
+\pgfphysicalwidth=\dimen300
+\pgfpages@shipoutbox=\box111
 )
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2016/12/05 v3.7 programmable bibliographies (PK/JW/AB)
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count198
+\lrq@indent=\count270
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -1588,62 +1625,62 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write5
-\integerpart=\count199
-\decimalpart=\count266
+\integerpart=\count271
+\decimalpart=\count272
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count267
-\c@listtotal=\count268
-\c@listcount=\count269
-\c@liststart=\count270
-\c@liststop=\count271
-\c@citecount=\count272
-\c@citetotal=\count273
-\c@multicitecount=\count274
-\c@multicitetotal=\count275
-\c@instcount=\count276
-\c@maxnames=\count277
-\c@minnames=\count278
-\c@maxitems=\count279
-\c@minitems=\count280
-\c@citecounter=\count281
-\c@savedcitecounter=\count282
-\c@uniquelist=\count283
-\c@uniquename=\count284
-\c@refsection=\count285
-\c@refsegment=\count286
-\c@maxextratitle=\count287
-\c@maxextratitleyear=\count288
-\c@maxextrayear=\count289
-\c@maxextraalpha=\count290
-\c@abbrvpenalty=\count291
-\c@highnamepenalty=\count292
-\c@lownamepenalty=\count293
-\c@maxparens=\count294
-\c@parenlevel=\count295
-\blx@tempcnta=\count296
-\blx@tempcntb=\count297
-\blx@tempcntc=\count298
-\blx@maxsection=\count299
-\blx@maxsegment@0=\count300
-\blx@notetype=\count301
-\blx@parenlevel@text=\count302
-\blx@parenlevel@foot=\count303
-\blx@sectionciteorder@0=\count304
-\labelnumberwidth=\skip67
-\labelalphawidth=\skip68
-\biblabelsep=\skip69
-\bibitemsep=\skip70
-\bibnamesep=\skip71
-\bibinitsep=\skip72
-\bibparsep=\skip73
-\bibhang=\skip74
+\c@tabx@nest=\count273
+\c@listtotal=\count274
+\c@listcount=\count275
+\c@liststart=\count276
+\c@liststop=\count277
+\c@citecount=\count278
+\c@citetotal=\count279
+\c@multicitecount=\count280
+\c@multicitetotal=\count281
+\c@instcount=\count282
+\c@maxnames=\count283
+\c@minnames=\count284
+\c@maxitems=\count285
+\c@minitems=\count286
+\c@citecounter=\count287
+\c@savedcitecounter=\count288
+\c@uniquelist=\count289
+\c@uniquename=\count290
+\c@refsection=\count291
+\c@refsegment=\count292
+\c@maxextratitle=\count293
+\c@maxextratitleyear=\count294
+\c@maxextrayear=\count295
+\c@maxextraalpha=\count296
+\c@abbrvpenalty=\count297
+\c@highnamepenalty=\count298
+\c@lownamepenalty=\count299
+\c@maxparens=\count300
+\c@parenlevel=\count301
+\blx@tempcnta=\count302
+\blx@tempcntb=\count303
+\blx@tempcntc=\count304
+\blx@maxsection=\count305
+\blx@maxsegment@0=\count306
+\blx@notetype=\count307
+\blx@parenlevel@text=\count308
+\blx@parenlevel@foot=\count309
+\blx@sectionciteorder@0=\count310
+\labelnumberwidth=\skip72
+\labelalphawidth=\skip73
+\biblabelsep=\skip74
+\bibitemsep=\skip75
+\bibnamesep=\skip76
+\bibinitsep=\skip77
+\bibparsep=\skip78
+\bibhang=\skip79
 \blx@bcfin=\read2
 \blx@bcfout=\write6
-\c@mincomprange=\count305
-\c@maxcomprange=\count306
-\c@mincompwidth=\count307
+\c@mincomprange=\count311
+\c@maxcomprange=\count312
+\c@mincompwidth=\count313
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1652,78 +1689,78 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count308
-\c@savedafterword=\count309
-\c@annotator=\count310
-\c@savedannotator=\count311
-\c@author=\count312
-\c@savedauthor=\count313
-\c@bookauthor=\count314
-\c@savedbookauthor=\count315
-\c@commentator=\count316
-\c@savedcommentator=\count317
-\c@editor=\count318
-\c@savededitor=\count319
-\c@editora=\count320
-\c@savededitora=\count321
-\c@editorb=\count322
-\c@savededitorb=\count323
-\c@editorc=\count324
-\c@savededitorc=\count325
-\c@foreword=\count326
-\c@savedforeword=\count327
-\c@holder=\count328
-\c@savedholder=\count329
-\c@introduction=\count330
-\c@savedintroduction=\count331
-\c@namea=\count332
-\c@savednamea=\count333
-\c@nameb=\count334
-\c@savednameb=\count335
-\c@namec=\count336
-\c@savednamec=\count337
-\c@translator=\count338
-\c@savedtranslator=\count339
-\c@shortauthor=\count340
-\c@savedshortauthor=\count341
-\c@shorteditor=\count342
-\c@savedshorteditor=\count343
-\c@labelname=\count344
-\c@savedlabelname=\count345
-\c@institution=\count346
-\c@savedinstitution=\count347
-\c@lista=\count348
-\c@savedlista=\count349
-\c@listb=\count350
-\c@savedlistb=\count351
-\c@listc=\count352
-\c@savedlistc=\count353
-\c@listd=\count354
-\c@savedlistd=\count355
-\c@liste=\count356
-\c@savedliste=\count357
-\c@listf=\count358
-\c@savedlistf=\count359
-\c@location=\count360
-\c@savedlocation=\count361
-\c@organization=\count362
-\c@savedorganization=\count363
-\c@origlocation=\count364
-\c@savedoriglocation=\count365
-\c@origpublisher=\count366
-\c@savedorigpublisher=\count367
-\c@publisher=\count368
-\c@savedpublisher=\count369
-\c@language=\count370
-\c@savedlanguage=\count371
-\c@pageref=\count372
-\c@savedpageref=\count373
-\shorthandwidth=\skip75
-\shortjournalwidth=\skip76
-\shortserieswidth=\skip77
-\shorttitlewidth=\skip78
-\shortauthorwidth=\skip79
-\shorteditorwidth=\skip80
+\c@afterword=\count314
+\c@savedafterword=\count315
+\c@annotator=\count316
+\c@savedannotator=\count317
+\c@author=\count318
+\c@savedauthor=\count319
+\c@bookauthor=\count320
+\c@savedbookauthor=\count321
+\c@commentator=\count322
+\c@savedcommentator=\count323
+\c@editor=\count324
+\c@savededitor=\count325
+\c@editora=\count326
+\c@savededitora=\count327
+\c@editorb=\count328
+\c@savededitorb=\count329
+\c@editorc=\count330
+\c@savededitorc=\count331
+\c@foreword=\count332
+\c@savedforeword=\count333
+\c@holder=\count334
+\c@savedholder=\count335
+\c@introduction=\count336
+\c@savedintroduction=\count337
+\c@namea=\count338
+\c@savednamea=\count339
+\c@nameb=\count340
+\c@savednameb=\count341
+\c@namec=\count342
+\c@savednamec=\count343
+\c@translator=\count344
+\c@savedtranslator=\count345
+\c@shortauthor=\count346
+\c@savedshortauthor=\count347
+\c@shorteditor=\count348
+\c@savedshorteditor=\count349
+\c@labelname=\count350
+\c@savedlabelname=\count351
+\c@institution=\count352
+\c@savedinstitution=\count353
+\c@lista=\count354
+\c@savedlista=\count355
+\c@listb=\count356
+\c@savedlistb=\count357
+\c@listc=\count358
+\c@savedlistc=\count359
+\c@listd=\count360
+\c@savedlistd=\count361
+\c@liste=\count362
+\c@savedliste=\count363
+\c@listf=\count364
+\c@savedlistf=\count365
+\c@location=\count366
+\c@savedlocation=\count367
+\c@organization=\count368
+\c@savedorganization=\count369
+\c@origlocation=\count370
+\c@savedoriglocation=\count371
+\c@origpublisher=\count372
+\c@savedorigpublisher=\count373
+\c@publisher=\count374
+\c@savedpublisher=\count375
+\c@language=\count376
+\c@savedlanguage=\count377
+\c@pageref=\count378
+\c@savedpageref=\count379
+\shorthandwidth=\skip80
+\shortjournalwidth=\skip81
+\shortserieswidth=\skip82
+\shorttitlewidth=\skip83
+\shortauthorwidth=\skip84
+\shorteditorwidth=\skip85
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -1735,13 +1772,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
-\c@textcitecount=\count374
-\c@textcitetotal=\count375
-\c@textcitemaxnames=\count376
-\c@biburlnumpenalty=\count377
-\c@biburlucpenalty=\count378
-\c@biburllcpenalty=\count379
-\c@smartand=\count380
+\c@textcitecount=\count380
+\c@textcitetotal=\count381
+\c@textcitemaxnames=\count382
+\c@biburlnumpenalty=\count383
+\c@biburlucpenalty=\count384
+\c@biburllcpenalty=\count385
+\c@smartand=\count386
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -1759,8 +1796,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2016/12/05 v3.7 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count381
-\c@bbx:relatedtotal=\count382
+\c@bbx:relatedcount=\count387
+\c@bbx:relatedtotal=\count388
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -1806,40 +1843,40 @@ Package biblatex Warning: Patching footnotes failed.
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count383
-\@quotereset=\count384
+\@quotelevel=\count389
+\@quotereset=\count390
 (./vortrag.aux)
 \openout1 = `vortrag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 79.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Try loading font information for T1+FiraSans-OsF on input l
-ine 77.
+ine 79.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fira/T1FiraSans-OsF.fd
 File: T1FiraSans-OsF.fd 2016/11/12 (autoinst) Font definitions for T1/FiraSans-
 OsF.
 )
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 77.
+(Font)              scaled to size 10.0pt on input line 79.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1877,17 +1914,17 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count385
-\scratchdimen=\dimen293
-\scratchbox=\box108
-\nofMPsegments=\count386
-\nofMParguments=\count387
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count388
-\MPscratchDim=\dimen294
-\MPnumerator=\count389
-\makeMPintoPDFobject=\count390
-\everyMPtoPDFconversion=\toks54
+\scratchcounter=\count391
+\scratchdimen=\dimen301
+\scratchbox=\box112
+\nofMPsegments=\count392
+\nofMParguments=\count393
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count394
+\MPscratchDim=\dimen302
+\MPnumerator=\count395
+\makeMPintoPDFobject=\count396
+\everyMPtoPDFconversion=\toks55
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1906,8 +1943,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box109
-Package hyperref Info: Link coloring OFF on input line 77.
+\AtBeginShipoutBox=\box113
+Package hyperref Info: Link coloring OFF on input line 79.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1915,69 +1952,69 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count391
+\c@section@level=\count397
 )
-LaTeX Info: Redefining \ref on input line 77.
-LaTeX Info: Redefining \pageref on input line 77.
-LaTeX Info: Redefining \nameref on input line 77.
+LaTeX Info: Redefining \ref on input line 79.
+LaTeX Info: Redefining \pageref on input line 79.
+LaTeX Info: Redefining \nameref on input line 79.
 
 (./vortrag.out) (./vortrag.out)
 \@outlinefile=\write7
 \openout7 = `vortrag.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 77.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 79.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 77.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 79.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 77.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 77.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 79.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/FiraSans-OsF/bx/n on input line 77.
+(Font)                  OT1/cmr/bx/n --> T1/FiraSans-OsF/bx/n on input line 79.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/FiraSans-OsF/bx/n on input line 77.
+(Font)                  OT1/cmr/bx/n --> T1/FiraSans-OsF/bx/n on input line 79.
 
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 77.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/FiraSans-OsF/m/n on input line 77.
+(Font)                  OT1/cmss/m/n --> T1/FiraSans-OsF/m/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/FiraSans-OsF/m/n on input line 77.
+(Font)                  OT1/cmss/bx/n --> T1/FiraSans-OsF/m/n on input line 79.
 
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 77.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/FiraSans-OsF/m/it on input line 77.
+(Font)                  OT1/cmr/m/it --> T1/FiraSans-OsF/m/it on input line 79.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/FiraSans-OsF/m/it on input line 77
+(Font)                  OT1/cmr/bx/it --> T1/FiraSans-OsF/m/it on input line 79
 .
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 77.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/FiraMono-TLF/m/n on input line 77.
+(Font)                  OT1/cmtt/m/n --> T1/FiraMono-TLF/m/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/FiraMono-TLF/m/n on input line 77.
+(Font)                  OT1/cmtt/m/n --> T1/FiraMono-TLF/m/n on input line 79.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 (Font)                  T1/FiraSans-OsF/m/n --> T1/FiraSans-OsF/bx/n on input l
-ine 77.
+ine 79.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  T1/FiraSans-OsF/m/it --> T1/FiraSans-OsF/bx/it on input
- line 77.
+ line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 77.
+(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  T1/FiraSans-OsF/bx/n --> T1/FiraSans-OsF/bx/n on input 
-line 77.
+line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  T1/FiraSans-OsF/m/n --> T1/FiraSans-OsF/bx/n on input l
-ine 77.
+ine 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  T1/FiraSans-OsF/m/it --> T1/FiraSans-OsF/bx/it on input
- line 77.
+ line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  T1/FiraMono-TLF/m/n --> T1/FiraMono-TLF/bx/n on input l
-ine 77.
+ine 79.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -2003,7 +2040,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 77.
+LaTeX Info: Redefining \microtypecontext on input line 79.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2017,9 +2054,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FiraSans-OsF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\c@mv@tabular=\count392
-\c@mv@boldtabular=\count393
-\c@lstlisting=\count394
+\c@mv@tabular=\count398
+\c@mv@boldtabular=\count399
+\c@lstlisting=\count400
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -2029,69 +2066,69 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'vortrag.bbl' not found.
 
 No file vortrag.bbl.
-Package biblatex Info: Reference section=0 on input line 77.
-Package biblatex Info: Reference segment=0 on input line 77.
+Package biblatex Info: Reference section=0 on input line 79.
+Package biblatex Info: Reference segment=0 on input line 79.
 (./vortrag.nav)
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 77.
+(Font)              scaled to size 5.0pt on input line 79.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 77.
+(Font)              scaled to size 6.0pt on input line 79.
 
-Overfull \hbox (0.696pt too wide) in paragraph at lines 77--77
+Overfull \hbox (0.696pt too wide) in paragraph at lines 79--79
 [][]\T1/FiraSans-OsF/m/n/6 ,  
  []
 
 
-Overfull \hbox (0.696pt too wide) in paragraph at lines 77--77
+Overfull \hbox (0.696pt too wide) in paragraph at lines 79--79
 [][]\T1/FiraSans-OsF/m/n/6 ,  
  []
 
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 29.87538pt on input line 77.
+(Font)              scaled to size 29.87538pt on input line 79.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/sb/n' will be
-(Font)              scaled to size 29.87538pt on input line 77.
+(Font)              scaled to size 29.87538pt on input line 79.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/sb/sc' will be
-(Font)              scaled to size 29.87538pt on input line 77.
+(Font)              scaled to size 29.87538pt on input line 79.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/FiraSans-OsF/sb/sc/29.87538'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 12.23468pt on input line 77.
+(Font)              scaled to size 12.23468pt on input line 79.
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 79.
+(hyperref)                setting the option has no effect on input line 81.
 
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 11.0pt on input line 97.
+(Font)              scaled to size 11.0pt on input line 99.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 15.0pt on input line 97.
+(Font)              scaled to size 15.0pt on input line 99.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 97.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 97.
+(Font)              scaled to size 9.0pt on input line 99.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 99.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 97.
+(Font)              size <5> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 97.
+(Font)              size <5> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 97.
+(Font)              size <5> substituted on input line 99.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 97.
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 97.
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2100,28 +2137,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 7.69997pt on input line 97.
+(Font)              scaled to size 7.69997pt on input line 99.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 97.
+(Font)              scaled to size 5.5pt on input line 99.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 11.0pt on input line 97.
+(Font)              scaled to size 11.0pt on input line 99.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 7.69997pt on input line 97.
+(Font)              scaled to size 7.69997pt on input line 99.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 5.5pt on input line 97.
+(Font)              scaled to size 5.5pt on input line 99.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 97.
+(Font)              scaled to size 8.0pt on input line 99.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 10.81204pt on input line 97.
+(Font)              scaled to size 10.81204pt on input line 99.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./vortrag.toc)
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 101.
+(Font)              scaled to size 14.4pt on input line 103.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 14.0pt on input line 101.
+(Font)              scaled to size 14.0pt on input line 103.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 4.0pt on input line 101.
+(Font)              scaled to size 4.0pt on input line 103.
 
 Overfull \vbox (0.64801pt too high) has occurred while \output is active []
 
@@ -2138,6 +2175,15 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [2
 
 ]
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 118.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 118.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
+(Font)              scaled to size 7.0pt on input line 118.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
+(Font)              scaled to size 5.0pt on input line 118.
+
 Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [][]\T1/FiraSans-OsF/m/n/6 , 
  []
@@ -2150,19 +2196,6 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [3
 
 ]
-LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 126.
-LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 126.
-LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 5.0pt on input line 126.
-LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 126.
-LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 126.
-LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 6.0pt on input line 126.
-
 Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [][]\T1/FiraSans-OsF/m/n/6 , 
  []
@@ -2199,6 +2232,14 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [6
 
 ]
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 140.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
+(Font)              scaled to size 6.0pt on input line 140.
+
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
 Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [][]\T1/FiraSans-OsF/m/n/6 , 
  []
@@ -2211,6 +2252,9 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [7
 
 ]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
 Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [][]\T1/FiraSans-OsF/m/n/6 , 
  []
@@ -2223,6 +2267,9 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [8
 
 ]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
 Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [][]\T1/FiraSans-OsF/m/n/6 , 
  []
@@ -2235,6 +2282,9 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [9
 
 ]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
 Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [][]\T1/FiraSans-OsF/m/n/6 , 
  []
@@ -2457,8 +2507,7 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [24
 
 ]
-
-LaTeX Warning: Empty bibliography on input line 219.
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (0.696pt too wide) has occurred while \output is active
@@ -2473,6 +2522,262 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 [25
 
 ]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[26
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[27
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[28
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[29
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[30
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[31
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[32
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[33
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[34
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[35
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[36
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[37
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[38
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[39
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[40
+
+]
+Overfull \vbox (0.64801pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[41
+
+]
+
+LaTeX Warning: Empty bibliography on input line 349.
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+
+Overfull \hbox (0.696pt too wide) has occurred while \output is active
+[][]\T1/FiraSans-OsF/m/n/6 , 
+ []
+
+[42
+
+]
 \tf@nav=\write8
 \openout8 = `vortrag.nav'.
 
@@ -2482,14 +2787,20 @@ Overfull \hbox (0.696pt too wide) has occurred while \output is active
 \tf@snm=\write10
 \openout10 = `vortrag.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 351.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 351.
  (./vortrag.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 221.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 221.
-Package rerunfilecheck Info: File `vortrag.out' has not changed.
-(rerunfilecheck)             Checksum: D5A614691C8F12937C50FE8F9F2F430F;371.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 351.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 351.
 
+
+Package rerunfilecheck Warning: File `vortrag.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `vortrag.out':
+(rerunfilecheck)             Before: 0EBA79ADDBCD842B5DDEC738B337EF0E;446
+(rerunfilecheck)             After:  A98C1AB666AAD08224B5D50C5B3D42C0;423.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -2507,11 +2818,11 @@ Package logreq Info: Writing requests to 'vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36389 strings out of 492990
- 742174 string characters out of 6135004
- 1247286 words of memory out of 5000000
- 39077 multiletter control sequences out of 15000+600000
- 415788 words of font info for 118 fonts, out of 8000000 for 9000
+ 37123 strings out of 492990
+ 755206 string characters out of 6135004
+ 1271665 words of memory out of 5000000
+ 39762 multiletter control sequences out of 15000+600000
+ 416263 words of font info for 121 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  58i,20n,84p,1132b,1698s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/fira/fir_7gpamp.enc}{/usr/shar
@@ -2526,13 +2837,12 @@ st/fonts/type1/public/fira/FiraSans-SemiBold.pfb></usr/share/texlive/texmf-dist
 nts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on vortrag.pdf (25 pages, 404475 bytes).
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on vortrag.pdf (42 pages, 447973 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 35419 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 392 PDF objects out of 1000 (max. 8388607)
+ 323 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 35427 words of extra memory for PDF output out of 35830 (max. 10000000)
 

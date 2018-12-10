@@ -1,12 +1,11 @@
-\BOOKMARK [1][-]{section.1}{Motivation/Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Preliminaries}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Operator Precedence Grammar}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Operator Precedence Automata}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Equivalence of OPG and OPA}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{\(Closure-\) Properties of OPLs}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Determistic vs. Nondeterministic OPAs}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.2}{Closure Properties}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.3}{Visibly Pushdown Language as a Subclass}{section.3}% 9
-\BOOKMARK [1][-]{section.4}{\(-Operator Precedence Languages\)}{}% 10
-\BOOKMARK [1][-]{section.5}{Implementation of OPLs}{}% 11
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 12
+\BOOKMARK [1][-]{section.1}{Motivation}{}% 1
+\BOOKMARK [1][-]{section.2}{Vorbereitung und Definitionen}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Operator Precedence Grammatik}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Operator Precedence Automaten}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{\304quivalenz von OPG und OPA}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{\(Abschluss-\) Eigenschaften von OPLs}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Determistischer vs. Nondeterministischer OPA}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Abgeschlossenheit}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Visibly Pushdown Sprache als Teilklasse}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Implementation of OPLs}{}% 10
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 11

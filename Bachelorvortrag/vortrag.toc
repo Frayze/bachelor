@@ -4,12 +4,14 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {2}{Preliminaries}{4}{0}{2}
+\beamer@sectionintoc {2}{Vorbereitung}{7}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{Operator Precedence Languages}{11}{0}{3}
+\beamer@sectionintoc {3}{Operator Precedence Languages}{19}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {3}{1}{Operator Precedence Grammar}{11}{0}{3}
+\beamer@subsectionintoc {3}{1}{Operator Precedence Grammar}{19}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {3}{2}{Operator Precedence Automata}{15}{0}{3}
+\beamer@subsectionintoc {3}{2}{Operator Precedence Automata}{27}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{(Closure-)Properties}{21}{0}{4}
+\beamer@sectionintoc {4}{Automaten Beispiel}{37}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{(Closure-)Properties}{38}{0}{5}

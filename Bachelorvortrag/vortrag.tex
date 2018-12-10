@@ -13,11 +13,13 @@ pantone315, 	% WWU-Design in dunkelblau
 %handout		% aktivieren um \pause für Druck zu ignorieren (keine neue Seite für einen neuen Punkt)
 ]{beamer}
 
+\usepackage{longtable}
 \usepackage{wwustyle2}
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}%
 \usepackage{multirow}
+\usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{tabularx}
 \usepackage{listings}
@@ -77,8 +79,8 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 \begin{document}
 \date{\today}
 \author{Jonas Kremer}
-\title{Operator Precedence Languages}
-\subtitle{Subtitle}
+\title{Operator Präzedenz Sprachen}
+\subtitle{und ihre Automaten}
 
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
@@ -104,15 +106,23 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 \begin{frame}[t]{\secname}
 	\begin{enumerate}[<+->]
 		\item
+		Operator Precedence Languages (OPL) sind eine Subklasse der kontextfreien Sprachen
+		\item
+		Sie wurden 1963 von Robert W. Floyd vorgestellt
+		\item
+		Größte bekannte Klasse von kontextfreien Sprache, die Abschlusseigenschaften von regulären Sprachen hat
+		\item 
+		Als Beispiel dient eine einfache Sprache für arithmetische Ausdrücke\\
+		zB. $ n + n \times (n + n)$
 	\end{enumerate}	
 \end{frame}
 
-\section{Preliminaries}
+\section{Vorbereitung}
 \begin{frame}[t]{Definition kontextfreie Grammatik}
 	\begin{itemize}[<+->]
 		\item
 		Eine kontextfreie Grammatik ist ein 4-Tupel $G = (N, \Sigma , P, S)$
-		\begin{itemize}[<+->]
+		\begin{enumerate}
 			\item
 			N ist die Menge der Nichtterminale
 			\item
@@ -121,42 +131,53 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 			P sind die Produktionsregeln
 			\item
 			S $\in$ N ist das Startsymbol
-		\end{itemize}
+		\end{enumerate}
+		\item
+		Produktionen haben die Form $A \rightarrow \beta$, wobei $\beta \in (\Sigma \cup N) \cup \epsilon$
+		\item
+		Ableitungen werden mit $\Rightarrow$ bzw. $\xRightarrow{\text{*}}$ beschrieben
 	\end{itemize}
 \end{frame}
+
 \begin{frame}[t]{Namenskonventionen 1}
 	\begin{enumerate}
+	
+	
 		\item
 		$a,b,\dots\in\Sigma$ sind einzelne Terminalsymbole
 		\item 
-		$v,w,\dots\in\Sigma\textsuperscript{*}$ sind beliebige Terminalstrings
+		$u,v, \dots\in\Sigma\textsuperscript{*}$ sind beliebige Terminalstrings
 		\item
 		$A,B,\dots\in N$ sind einzelne Nichtterminale
 		\item
-		$\alpha,\beta,\dots\in (\Sigma \cup N)\textsuperscript{*}$ sind beliebe Reststrings
+		$\alpha,\beta,\dots\in (\Sigma \cup N)\textsuperscript{*}$ sind beliebige Reststrings
 		\item
 		$A \rightarrow \epsilon $ ist die \textit{leere Regel}
 		\item
 		Eine \textit{umbenennende} Regel hat nur ein Nichtterminal als rechte Seite $\left( A \rightarrow B \right)$
+
 	\end{enumerate}
 \end{frame}
 
 \begin{frame}[t]{Namenskonventionen 2}
-	\begin{enumerate}
+	\begin{itemize}[<+->]
+			\item
+		Eine Grammatik ist \textit{reduziert}, wenn jede Regel benutzt werden kann um ein Wort aus $\Sigma \textsuperscript{*}$ zu erzeugen
+		\item
+		Eine Grammatik ist \textit{invertierbar}, wenn es keine identischen rechten Seiten von Produktionsregeln gibt
 		\item
 		Eine Regel ist in \textit{Operatorform}, wenn die rechte Seite keine benachbarten Nichtterminale hat
 		\item 
 		Jede kontextfreie Grammatik kann in eine äquivalente \textit{Operatorgrammatik (OG)} umgewandelt werden
 		
-	\end{enumerate}
+		
+	\end{itemize}
 \end{frame}
 
 \section{Operator Precedence Languages}
 \subsection{Operator Precedence Grammar}
 \begin{frame}[t]{\subsecname}
 	\begin{itemize}[<+->]
-		\item
-		Wird häufig auch \textit{Floyd Grammar} genannt nach ihrem Erfinder
 		\item
 		Definition: \textit{Linke und Rechte Terminalmenge}\\
 		$\mathcal{L} \textsubscript{G} \big( A \big) = \{ a \in \Sigma | 
@@ -172,17 +193,34 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 		\mathcal{R}\textsubscript{G}(D)$ \\
 		yields precedence: $ a \lessdot b \Leftrightarrow \exists A \rightarrow \alpha aD \beta , D \in N $ and $ b \in
 		\mathcal{L}\textsubscript{G}(D)$
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+	\begin{itemize}[<+->]
+	\item Eine Operator Precedence Matrix (OPM) M ist eine $|\Sigma| \times |\Sigma |$ Matrix, die für jedes Paar (a,b) die Precedence Relation speichert
+	
+	\item 
+	Eine Operator Grammatik ist eine Operator Precedence Grammatik, wenn M=OPM(G) \textit{konfliktfrei} ist
+	\item
+	Eine OPG ist in \textit{Fischer Normalform}, wenn sie invertierbar ist und keine leeren (ausser Startsymbol) oder umbenennenden Regeln hat
+	\item
+	Zusätzliches Symbol $\# \notin \Sigma$ um das Ende eines Strings zu markieren\\
+	Alle anderen Symbole übernehmen Precedence über $\#$
+	\item
+	Ein Operator Precedence Alphabet ist ein Paar $(\Sigma, M)$ mit der konfliktfreien OPM $M = | \Sigma \cup \{ \# \} | \textsuperscript{2}$	
 	\end{itemize}
 \end{frame}
 
 \subsection{Operator Precedence Automata}
-\begin{frame}[t]{\secname}
+\begin{frame}[t]{\subsecname}
 	\begin{itemize}[<+->]
 		\item
-		Ein nichtdetermistischer Operator Precedence Automat ist ein 6-Tupel A = $(\Sigma, M, Q, I, F, \delta)$
+		Ein nichtdetermistischer Operator Precedence Automat (OPA) ist ein 6-Tupel A = $(\Sigma, M, Q, I, F, \delta)$
 		\begin{enumerate}
 			\item
-			$(\Sigma, M)$ ist ein OP alphabet
+			$(\Sigma, M)$ ist ein OP Alphabet
 			\item
 			Q ist die Menge der Zustände
 			\item
@@ -195,8 +233,100 @@ style=alphabetic % eine unvollständige Auswahl von Styles: ieee, numeric, apa
 			$\delta \textsubscript{push}: Q \times \Sigma \rightarrow \mathcal{P} (Q)$
 			$\delta \textsubscript{pop}: Q \times Q \rightarrow \mathcal{P} (Q)$
 		\end{enumerate}
-			
+		\item
+		Weiterhin wird das Stackalphabet definiert als $\Gamma = (\Sigma \times Q)$\\
+		mit $\left[a , q \right]\in \Gamma$ und dem Symbol für den leeren Stack ${\perp}$
+		\item
+		Der Stack $\Pi$ ist ein String $\perp \Gamma \textsuperscript{*}$ \\
+		Bsp: $\perp \left[+, q \textsubscript{1} \right] \left[ n, q \textsubscript{0} \right]$
 	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+	\begin{itemize}
+		\item
+1		Eine \textit{Konfiguration} eines OPA ist ein Tripel $C = (\Pi, q, w)$ mit dem Stack $\Pi$, dem aktuellen Zustand q und der Eingabe w
+		\item Eine Berechnung des Automaten ist eine endliche Folge von \textit{Transitionen (Moves)} $C \textsubscript{1} \vdash C \textsubscript{2}$
+		\item
+		Die Sprache die ein OPA A akzeptiert wird definiert als: \\
+		L(A)= $\left\{x|(\perp, q \textsubscript{I}, x\#) \vdash \textsuperscript{*} ( \perp, q \textsubscript{F}, \#) ,
+		q \textsubscript{I} \in I, q \textsubscript{F} \in F \right\}$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{OPA Transitionen}
+	\begin{itemize}
+		\item
+		\textit{push move:} (Normaler Pfeil) \\
+		if $sym(\Pi) \lessdot a$ then $(\Pi, p, ax) \vdash (\Pi\left[a, p \right], q, x)$ mit 
+		$q \in \delta \textsubscript{push} (p,a)$
+		\item
+		\textit{shift move: } (Gestrichelter Pfeil) \\
+		if $a \doteq b$ then $(\Pi\left[a, p \right], q, bx) \vdash (\Pi \left[ b, p \right], r, x)$ mit 
+		$r \in \delta \textsubscript{shift} (q, b)$
+		\item
+		\textit{pop move: } (Doppelter Pfeil) \\
+		if $ a \gtrdot b$ then $(\Pi\left[a, p\right], q, bx) \vdash (\Pi, r, bx)$ mit $r \in \delta \textsubscript{pop} (q,p)$
+	
+	\end{itemize}
+\end{frame}
+
+\section{Automaten Beispiel}
+\begin{frame}
+	\small
+	\begin{tabular}{| l | c | r |}
+	\hline
+	Stack & Zustand & Eingabe \\ \hline
+	$\perp$ & $q \textsubscript{0}$ & $ n+n \times (n+n)\#$ \\ \hline
+	
+	$ \perp\left[n, q\textsubscript{0} \right]$ & $q \textsubscript{1}$ & $+n \times (n+n)\#$ \\ \hline
+	
+	$\perp$ & $q \textsubscript{1}$ & $ +n \times (n+n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]$ & $q \textsubscript{0}$ & $ n \times (n+n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right] \left[n, q\textsubscript{0} \right]$ 
+	& $q \textsubscript{1}$ & $\times (n+n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]$ & $q \textsubscript{1}$ & $\times (n+n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{0} \right]\left[\times, q\textsubscript{1} \right]$ 
+	& $q \textsubscript{1}$ & $(n+n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right] \left[(, q\textsubscript{0} \right]$ 
+	& $q \textsubscript{2}$ & $n+n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right] \left[(, q\textsubscript{0} \right] \left[n, q\textsubscript{2} \right]$ 
+	& $q \textsubscript{3}$ & $+n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right] \left[(, q\textsubscript{0} \right]$ 
+	& $q \textsubscript{3}$ & $+n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right] \left[(, q\textsubscript{0} \right] \left[+, q\textsubscript{3} \right]$ 
+	& $q \textsubscript{2}$ & $n)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right] \left[(, q\textsubscript{0} \right] \left[+, q\textsubscript{3} \right] \left[n, q\textsubscript{2} \right]$ 
+	& $q \textsubscript{3}$ & $)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right] \left[(, q\textsubscript{0} \right] \left[+, q\textsubscript{3} \right]$ 
+	& $q \textsubscript{3}$ & $)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right] \left[(, q\textsubscript{0} \right]$ 
+	& $q \textsubscript{3}$ & $)\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right] \left[), q\textsubscript{0} \right]$ 
+	& $q \textsubscript{3}$ & $\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]\left[\times, q\textsubscript{1} \right]$ 
+	& $q \textsubscript{3}$ & $\#$ \\ \hline
+	
+	$\perp\left[+, q\textsubscript{1} \right]$ 
+	& $q \textsubscript{3}$ & $\#$ \\ \hline
+	
+	$\perp$ 
+	& $q \textsubscript{3}$ & $\#$ \\ \hline
+	\end{tabular}
+	
 \end{frame}
 
 \section{(Closure-)Properties}
