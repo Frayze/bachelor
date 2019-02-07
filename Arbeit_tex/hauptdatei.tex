@@ -1,10 +1,24 @@
 \documentclass{article}
 
-\usepackage{amsmath}
+
+\usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}%
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabularx}
 \usepackage{listings}
-\usepackage{titlesec}
+\usepackage{textcomp}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usetikzlibrary{quotes,babel,arrows,automata,positioning,trees,graphs,shapes,calc,decorations.pathreplacing}
+
+
+\newtheorem{definition}{Definition}[section]
+
 
 \newcommand{\sectionbreak}{\clearpage}
 
@@ -18,15 +32,11 @@
 \newpage
 \tableofcontents
 \newpage
+
 \section{Motivation}
 
-\section{Vorbereitung und Definitionen}
+\input{sections/definitionen}
 
-\subsection{Operator Precedence Grammatik}
-
-\subsection{Operator Precedence Automaten}
-
-\subsection{Äquivalenz von OPG und OPA}
 
 \section{(Abschluss-) Eigenschaften von OPLs}
 

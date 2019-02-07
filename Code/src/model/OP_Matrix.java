@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OP_Matrix {
@@ -10,14 +11,14 @@ public class OP_Matrix {
     private Relation[][] matrix;
 
     /**
-     * The constructor creates a new matrix based on the number of symbols. Adds an endsymbol to
+     * The constructor creates a new matrix based on the number of symbols. Adds an endsymbol to the terminal symbols
      * @param terminals
      */
 
     public OP_Matrix(List<Character> terminals) {
 
-        this.symbols = terminals;
-        endsymbol = '#';
+        this.symbols = new ArrayList<>(terminals);
+        this.endsymbol = '#';
         this.symbols.add(endsymbol);
 
         this.size = symbols.size();

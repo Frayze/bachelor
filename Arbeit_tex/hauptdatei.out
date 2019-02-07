@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Motivation}{}% 1
 \BOOKMARK [1][-]{section.2}{Vorbereitung und Definitionen}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Operator Precedence Grammatik}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Operator Precedence Automaten}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Operatorpr\344zedenzgrammatik}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Operatorpr\344zedenzautomaten}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{\304quivalenz von OPG und OPA}{section.2}% 5
 \BOOKMARK [1][-]{section.3}{\(Abschluss-\) Eigenschaften von OPLs}{}% 6
 \BOOKMARK [2][-]{subsection.3.1}{Determistischer vs. Nondeterministischer OPA}{section.3}% 7

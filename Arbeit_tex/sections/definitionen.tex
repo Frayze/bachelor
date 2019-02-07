@@ -1,0 +1,61 @@
+\section{Vorbereitung und Definitionen}
+In diesem Abschnitt geht es um die Definitionen und Namenskonventionen, die für Operatorpräzedenzsprachen benötigt werden. Zunächst kommt eine kurze Definition von kontextfreien Grammatiken, gefolgt von Definitionen und Einschränkungen für Operatorpräzedenzgrammatiken (OPG). Im Anschluss wird die Klasse der Operatorpräzedenzautomaten (OPA) eingeführt, sowohl deterministisch als auch nichtdeterministisch, sowie deren Äquivalenz zu OPGs bewiesen. 
+\subsection{Operatorpräzedenzgrammatik}
+Eine kontextfreie Grammatik (kfG) ist ein 4-tupel $G = (N, \Sigma, P, S)$, wobei N die Menge der Nichtterminalsymbole, $\Sigma$ die Menge der Terminalsymbole, P die Menge der Produktionsregeln und S das Startsymbol bezeichnet. Folgende Namenskonventionen werden im weiteren Verlauf verwendet: Kleine lateinische Buchstaben am Anfang des Alphabets $a, b, ...$ bezeichnen einzelne Terminalsymbole; Spätere, kleine lateinische Buchstaben $u,v, ...$ bezeichnen Terminalstrings; Große lateinische Buchstaben $A, B, ...$ stehen für Nichtterminalsymbole und griechische Buchstaben $\alpha, \beta, ...$ für beliebige Strings über $N \cup \Sigma$. Sofern nicht explizit eingeschränkt können Strings auch leer sein.\\
+Weiterhin haben Produktionsregeln die Form $A \rightarrow \alpha$ mit der \textit{leeren Regel} $A \rightarrow \epsilon$. \textit{Umbenennende} Regeln haben nur ein Nichtterminalsymbol als rechte Seite . Eine \textit{direkte Ableitung} wird mit $\Rightarrow$ beschrieben, eine beliebige Anzahl von Ableitungen mit $\overset{*}{\Rightarrow}$.
+\\
+Eine Grammatik heisst \textit{reduziert}, wenn jede Regel aus P benutzt werden kann um einen String aus $\Sigma\textsuperscript{*}$ zu erzeugen. Sie ist \textit{invertierbar}, wenn keine zwei Regeln identische rechten Seiten haben.\\
+Eine Regel ist in \textit{Operatorform}, wenn ihre rechte Seite keine benachbarten Nichtterminale hat. Entsprechend heisst eine Grammatik, die nur solche Regeln beinhaltet \textit{Operatorgrammatik} (OG). Jede kfG $G=(N,\Sigma, P, S)$ kann in eine äquivalente Operatorgrammatik $G'=(N', \Sigma, P', S)$ umgewandelt werden [siam 25, 38].Die folgenden Definitionen gelten für Operatorpräzedenzgrammatiken (OPGs). \\
+\begin{definition}
+
+Für eine OG G und ein Nichtterminal A sinddie \textit{linken und rechten Terminalmengen}  definiert als 
+$$ \mathcal{L} \textsubscript{G}(A) = \{ a \in \Sigma | A \overset{*}{\Rightarrow} Ba \alpha \}, \;
+ \mathcal{R} \textsubscript{G}(A) = \{ a \in \Sigma | A \overset{*}{\Rightarrow} \alpha aB \}$$
+mit $B \in N \cup \{\epsilon\}$
+\end{definition}
+
+Auf den Namen der Grammatik G kann verzichtet werden, wenn der Kontext klar ist. Eines der wichtigsten Merkmale von Operatorpräzedenzgrammatiken ist die Definition von drei binären Operatorpräzedenzrelationen.
+\begin{definition}[Präzedenzrelationen]\ \\
+Gleiche Präzedenz: $ a \doteq b \Leftrightarrow \exists A \rightarrow \alpha aBb \beta , 
+		B \in N \cup \{ \epsilon \}$ \\
+		Übernimmt Präzedenz: $ a \gtrdot b \Leftrightarrow \exists A \rightarrow \alpha Db \beta , D \in N $ and $ a \in
+		\mathcal{R}\textsubscript{G}(D)$ \\
+		Gibt Präzedenz ab: $ a \lessdot b \Leftrightarrow \exists A \rightarrow \alpha aD \beta , D \in N $ and $ b \in
+		\mathcal{L}\textsubscript{G}(D)$
+\end{definition}
+Es muss beachtet werden, dass diese Relationen im Gegensatz zu ähnlichen arithmetischen Relationen (<,>,=) keine transitiven, symmetrischen oder reflexiven Eigenschaften vorliegen. Weiterhin schließt die Gültigkeit einer Relation die andere nicht aus, sodass zB. sowohl $a \lessdot b$ als auch $a \doteq b$ gelten kann.
+Für eine OG G kann eine Operatorpräzedenzmatrix (OPM) $M = OPM(G)$ als $|\Sigma | \times |\Sigma |$ erstell werden, die für jedes geordnete Paar (a,b) die Menge $M \textsubscript{ab}$ der Operatorpräzedenzrelationen beinhaltet. Für solche Matrizen sind Inklusion und Vereinigung natürlich definiert.
+
+\begin{definition}
+Eine OG G ist eine OPG oder auch FG gdw. M = OPM(G) eine \textit{konfliktfreie} Matrix ist.\\ 
+Also: $\forall a, b, |M \textsubscript{ab} | \leq 1$\\
+Eine OPL ist eine Sprache, die durch eine OPG gebildet wird.
+\end{definition}
+
+Für solche OPMs werden nun weitere Namenskonventionen vereinbart. Zwei Matrizen sind \textit{kompatibel}, wenn ihre Vereinigung konfliktfrei ist. Eine Matrix heisst \textit{total}, wenn gilt $\forall a, b: M \textsubscript{ab} \neq \emptyset$.
+Für eine OPG wird die \textit{Fischer Normalform (FNF)} definiert.
+
+\begin{definition}[Fischernormalform]
+Eine OPG G ist in Fischer Normalform gdw. gilt:
+\begin{itemize}
+\item
+G ist invertierbar
+\item
+G hat keine leeren Regeln außer dem Startsymbol, sofern dies nicht weiter verwendet wird
+\item 
+G hat keine umbenennenden Regeln
+\end{itemize}
+\end{definition}
+
+Zu jeder OPG kann eine äquivalente Grammatik in FNF gebildet werden. [ASDFGH]
+In Ausblick auf die Operatorpräzedenzautomaten erweitern wir die OPM um ein Symbol $\# \notin \Sigma$, welches Start und Ende eines Strings bezeichnet. Dieses Symbol beeinflusst die Grammatik nicht weiter, da für jedes Terminal gilt: $\forall a \in \Sigma: \# \lessdot a $ und $a \gtrdot \#$. Ferner gilt: $M\textsubscript{\# \#}=\{ \doteq \}$.
+\begin{definition}
+Ein OP Alphabet ist ein Paar $(\Sigma, M)$ mit:\\
+$\Sigma$ ist ein Alphabet \\
+M ist eine konfliktfreie OPM, erweitert zu einem $ |\Sigma \cup \{\#\}|\textsuperscript{2}$ Array, das zu jedem geordneten Paar (a,b) höchstens eine OP Relation enthält.
+\end{definition} 
+Zum Schluss sollte noch eine Einschränkung bezüglich der $\doteq$-Relation getroffen werden. Aus
+
+\subsection{Operatorpräzedenzautomaten}
+
+\subsection{Äquivalenz von OPG und OPA}
