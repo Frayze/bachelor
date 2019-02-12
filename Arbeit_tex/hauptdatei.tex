@@ -6,6 +6,7 @@
 \usepackage{multirow}
 \usepackage{mathtools}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{tabularx}
 \usepackage{listings}
@@ -15,10 +16,13 @@
 \usepackage{hyperref}
 \usetikzlibrary{quotes,babel,arrows,automata,positioning,trees,graphs,shapes,calc,decorations.pathreplacing}
 
+%\theoremstyle{definition}
+\newtheorem{definition}{Definition}[subsection]
 
-\newtheorem{definition}{Definition}[section]
-
-
+\theoremstyle{remark}
+\newtheorem{example}{Beispiel}
+\newcommand{\tief}[1]{\textsubscript{#1}}
+\newcommand{\hoch}[1]{\textsuperscript{#1}}
 \newcommand{\sectionbreak}{\clearpage}
 
 \author{Jonas Kremer}
@@ -48,6 +52,10 @@
 \section{Implementation of OPLs}
 
 \section{Conclusion}
+
+\appendix
+
+\section{Anhaaaang}
 
 \bibliography{}
 \end{document}

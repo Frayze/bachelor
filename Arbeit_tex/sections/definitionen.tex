@@ -83,10 +83,10 @@ Die drei Transitionen werden mit verschiedenen Arten von Pfeilen dargestellt: Ei
 Als nächstes wird der Stack des Automaten definiert. Für die Elemente des Stacks definieren wir $\Gamma = \Sigma \times Q$ und erweitern dies um das Symbol für den leeren Stack $\Gamma ' = \Gamma \cup \{\bot\}$. Elemente von $\Gamma'$ haben die Form $\left[a, q\right]$ oder $\bot$.\\
 Für $\Gamma ' $ werden ein paar Hilfsfunktionen einegführt: $symbol(\left[ a, q \right]) = a$, $symbol(\bot) = \#$ und $state(\left[ a, q \right]) = q$. Der Stack ist ein String der Form $\Pi = \bot \pi \textsubscript{1} \pi \textsubscript{2}... pi\textsubscript{n}$ mit $\pi\textsubscript{i}\in \Gamma$. Die symbol-Funktion wird auf Strings erweitert, indem das Symbol des letzten Elements ausgegeben wird: $symbol(\Pi)=symbol(\pi \textsubscript{n})$.\\
 Eine \textit{Konfiguration} eines OPA ist ein Tripel $C = (\Pi, q, w)$, wobei $\Pi \in \bot \Gamma \textsuperscript{*}$ den aktuelle Stack, $q \in Q$ den Zustand und $w \in \Sigma\textsuperscript{*}\#$ das (übrige) Eingabewort bezeichnet.\\
-Bei einem \textit{Lauf} des Automaten handelt es sich um eine endliche Folge von Transitionen/Moves $C\textsubscript{1} \vdash C\textsubscript{2}$. Die drei verschiedenen Moves sind wie folgt definiert:
-\begin{definition}[Übergangsfunktionen]\ \\
-push move: if $symbol(\Pi) \lessdot a $ then $ (\Pi, p, ax) \vdash (\Pi\left[a, p \right], q, x)$ mit $q \in \delta\textsubscript{push}(p,a)$\\  
-push move: if $a \doteq b $ then $ (\Pi\left[a, p \right], q, bx) \vdash (\Pi\left[b, p \right], r, x)$ mit $r \in \delta \textsubscript{shift}(q,b)$\\
+Bei einem \textit{Lauf} des Automaten handelt es sich um eine endliche Folge von Transitionen/Moves $C\textsubscript{1} \vdash C\textsubscript{2}$. 
+\begin{definition}[Übergangsfunktionen]\ Die drei verschiedenen Moves sind wie folgt definiert: \\[1ex]
+push move: if $symbol(\Pi) \lessdot a $ then $ (\Pi, p, ax) \vdash (\Pi\left[a, p \right], q, x)$ mit $q \in \delta\textsubscript{push}(p,a)$\\[0.5ex]  
+push move: if $a \doteq b $ then $ (\Pi\left[a, p \right], q, bx) \vdash (\Pi\left[b, p \right], r, x)$ mit $r \in \delta \textsubscript{shift}(q,b)$\\[0.5ex]
 pop move: if $a \gtrdot b $ then $ (\Pi\left[a, p \right], q, bx) \vdash (\Pi, r, bx)$ mit $r \in \delta \textsubscript{pop}(q,p)$
 \end{definition}
 Einfach gesagt bedeutet das: Bei einem Push-Move wird der Stack aufgebaut, während das Eingabewort weiter verbraucht wird. Der Shift-Move verarbeitet ebenfalls das Eingabewort, tauscht allerdings nur das Symbol im vorderen Stackelement aus. Der Pop-Move arbeitet dann den Stack ab. Shift- und Pop-Moves werden bei einem leeren Stack nicht ausgeführt.\\
@@ -95,8 +95,31 @@ Um den Automaten zu vervollständigen muss die akzeptierte Sprache definiert wer
 Die Sprache, die von einem OPA A erkannt wird ist definiert als\\
 $L(A)=  \Big \{ w | (\bot, q\textsubscript{I}, w\#) \overset{*}{\vdash} (\bot, q \textsubscript{F},\#), q\textsubscript{I} \in I, q \textsubscript{F} \in F \Big \}$
 \end{definition}
-Damit ist die Definition eines nichtdeterministischen OPAs vollständig.\\
-Für die Beweise von interessanten Eigenschaften müssen allerdings noch ein paar weitere Grundlagen von OPAs benannt und definiert werden.
+Damit ist die Definition eines nichtdeterministischen OPAs vollständig.
+\subsubsection{Weitere Strukturen}
+Um das Verhalten von OPAs beschreiben zu können und die interessanteren Eigenschaften zu beweisen müssen allerdings noch ein paar weitere Grundlagen von OPAs benannt und definiert werden.
+
+\begin{definition}[Einfache Ketten]
+Sei ($\Sigma$, M) ein Präzedenz-Alphabet. Eine einfache Kette ist ein Wort $a\tief{0} a\tief{1}a\tief{2}...a\tief{n}a\tief{n+1}$, welches wir als $\hoch{a\tief{0}} \big[ a\tief{1} a\tief{2}... a\tief{n} \big] \hoch{a \tief{n+1}}$ notieren,
+mit $a\tief{0}, a\tief{n+1} \in \Sigma \cup \{ \# \}, a\tief{i} \in \Sigma$ für $ 1 \leq i \leq n, M\tief{a\tief{0} a\tief{n+1}} \neq \emptyset$ und $ a\tief{0} \lessdot a\tief{1} \doteq a\tief{2}...a\tief{n} \gtrdot a\tief{n+1}$
+\end{definition}
+
+\begin{definition}[Zusammengesetzte Ketten]
+Sei ($\Sigma$, M) ein Präzedenz-Alphabet. Eine zusammengesetzte Kette ist ein Wort $a\tief{0} x\tief{0} a\tief{1} x\tief{1} a\tief{2}...a\tief{n}x\tief{n} a\tief{n+1}$ mit $x\tief{i} \in \Sigma \hoch{*}$, bei dem $\hoch{a\tief{0}} \big[ a\tief{1} a\tief{2}... a\tief{n} \big] \hoch{a \tief{n+1}}$ eine einfache Kette ist und jedes $x\tief{i}$ entweder leer$(\epsilon)$ oder wieder eine (einfache oder zusammengesetzte) Kette ist.\\
+Die Schreibweise ist $\hoch{a\tief{0}} \big[x\tief{0} a\tief{1} x\tief{1} a\tief{2}... a\tief{n} x\tief{n} \big] \hoch{a \tief{n+1}}$
+\end{definition}
+
+Für diese Strukturen benennt man weitere Eigenschaften. Bei einer Kette $\hoch{a} \big[ x \big] \hoch b$ wird x der \textit{Rumpf} genannt. Die \textit{Tiefe} d(x) einer Kette wird rekursiv definiert: $d(x) = 1$, wenn x eine einfache Kette ist und $d(x\tief{0}a\tief{1} x\tief{1}...a\tief{n} x\tief{n}) = \underset{i}{max}(d(x\tief{i})) + 1$ bei zusammengesetzten Ketten. Die Struktur der Ketten ist gleich der internen Struktur von Eingabewörtern und so kann die Tiefe einfach abgelesen werden, wenn ein Syntaxbaum gebildet wird. Die Tiefe einer Kette ist gleich der Tiefe des Rumpfes. Bei der Handhabung von zusammengesetzten Ketten ist es sinnvoll die Rümpfe mit Variablen abzukürzen.\\
+Mit diesen Ketten lässt sich jetzt die Kompatibilät eines Wortes w mit einer OPM M definieren, die allerdings nicht mit der Akzeptanz für einen OPA verwechselt werden darf.
+\begin{definition}[Kompatibilität mit OPM]
+Ein Wort w über $(\Sigma, M)$ ist kompatibel mit M, wenn die beiden Bedingungen gelten:
+\begin{itemize}
+\item
+Für jedes aufeinanderfolgende Paar von Nichtterminalen b,c in w muss $M\tief{bc}\neq \emptyset$ gelten
+\item
+Für jeden Substring x von $\# w\#$ mit $x=a\tief{0}x\tief{0}a\tief{1}x\tief{1}a\tief{2}...a\tief{n}x\tief{n}a\tief{n}$ gilt: Wenn $a\tief{0} \lessdot a\tief{1} \doteq a\tief{2}...a\tief{n-1} \doteq a\tief{n} \gtrdot a\tief{n+1}$ und für alle $0 \leq i \leq n$ ist $x\tief{i}$ entweder $\epsilon$ oder $\hoch{a\tief{i}} \left[ x \right] \hoch{a\tief{n+1}}$ ist eine Kette, dann ist $M\tief{a\tief{0}a\tief{n+1}} \neq \emptyset$
+\end{itemize}
+\end{definition}
 
 \subsection{Deterministischer vs. Nichtdeterminstischer OPA}
 \subsection{Äquivalenz von OPG und OPA}
