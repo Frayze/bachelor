@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.30)  12 FEB 2019 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.30)  13 FEB 2019 22:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1258,27 +1258,27 @@ decorations.pathreplacing.code.tex))
  (./hauptdatei.aux)
 \openout1 = `hauptdatei.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 \c@lstlisting=\count148
 
 ABD: EveryShipout initializing macros
@@ -1313,7 +1313,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring OFF on input line 33.
+Package hyperref Info: Link coloring OFF on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1323,32 +1323,32 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count155
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
 (./hauptdatei.out) (./hauptdatei.out)
 \@outlinefile=\write4
 \openout4 = `hauptdatei.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 39.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 39.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 39.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 39.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./hauptdatei.toc)
@@ -1356,20 +1356,20 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout5 = `hauptdatei.toc'.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 41.
  [2]
+(./sections/motivation.tex
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 39.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 39.
-
-(./sections/definitionen.tex
+(babel)             in language  on input line 1.
+) (./sections/definitionen.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1384,26 +1384,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 9.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 9.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 9.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 9.
 [3]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 34.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 34.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 34.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 34.
+ [4]
 
 Package hyperref Warning: No autoref name for `definition' on input line 58.
 
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 60.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 60.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 60.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 60.
-[4]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1415,7 +1415,15 @@ Overfull \hbox (6.61075pt too wide) in paragraph at lines 64--65
 A
  []
 
-
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 73.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 73.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 73.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 73.
+[5]
 Overfull \hbox (12.08322pt too wide) in paragraph at lines 81--87
 \T1/cmr/m/n/10 Für $\OT1/cmr/m/n/10 ^^@[]$ \T1/cmr/m/n/10 wer-den ein paar Hilf
 s-funk-tio-nen ei-neg-führt: $\OML/cmm/m/it/10 symbol\OT1/cmr/m/n/10 ([]) = \OM
@@ -1424,19 +1432,14 @@ cmsy/m/n/10 ?\OT1/cmr/m/n/10 ) =
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 91.
+(babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 91.
+(babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 91.
+(babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 91.
-[5]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 99.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 99.
-
+(babel)             in language  on input line 97.
+[6]
 Overfull \hbox (13.66075pt too wide) in paragraph at lines 108--110
 [][]\T1/cmr/bx/n/10 Definition 2.2.5 \T1/cmr/m/n/10 (Zu-sam-men-ge-setz-te Ket-
 ten)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 Sei ($\OT1/cmr/m/n/10 ^^F$\T1/cmr/m/it/
@@ -1444,32 +1447,24 @@ ten)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 Sei ($\OT1/cmr/m/n/10 ^^F$\T1/cmr/m/it/
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 114.
+(babel)             in language  on input line 125.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 114.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 114.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 114.
-[6]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 124.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 124.
+(babel)             in language  on input line 125.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 125.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 125.
+[7]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 145.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 145.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 157.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 157.
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 44.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 44.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 46.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 46.
-Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 48.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 48.
@@ -1485,6 +1480,10 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 54.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 54.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 56.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 58.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1492,51 +1491,75 @@ Package babel Info: Redefining ngerman shorthand "~
 
 No file hauptdatei.bbl.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
-[7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+(babel)             in language  on input line 65.
+[8]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 65.
+ [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
  (./hauptdatei.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
-Package rerunfilecheck Info: File `hauptdatei.out' has not changed.
-(rerunfilecheck)             Checksum: 4148A151A05FDC16383019F85656AC48;987.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
+
+
+Package rerunfilecheck Warning: File `hauptdatei.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `hauptdatei.out':
+(rerunfilecheck)             Before: 175C33FD10C42EA13732907ED8241946;941
+(rerunfilecheck)             After:  3E1E7DDC2C0C7DE80F058F289AD7F1A1;863.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 65.
  ) 
 Here is how much of TeX's memory you used:
- 23945 strings out of 492990
- 484635 string characters out of 6135004
- 574645 words of memory out of 5000000
- 27018 multiletter control sequences out of 15000+600000
- 18579 words of font info for 52 fonts, out of 8000000 for 9000
+ 23957 strings out of 492990
+ 484795 string characters out of 6135004
+ 573670 words of memory out of 5000000
+ 27019 multiletter control sequences out of 15000+600000
+ 19398 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,8n,82p,1129b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
-fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0500.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfti0700.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfti1000.pfb>
-Output written on hauptdatei.pdf (7 pages, 273539 bytes).
+ 61i,11n,82p,1129b,486s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{subsubsection.2.2.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fo
+nts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1
+200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm12
+00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/t
+exmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfti0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti070
+0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on hauptdatei.pdf (9 pages, 334945 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 242 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

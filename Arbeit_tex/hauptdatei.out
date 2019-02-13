@@ -2,13 +2,11 @@
 \BOOKMARK [1][-]{section.2}{Vorbereitung und Definitionen}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Operatorpr\344zedenzgrammatik}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Operatorpr\344zedenzautomaten}{section.2}% 4
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Weitere Strukturen}{subsection.2.2}% 5
-\BOOKMARK [2][-]{subsection.2.3}{Deterministischer vs. Nichtdeterminstischer OPA}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.4}{\304quivalenz von OPG und OPA}{section.2}% 7
-\BOOKMARK [1][-]{section.3}{\(Abschluss-\) Eigenschaften von OPLs}{}% 8
-\BOOKMARK [2][-]{subsection.3.1}{Determistischer vs. Nondeterministischer OPA}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.2}{Abgeschlossenheit}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.3}{Visibly Pushdown Sprache als Teilklasse}{section.3}% 11
-\BOOKMARK [1][-]{section.4}{Implementation of OPLs}{}% 12
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 13
-\BOOKMARK [1][-]{appendix.A}{Anhaaaang}{}% 14
+\BOOKMARK [2][-]{subsection.2.3}{Deterministischer vs. Nichtdeterminstischer OPA}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{\304quivalenz von OPG und OPA}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{\(Abschluss-\) Eigenschaften von OPLs}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Determistischer vs. Nondeterministischer OPA}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Abgeschlossenheit}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Visibly Pushdown Sprache als Teilklasse}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Implementation of OPLs}{}% 11
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 12

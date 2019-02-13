@@ -6,6 +6,7 @@
 \usepackage{multirow}
 \usepackage{mathtools}
 \usepackage{amssymb}
+\usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{tabularx}
@@ -24,6 +25,9 @@
 \newcommand{\tief}[1]{\textsubscript{#1}}
 \newcommand{\hoch}[1]{\textsuperscript{#1}}
 \newcommand{\sectionbreak}{\clearpage}
+\pagestyle{headings}
+
+
 
 \author{Jonas Kremer}
 \title{Operator Precedence Sprachen und ihre Automaten}
@@ -36,7 +40,7 @@
 \tableofcontents
 \newpage
 
-\section{Motivation}
+\input{sections/motivation}
 
 \input{sections/definitionen}
 
@@ -55,7 +59,7 @@
 
 \appendix
 
-\section{Anhaaaang}
+\section*{Anhang}
 
 \bibliography{}
 \end{document}

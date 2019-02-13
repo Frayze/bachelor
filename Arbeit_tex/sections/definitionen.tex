@@ -96,7 +96,7 @@ Die Sprache, die von einem OPA A erkannt wird ist definiert als\\
 $L(A)=  \Big \{ w | (\bot, q\textsubscript{I}, w\#) \overset{*}{\vdash} (\bot, q \textsubscript{F},\#), q\textsubscript{I} \in I, q \textsubscript{F} \in F \Big \}$
 \end{definition}
 Damit ist die Definition eines nichtdeterministischen OPAs vollständig.
-\subsubsection{Weitere Strukturen}
+\subsubsection*{Weitere Strukturen}
 Um das Verhalten von OPAs beschreiben zu können und die interessanteren Eigenschaften zu beweisen müssen allerdings noch ein paar weitere Grundlagen von OPAs benannt und definiert werden.
 
 \begin{definition}[Einfache Ketten]
@@ -109,7 +109,7 @@ Sei ($\Sigma$, M) ein Präzedenz-Alphabet. Eine zusammengesetzte Kette ist ein W
 Die Schreibweise ist $\hoch{a\tief{0}} \big[x\tief{0} a\tief{1} x\tief{1} a\tief{2}... a\tief{n} x\tief{n} \big] \hoch{a \tief{n+1}}$
 \end{definition}
 
-Für diese Strukturen benennt man weitere Eigenschaften. Bei einer Kette $\hoch{a} \big[ x \big] \hoch b$ wird x der \textit{Rumpf} genannt. Die \textit{Tiefe} d(x) einer Kette wird rekursiv definiert: $d(x) = 1$, wenn x eine einfache Kette ist und $d(x\tief{0}a\tief{1} x\tief{1}...a\tief{n} x\tief{n}) = \underset{i}{max}(d(x\tief{i})) + 1$ bei zusammengesetzten Ketten. Die Struktur der Ketten ist gleich der internen Struktur von Eingabewörtern und so kann die Tiefe einfach abgelesen werden, wenn ein Syntaxbaum gebildet wird. Die Tiefe einer Kette ist gleich der Tiefe des Rumpfes. Bei der Handhabung von zusammengesetzten Ketten ist es sinnvoll die Rümpfe mit Variablen abzukürzen.\\
+Für diese Strukturen benennt man weitere Eigenschaften. Bei einer Kette $\hoch{a} \big[ x \big] \hoch b$ wird x der \textit{Rumpf} genannt. Die \textit{Tiefe} d(x) einer Kette wird rekursiv definiert: $d(x) = 1$, wenn x eine einfache Kette ist und $d(x\tief{0}a\tief{1} x\tief{1}...a\tief{n} x\tief{n}) = \underset{i}{max}(d(x\tief{i})) + 1$ bei zusammengesetzten Ketten. Die Struktur der Ketten ist gleich der internen Struktur von Eingabewörtern und so kann die Tiefe einfach abgelesen werden, wenn ein Strukturbaum gebildet wird. Bei einer manuellen Konstruktion eines Strukturbaumes kann Bottom-Up vorgegangen werden: Zunächst identifiziert man die einfachen Ketten und schreibt diese als Blätter auf. Jetzt geht man in mehreren Iterationen das Eingabewort durch identifiziert zusammengesetzte Ketten. Hilfreich ist dabei die Ketten mit Variablen abzukürzen. Das Eingabewort wird immer weiter durch Ketten ausgedünnt bis die finale Kette mit dem $\#$-Symbol stehen bleibt. \\
 Mit diesen Ketten lässt sich jetzt die Kompatibilät eines Wortes w mit einer OPM M definieren, die allerdings nicht mit der Akzeptanz für einen OPA verwechselt werden darf.
 \begin{definition}[Kompatibilität mit OPM]
 Ein Wort w über $(\Sigma, M)$ ist kompatibel mit M, wenn die beiden Bedingungen gelten:
@@ -121,5 +121,37 @@ Für jeden Substring x von $\# w\#$ mit $x=a\tief{0}x\tief{0}a\tief{1}x\tief{1}a
 \end{itemize}
 \end{definition}
 
+Das Konzept für einfache und zusammengesetzte Ketten wird nun in Form von \textit{Stützen} auf OPAs übertragen. Dabei werden die gleichen Konventionen für Pfeile verwendet wie oben beschrieben.
+
+\begin{definition}[Stützen]
+Sei A ein OPA. Eine Stütze für eine einfache Kette $^a_0 \left[ a_1a_2...a_n\right]^{a_{n+1}}$ ist ein beliebiger Pfad in A der Form 
+\begin{eqnarray}
+q_0  \stackrel{a_1}{\rightarrow} q_1 \dashrightarrow ... \dashrightarrow q_{n-1} \stackrel{a_n}{\dashrightarrow} q_n \stackrel {q_0} {\Rightarrow} q_{n+1}
+\end{eqnarray}
+
+Eine Stütze für eine zusammengesetzte Kette $^{a_0}\left[x_0a_1x_1a_2...a_nx_n\right]^{a_{n+1}}$ ist ein beliebiger Pfad in A der Form
+\begin{eqnarray}
+q_0 \stackrel{x_0}{\rightsquigarrow} q_0^{\prime} \stackrel{a_1}{\rightarrow} q_1\stackrel{x_1}{\rightsquigarrow} q_1^{\prime} \dashrightarrow ... \dashrightarrow q_{n-1} \stackrel{a_n}{\dashrightarrow} q_n \stackrel{x_n}{\rightsquigarrow} q_n^{\prime} \stackrel {q_0^{\prime}} {\Rightarrow} q_{n+1}
+\end{eqnarray}
+wobei für jedes $0\leq i \leq n$ gilt: 
+\begin{itemize}
+\item if $x_i \neq \epsilon$, dann ist $q_i \stackrel{x_i}{\rightsquigarrow} q_i^{\prime}$ eine Stütze für die Kette $^{a_i}\left[x_i\right]^{a_{i+1}}$
+\item if $x_i = \epsilon$, dann ist $q_i^{\prime}=q_i$
+\end{itemize}
+\end{definition}
+
+Wichtig zu beachten ist, dass der einzige Pop-Move am Ende mit genau dem ersten Zustand der Kette $q_0$ beschriftet ist, bzw. bei zusammengesetzten Ketten $q_0^{\prime}.$ Der Automat nutzt die Informationen der Ketten um die Stützen zu bilden. Durch die Stützen wird der Lauf eines Eingabewortes eindeutig festgelegt. Dabei entspricht die Tiefe d der Kette $^\#\left[w\right]^\#$, die als äußerste Kette zu verstehen ist der maximalen Stackgröße, die während eines Laufes erreicht wird.\\
+Damit sind die wesentlichen Definitionen für das Verhalten der Operatorpräzedenzautomaten erstmal abgeschlossen.
 \subsection{Deterministischer vs. Nichtdeterminstischer OPA}
+Die vorherige Definition von OPAs war nichtdeterministisch. Eine vorteilhafte Eigenschaft von OPAs ist nun die Äquivalenz der deterministischen und nichtdeterministischen Version. In diesem Abschnitt geht es um die Definition und die Konstruktion eines solchen deterministischen OPAs und um die Lemmata, die nötig sind um die Korrektheit zu beweisen.
+\begin{definition}[Deterministischer OPA]
+Ein OPA $A=(\Sigma, M, Q, I, F, \delta)$ ist deterministisch, wenn gilt:
+\begin{itemize}
+\item
+I besteht aus nur einem Element
+\item
+$\delta: Q \times \{Q \cup \Sigma\} \rightarrow Q\}$ \\
+($\delta$ bildet auf Q ab, anstatt auf $\mathcal{P}(Q)$)
+\end{itemize}
+\end{definition}
 \subsection{Äquivalenz von OPG und OPA}
