@@ -60,6 +60,7 @@ Nachdem hier die Grundlagen für die OPGs geschaffen wurden geht es weiter mit d
 
 \subsection{Operatorpräzedenzautomaten}
 Die Operatorpräzedenzautomaten(OPA) verhalten sich ähnlich wie Pushdown-Automaten, aber erkennen genau die Operatorpräzedenzsprachen. OPAs arbeiten Bottom-Up, sind aber deutlich einfacher als zB. LR(k) Parser.
+\begin{samepage}
 \begin{definition}[Operatorpräzedenzautomat]
 Ein nichtdeterministischer OPA ist ein 6-Tupel $A=(\Sigma, M, Q, I, F, \delta)$ mit
 	\begin{itemize}
@@ -78,6 +79,7 @@ Ein nichtdeterministischer OPA ist ein 6-Tupel $A=(\Sigma, M, Q, I, F, \delta)$ 
 	$\delta \textsubscript{pop}: Q \times Q \rightarrow \mathcal{P}(Q)$
 	\end{itemize}
 \end{definition}
+\end{samepage}
 Wie bei den meisten Automaten, bietet sich auch bei OPAs an eine graphische Darstellung einzuführen. Dabei werden die Zustände als Kreis mit einer Namenskennzeichnung dargestellt. Im weiteren Verlauf der Arbeit werden die Zustände meistens mit $q \textsubscript{i}$, $q \textsubscript{i}$ oder $r \textsubscript{i}$ bezeichnet. \\
 Die drei Transitionen werden mit verschiedenen Arten von Pfeilen dargestellt: Ein normaler Pfeil von q nach p mit einem Terminal a als Beschriftung steht für eine Push-Transition $p \in \delta \textsubscript{push}(q, a)$. Ein gestrichelter Pfeil steht für eine Shift-Transition $p \in \delta \textsubscript{shift}(q, a)$. Ein doppelter Pfeil mit einem Zustand r als Beschriftung steht dementsprechend für einen Pop-Move $p \in \delta \textsubscript{pop}(q, r)$\\
 Als nächstes wird der Stack des Automaten definiert. Für die Elemente des Stacks definieren wir $\Gamma = \Sigma \times Q$ und erweitern dies um das Symbol für den leeren Stack $\Gamma ' = \Gamma \cup \{\bot\}$. Elemente von $\Gamma'$ haben die Form $\left[a, q\right]$ oder $\bot$.\\
@@ -99,10 +101,12 @@ Damit ist die Definition eines nichtdeterministischen OPAs vollständig.
 \subsubsection*{Weitere Strukturen}
 Um das Verhalten von OPAs beschreiben zu können und die interessanteren Eigenschaften zu beweisen müssen allerdings noch ein paar weitere Grundlagen von OPAs benannt und definiert werden.
 
+\begin{samepage}
 \begin{definition}[Einfache Ketten]
 Sei ($\Sigma$, M) ein Präzedenz-Alphabet. Eine einfache Kette ist ein Wort $a\tief{0} a\tief{1}a\tief{2}...a\tief{n}a\tief{n+1}$, welches wir als $\hoch{a\tief{0}} \big[ a\tief{1} a\tief{2}... a\tief{n} \big] \hoch{a \tief{n+1}}$ notieren,
 mit $a\tief{0}, a\tief{n+1} \in \Sigma \cup \{ \# \}, a\tief{i} \in \Sigma$ für $ 1 \leq i \leq n, M\tief{a\tief{0} a\tief{n+1}} \neq \emptyset$ und $ a\tief{0} \lessdot a\tief{1} \doteq a\tief{2}...a\tief{n} \gtrdot a\tief{n+1}$
 \end{definition}
+\end{samepage}
 
 \begin{definition}[Zusammengesetzte Ketten]
 Sei ($\Sigma$, M) ein Präzedenz-Alphabet. Eine zusammengesetzte Kette ist ein Wort $a\tief{0} x\tief{0} a\tief{1} x\tief{1} a\tief{2}...a\tief{n}x\tief{n} a\tief{n+1}$ mit $x\tief{i} \in \Sigma \hoch{*}$, bei dem $\hoch{a\tief{0}} \big[ a\tief{1} a\tief{2}... a\tief{n} \big] \hoch{a \tief{n+1}}$ eine einfache Kette ist und jedes $x\tief{i}$ entweder leer$(\epsilon)$ oder wieder eine (einfache oder zusammengesetzte) Kette ist.\\
@@ -170,7 +174,30 @@ $\tilde{I}=I\times \{\top \}$ ist der Startzustand
 \item
 $\tilde{F}=\left\{K|K \cap (F \times \{\top\}) \neq \emptyset\right\}$
 \item
-$\tilde{\delta}: \tilde{Q} \times (\Sigma \cup \tilde{Q})\rightarrow \tilde{Q}$ ist die Übergangsfunktion, die wie folgt definiert ist: 
-\end{itemize} 
+$\tilde{\delta}: \tilde{Q} \times (\Sigma \cup \tilde{Q})\rightarrow \tilde{Q}$ ist die Übergangsfunktion ist die Vereinigung aus den drei Teilfunktionen:\\[2ex]
+$\tilde{\delta}_{push}: \tilde{Q} \times \Sigma \rightarrow \tilde{Q}$ ist definiert als: 
+\begin{equation*}
+\tilde{\delta}_{push}(K, a) = \bigcup\limits_{(q,p) \in K} \{(h,q)|h \in \delta_{push}(q,a)\}
+\end{equation*}
+$\tilde{\delta}_{shift}: \tilde{Q} \times \Sigma \rightarrow \tilde{Q}$ ist definiert als: 
+\begin{equation*}
+\tilde{\delta}_{shift}(K, a) = \bigcup\limits_{(q,p) \in K} \{(h,p)|h \in \delta_{shift}(q,a)\}
+\end{equation*}
+$\tilde{\delta}_{pop}: \tilde{Q} \times \tilde{Q}\rightarrow \tilde{Q}$ ist definiert als: 
+\begin{equation*}
+\tilde{\delta}_{pop}(K_1, K_2) = \bigcup\limits_{(r,q) \in K_1, (q,p)\in K_2} \{(h,p)|h \in \delta_{pop}(r,q)\}
+\end{equation*}
+\end{itemize}
+Die Zahl s der Zustände wächste exponential: Sei s = $|Q|$ die Anzahl der Zustände vom nichtdeterministischen Automaten A, dann ist $|\tilde{Q}| = 2^{|Q| * |Q \cup \{\top\}|}$. Also hat $\tilde{A}$ genau $2^{O(s^2)}$ Zustände.\\
+Die Äquivalenz der beiden Automaten basiert auf den Aussagen der Lemmata:
+\begin{lemma}
+Sei y der Rumpf einer Kette mit der Stütze $q\stackrel{y}{\rightsquigarrow} q^\prime$ in A. Dann gilt für alle $p \in Q$ und $K \in \tilde{Q}$, wenn $(q,p) \in K$, dann existiert eine Stütze $K\stackrel{y}{\rightsquigarrow} K^\prime$ mit $(q^\prime, p) \in K^\prime $
+\end{lemma}
+\begin{proof}
+Beweis durch Induktion der Tiefe h = $d(y)$. 
+\paragraph{Induktionsanfang: h = 1}
+ANVSKJCKJSNVKJSNDVKLalksmvlmss
+
+\end{proof}
 \end{proof}
 \subsection{Äquivalenz von OPG und OPA}
