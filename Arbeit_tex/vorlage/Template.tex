@@ -1,0 +1,73 @@
+% File: main.tex
+\documentclass[12pt,twoside]{report}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+ 
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\graphicspath{ {Images/} }
+ 
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+ 
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+ 
+\usepackage[noend]{algpseudocode}
+%\usepackage[compatible]{algpseudocode}
+\usepackage{algorithm}
+%\usepackage{algorithmicx}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+
+ 
+\usepackage[noadjust]{cite}
+
+\usepackage{qtree}
+\usepackage{setspace}
+
+\usepackage{tikz}
+\usetikzlibrary{automata,calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols}
+
+\usepackage{verbatim}
+
+\usepackage{pdfpages}
+
+\usepackage[nottoc]{tocbibind}
+\newtheorem{mydef}{Definition}[chapter]
+\newtheorem{mythe}[mydef]{Theorem}
+\newtheorem{mylem}[mydef]{Lemma}
+\newtheorem{mycor}[mydef]{Corollary}
+\newtheorem{myrem}[mydef]{Remark}
+\newtheorem{myex} [mydef]{Example}
+ 
+\setcounter{secnumdepth}{5}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[LO,RE]{\thepage}
+%\fancyhead[C]{Chapter \thechapter}
+%\fancyhead[RO,LE]{Jens Gutsfeld}
+%\fancyfoot{}
+ \hyphenation{EXP-TIME}
+\onehalfspacing
+\allowdisplaybreaks[2]
+                        \usepackage{datetime}
+
+                        \newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+\begin{document}
+
+% Front Matter
+
+ \end{document}
+% Appendix
+%\appendix
+%\include{Chapters/appendix_a

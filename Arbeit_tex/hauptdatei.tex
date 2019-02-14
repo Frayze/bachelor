@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
@@ -20,8 +20,11 @@
 %\theoremstyle{definition}
 \newtheorem{definition}{Definition}[subsection]
 
+\newtheorem{lemma}{Lemma}[section]
+
 \theoremstyle{remark}
 \newtheorem{example}{Beispiel}
+
 \newcommand{\tief}[1]{\textsubscript{#1}}
 \newcommand{\hoch}[1]{\textsuperscript{#1}}
 \newcommand{\sectionbreak}{\clearpage}
@@ -30,9 +33,11 @@
 
 
 \author{Jonas Kremer}
-\title{Operator Precedence Sprachen und ihre Automaten}
+\title{Operatorpräzedenzsprachen und ihre Automaten}
 \date{\today{}}
 
+%Zeigt nur die zu bearbeitenden Kapitel an, muss am Ende entfernt werden
+\includeonly{sections/definitionen}
 
 \begin{document}
 \maketitle
@@ -40,22 +45,16 @@
 \tableofcontents
 \newpage
 
-\input{sections/motivation}
+\include{sections/motivation}
 
-\input{sections/definitionen}
+\include{sections/definitionen}
 
 
-\section{(Abschluss-) Eigenschaften von OPLs}
-
-\subsection{Determistischer vs. Nondeterministischer OPA}
-
-\subsection{Abgeschlossenheit}
-
-\subsection{Visibly Pushdown Sprache als Teilklasse}
+\include{sections/properties}
 
 \section{Implementation of OPLs}
 
-\section{Conclusion}
+\include{sections/conclusion}
 
 \appendix
 
