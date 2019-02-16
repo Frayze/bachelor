@@ -1,4 +1,4 @@
-\section{Vorbereitung und Definitionen}
+\section{Grundlagen und Definitionen}
 In diesem Abschnitt geht es um die Definitionen und Namenskonventionen, die für Operatorpräzedenzsprachen benötigt werden. Zunächst kommt eine kurze Definition von kontextfreien Grammatiken, gefolgt von Definitionen und Einschränkungen für Operatorpräzedenzgrammatiken (OPG). Im Anschluss wird die Klasse der Operatorpräzedenzautomaten (OPA) eingeführt, sowohl deterministisch als auch nichtdeterministisch, sowie deren Äquivalenz zu OPGs bewiesen. 
 \subsection{Operatorpräzedenzgrammatik}
 Eine kontextfreie Grammatik (kfG) ist ein 4-tupel $G = (N, \Sigma, P, S)$, wobei N die Menge der Nichtterminalsymbole, $\Sigma$ die Menge der Terminalsymbole, P die Menge der Produktionsregeln und S das Startsymbol bezeichnet. Folgende Namenskonventionen werden im weiteren Verlauf verwendet: Kleine lateinische Buchstaben am Anfang des Alphabets $a, b, ...$ bezeichnen einzelne Terminalsymbole; Spätere, kleine lateinische Buchstaben $u,v, ...$ bezeichnen Terminalstrings; Große lateinische Buchstaben $A, B, ...$ stehen für Nichtterminalsymbole und griechische Buchstaben $\alpha, \beta, ...$ für beliebige Strings über $N \cup \Sigma$. Sofern nicht explizit eingeschränkt können Strings auch leer sein.\\
@@ -60,7 +60,6 @@ Nachdem hier die Grundlagen für die OPGs geschaffen wurden geht es weiter mit d
 
 \subsection{Operatorpräzedenzautomaten}
 Die Operatorpräzedenzautomaten(OPA) verhalten sich ähnlich wie Pushdown-Automaten, aber erkennen genau die Operatorpräzedenzsprachen. OPAs arbeiten Bottom-Up, sind aber deutlich einfacher als zB. LR(k) Parser.
-\begin{samepage}
 \begin{definition}[Operatorpräzedenzautomat]
 Ein nichtdeterministischer OPA ist ein 6-Tupel $A=(\Sigma, M, Q, I, F, \delta)$ mit
 	\begin{itemize}
@@ -79,7 +78,6 @@ Ein nichtdeterministischer OPA ist ein 6-Tupel $A=(\Sigma, M, Q, I, F, \delta)$ 
 	$\delta \textsubscript{pop}: Q \times Q \rightarrow \mathcal{P}(Q)$
 	\end{itemize}
 \end{definition}
-\end{samepage}
 Wie bei den meisten Automaten, bietet sich auch bei OPAs an eine graphische Darstellung einzuführen. Dabei werden die Zustände als Kreis mit einer Namenskennzeichnung dargestellt. Im weiteren Verlauf der Arbeit werden die Zustände meistens mit $q \textsubscript{i}$, $q \textsubscript{i}$ oder $r \textsubscript{i}$ bezeichnet. \\
 Die drei Transitionen werden mit verschiedenen Arten von Pfeilen dargestellt: Ein normaler Pfeil von q nach p mit einem Terminal a als Beschriftung steht für eine Push-Transition $p \in \delta \textsubscript{push}(q, a)$. Ein gestrichelter Pfeil steht für eine Shift-Transition $p \in \delta \textsubscript{shift}(q, a)$. Ein doppelter Pfeil mit einem Zustand r als Beschriftung steht dementsprechend für einen Pop-Move $p \in \delta \textsubscript{pop}(q, r)$\\
 Als nächstes wird der Stack des Automaten definiert. Für die Elemente des Stacks definieren wir $\Gamma = \Sigma \times Q$ und erweitern dies um das Symbol für den leeren Stack $\Gamma ' = \Gamma \cup \{\bot\}$. Elemente von $\Gamma'$ haben die Form $\left[a, q\right]$ oder $\bot$.\\
@@ -101,12 +99,10 @@ Damit ist die Definition eines nichtdeterministischen OPAs vollständig.
 \subsubsection*{Weitere Strukturen}
 Um das Verhalten von OPAs beschreiben zu können und die interessanteren Eigenschaften zu beweisen müssen allerdings noch ein paar weitere Grundlagen von OPAs benannt und definiert werden.
 
-\begin{samepage}
 \begin{definition}[Einfache Ketten]
 Sei ($\Sigma$, M) ein Präzedenz-Alphabet. Eine einfache Kette ist ein Wort $a\tief{0} a\tief{1}a\tief{2}...a\tief{n}a\tief{n+1}$, welches wir als $\hoch{a\tief{0}} \big[ a\tief{1} a\tief{2}... a\tief{n} \big] \hoch{a \tief{n+1}}$ notieren,
 mit $a\tief{0}, a\tief{n+1} \in \Sigma \cup \{ \# \}, a\tief{i} \in \Sigma$ für $ 1 \leq i \leq n, M\tief{a\tief{0} a\tief{n+1}} \neq \emptyset$ und $ a\tief{0} \lessdot a\tief{1} \doteq a\tief{2}...a\tief{n} \gtrdot a\tief{n+1}$
 \end{definition}
-\end{samepage}
 
 \begin{definition}[Zusammengesetzte Ketten]
 Sei ($\Sigma$, M) ein Präzedenz-Alphabet. Eine zusammengesetzte Kette ist ein Wort $a\tief{0} x\tief{0} a\tief{1} x\tief{1} a\tief{2}...a\tief{n}x\tief{n} a\tief{n+1}$ mit $x\tief{i} \in \Sigma \hoch{*}$, bei dem $\hoch{a\tief{0}} \big[ a\tief{1} a\tief{2}... a\tief{n} \big] \hoch{a \tief{n+1}}$ eine einfache Kette ist und jedes $x\tief{i}$ entweder leer$(\epsilon)$ oder wieder eine (einfache oder zusammengesetzte) Kette ist.\\
@@ -128,7 +124,8 @@ Für jeden Substring x von $\# w\#$ mit $x=a\tief{0}x\tief{0}a\tief{1}x\tief{1}a
 Das Konzept für einfache und zusammengesetzte Ketten wird nun in Form von \textit{Stützen} auf OPAs übertragen. Dabei werden die gleichen Konventionen für Pfeile verwendet wie oben beschrieben.
 
 \begin{definition}[Stützen]
-Sei A ein OPA. Eine Stütze für eine einfache Kette $^a_0 \left[ a_1a_2...a_n\right]^{a_{n+1}}$ ist ein beliebiger Pfad in A der Form 
+\label{Support}
+Sei A ein OPA. Eine Stütze für eine einfache Kette $^{a_0} \left[ a_1a_2...a_n\right]^{a_{n+1}}$ ist ein beliebiger Pfad in A der Form 
 \begin{eqnarray}
 q_0  \stackrel{a_1}{\rightarrow} q_1 \dashrightarrow ... \dashrightarrow q_{n-1} \stackrel{a_n}{\dashrightarrow} q_n \stackrel {q_0} {\Rightarrow} q_{n+1}
 \end{eqnarray}
@@ -142,6 +139,7 @@ wobei für jedes $0\leq i \leq n$ gilt:
 \item if $x_i \neq \epsilon$, dann ist $q_i \stackrel{x_i}{\rightsquigarrow} q_i^{\prime}$ eine Stütze für die Kette $^{a_i}\left[x_i\right]^{a_{i+1}}$
 \item if $x_i = \epsilon$, dann ist $q_i^{\prime}=q_i$
 \end{itemize}
+
 \end{definition}
 
 Wichtig zu beachten ist, dass der einzige Pop-Move am Ende mit genau dem ersten Zustand der Kette $q_0$ beschriftet ist, bzw. bei zusammengesetzten Ketten $q_0^{\prime}.$ Der Automat nutzt die Informationen der Ketten um die Stützen zu bilden. Durch die Stützen wird der Lauf eines Eingabewortes eindeutig festgelegt. Für jedes Wort $w \in L(A)$ existiert eine Stütze $q_I  \stackrel{w}{\rightsquigarrow} q_F$ mit $q_I \in I, q_F \in F$.  Dabei entspricht die Tiefe d der Kette $^\#\left[x_w\right]^\#$, die als äußerste Kette zu verstehen ist der maximalen Stackgröße, die während eines Laufes erreicht wird.\\
@@ -162,6 +160,7 @@ $\delta: Q \times \{Q \cup \Sigma\} \rightarrow Q\}$ \\
 Bei der Konstruktion eines deterministischen OPA aus einem nichtdeterministischen wird folgende Grundidee verwendet: Es muss sichergestellt werden, dass die Pop-Moves von verschiedene Läufen des nichtdeterministischen Automaten nicht mit falschen initialen und finalen Zuständen vermischt werden. Dazu werden Informationen zu dem Pfad, die der Automat seit dem Push-Move, also dem Beginn einer Kette, genommen hat, gesammelt. Dazu wird jeder Zustand des deterministischen Automaten als Menge von Zustandspaaren defininiert. Der deterministische Automat simuliert den nichtdeterministischen Lauf mithilfe des ersten Zustand des Paares und speichert den Zustand, von dem aus der Push-Move ausging im zweiten Zustand. Die deterministischen Pop-Moves werden anhand  der nichtdeterministischen Pop-Moves die für den ersten Zustand und dem Zustand, der vor dem letzten Push-Move erreicht wurde (Was dem obersten Stackeintrag entspricht), definiert sind simuliert.\\
 Das wird nun in einem Lemma formal ausgedrückt und bewiesen.
 \begin{lemma}
+\label{lemma_Deter}
 Aus einem nichtdeterminischen OPA A mit s Zuständen kann ein äquivalenter deterministischer OPA $\tilde{A}$ mit $2^{O(s^2)}$ Zuständen konstruiert werden.
 \end{lemma}
 \begin{proof}
@@ -189,15 +188,85 @@ $\tilde{\delta}_{pop}: \tilde{Q} \times \tilde{Q}\rightarrow \tilde{Q}$ ist defi
 \end{equation*}
 \end{itemize}
 Die Zahl s der Zustände wächste exponential: Sei s = $|Q|$ die Anzahl der Zustände vom nichtdeterministischen Automaten A, dann ist $|\tilde{Q}| = 2^{|Q| * |Q \cup \{\top\}|}$. Also hat $\tilde{A}$ genau $2^{O(s^2)}$ Zustände.\\
-Die Äquivalenz der beiden Automaten basiert auf den Aussagen der Lemmata:
+Die Äquivalenz der beiden Automaten basiert auf den Aussagen der beiden folgenden Lemmata, die in jeweils Richtungen zeigen, dass äquivalente Supports gebildet werden:
 \begin{lemma}
 Sei y der Rumpf einer Kette mit der Stütze $q\stackrel{y}{\rightsquigarrow} q^\prime$ in A. Dann gilt für alle $p \in Q$ und $K \in \tilde{Q}$, wenn $(q,p) \in K$, dann existiert eine Stütze $K\stackrel{y}{\rightsquigarrow} K^\prime$ mit $(q^\prime, p) \in K^\prime $
 \end{lemma}
 \begin{proof}
+\label{lemma_deter1}
 Beweis durch Induktion der Tiefe h = $d(y)$. 
-\paragraph{Induktionsanfang: h = 1}
-ANVSKJCKJSNVKJSNDVKLalksmvlmss
-
+\paragraph{Induktionsanfang: (h = 1)}\ \\
+Wenn h = 1 ist, dann ist $y = a_1a_2...a_n$ und die Stütze in A hat die Form $q  \stackrel{a_1}{\rightarrow} q_1 \dashrightarrow ... \dashrightarrow q_{n-1} \stackrel{a_n}{\dashrightarrow} q_n \stackrel {q_0} {\Rightarrow} q^\prime$.\\[1,5ex] Sei \\[1ex]
+\begin{tabular}[c]{l}
+$K_1=\tilde{\delta}_{push}(K, a_1)$,\\
+$K_i=\tilde{\delta}_{shift}(K_{i-1}, a_1)\quad$, für jedes $i=2,...,n$\\
+$K^\prime = \tilde{\delta}_{pop}(K_n, K)$.
+\end{tabular}
+\\[1,5ex]Dann ist
+\begin{equation*}
+K\stackrel{a_1}{\rightarrow} K_1 \stackrel{a_2}{\dashrightarrow} ... \stackrel{a_{n-1}}{\dashrightarrow} K_{n-1} \stackrel{a_n}{\dashrightarrow} K_n \stackrel {q_0} {\Rightarrow} K^\prime. 
+\end{equation*}
+die Stütze in $\tilde{A}$. Weiterhin gilt für $(q,p) \in K$ aufgrund der Definition von $\tilde{\delta}$:\\
+\begin{tabular}{l l}
+$(q_1,q) \in K_1$, & da $q_1 \in \delta_{push}(q, a_1)$, \\
+$(q_i, q) \in K_i$, & da $q_i \in \delta_{shift}(q_{i-1})$, \\
+$(q^\prime, p) \in K^\prime$, & da $q^\prime \in \delta_{pop}(q_n, q)$ 
+\end{tabular}
+\paragraph{Induktionsschritt}\ \\
+Nun gelte Induktionsannahme für Stützen mit einer geringeren Tiefe als h. Weiter sei $y = x_0a_1x_1a_2...a_nx_n$ mit der Tiefe h und der Stütze $q \stackrel{x_0}{\rightsquigarrow} q_0^{\prime} \stackrel{a_1}{\rightarrow} q_1\stackrel{x_1}{\rightsquigarrow} q_1^{\prime} \dashrightarrow ... \dashrightarrow q_{n-1} \stackrel{a_n}{\dashrightarrow} q_n \stackrel{x_n}{\rightsquigarrow} q_n^{\prime} \stackrel {q_0^{\prime}} {\Rightarrow} q^\prime$, wobei $q_i^\prime = q_i$, wenn $x_i = \epsilon$ und jedes nichtleere $x_i$ hat eine geringere Tiefe als h. Dann kann man aufgrund der Induktionsannahme und der Definition von $\tilde{\delta}$ eine Stütze
+\begin{eqnarray*}
+K \stackrel{x_0}{\rightsquigarrow} K_0^{\prime} \stackrel{a_1}{\rightarrow} K_1\stackrel{x_1}{\rightsquigarrow} K_1^{\prime} \dashrightarrow ... \dashrightarrow K_{n-1} \stackrel{a_n}{\dashrightarrow} K_n \stackrel{x_n}{\rightsquigarrow} K_n^{\prime} \stackrel {K_0^{\prime}} {\Rightarrow} K^\prime 
+\end{eqnarray*}
+konstruieren und weil $(q,p) \in K$ ist, gilt:\\[1ex]
+\begin{tabular}[c] {l l}
+$(q_0^\prime, p) \in K_0^\prime $  & durch die Induktionsannahme auf die Stütze $q \stackrel{x_0}{\rightsquigarrow} q_0^\prime$ \\
+$ (q_1, q_0^\prime) \in K_1$, & denn $q_1 \in \delta_{push}(q_0^\prime, a_1)$ \\
+$(q_1^\prime, q_0^\prime) \in K_1^\prime$, & durch die Induktionsannahme auf die Stütze $q_1 \stackrel{x_1}{\rightsquigarrow} q_1^\prime$\\ 
+$ (q_i, q_0^\prime) \in K_i$, & denn $q_i \in \delta_{shift}(q_{i-1}^\prime, a_1)$ für jedes $i=2,...,n$ \\
+$(q_i^\prime, q_0^\prime) \in K_i^\prime$, & durch die Induktionsannahme auf die Stütze $q_i \stackrel{x_i}{\rightsquigarrow} q_i^\prime$\\ 
+$ (q^\prime, p) \in K^\prime$, & denn $q^\prime \in \delta_{pop}(q_n, q_0^\prime)$ \\
+\end{tabular}
+Und dadurch ist der Beweis abgeschlossen.
 \end{proof}
+Die Aussage des nächsten Lemmas führt genau anders herum, vom Automaten $\tilde{A}$ zu A.
+\begin{lemma}
+\label{lemma_deter2}
+Sei y der Rumpf einer Kette mit der Stütze $K \stackrel{y}{\rightsquigarrow} K^\prime$ in $\tilde{A}$. Dann gilt für alle $p, q^\prime \in Q$: Wenn $(q^\prime, p) \in K^\prime$, dann existiert eine Stütze $q \stackrel{y}{\rightsquigarrow} q^\prime$ in A.
+\end{lemma}
+\begin{proof}
+Zunächst ein paar Anmerkungen, die für den Beweis verwendet werden:
+\renewcommand{\labelenumi}{\roman{enumi})}
+\begin{enumerate}
+\item
+Aus der Definition von $\delta_{push}$ folgt: Wenn es $\bar{K} \stackrel{a}{\rightarrow} K$ in $\tilde{A}$ gibt mit $(\bar{q}, q) \in K, \quad (q,p) \in \bar{K}$, dann gibt es $q \stackrel{a}{\rightarrow} \bar{q}$ in A.
+\label{rem1}
+\item
+Aus der Definition von $\delta_{shift}$ folgt: Wenn es $\bar{K} \stackrel{a}{\dashrightarrow} K$ in $\tilde{A}$ gibt mit $(r,q) \in K$, dann existiert ein $\bar{q} \in Q$, sodass $\bar{q} \stackrel{a}{\dashrightarrow} r$ in A und $(\bar{q}, q) \in K$.
+\label{rem2}
+\item
+Aus der Definition von $\delta_{pop}$ folgt: Wenn es $\bar{K} \stackrel{K}{\Rightarrow} K$ in $\tilde{A}$ gibt mit $(q^\prime q) \in \bar{K}$, dann existiert ein Paar $(r,q) \in \bar{K}$, sodass $(q,p)\in K$ und es gibt $r \stackrel{q}{\Rightarrow} q^\prime$ in A.
+\label{rem3}
+\end{enumerate}
+
+Beweis durch Induktion auf die Höhe $h=d(y)$ 
+\paragraph*{Induktionsanfang: (h=1)}
+Wenn h=1 ist, dann ist $y=a_1a_2...a_n$ mit der Stütze $K\stackrel{a_1}{\rightarrow} K_1 \stackrel{a_2}{\dashrightarrow} ... \stackrel{a_{n-1}}{\dashrightarrow} K_{n-1} \stackrel{a_n}{\dashrightarrow} K_n \stackrel {q_0} {\Rightarrow} K^\prime.$ Sei $(q^\prime, p) \in K$, dann gibt es wie in Anmerkung \ref{rem3} in $\tilde{A}$ ein Paar $(q_n, q) \in K$, sodass $(q,p) \in K$ und $q_n \stackrel{q}{\Rightarrow} q^\prime$. Weiterhin folgt aus Anmerkung \ref{rem2} mit $(q_n, q) \in K$ und  $K_{n-1} \stackrel{a_n}{\dashrightarrow} K_n$ die Existenz eines Zustandes $q_{n-1} \in Q$, sodass $(q_n,q) \in K_{n-1}$ und $q_{n-1} \stackrel{a_n}{\dashrightarrow} q_n$. Auf gleiche Weise gilt für alle $i=n-2,...,1$, dass es $q_i \in Q$ gibt, sodass $(q_i,q) \in K_i$ und $q_i \stackrel{a_{i+1}}{\dashrightarrow} q_{i+1}$ Schließlich folgt aufgrund Anmerkung \ref{rem1} aus $K\stackrel{a_1}{\rightarrow} K_1$, $(q_1, q) \in K_1$ und $(q, p) \in K$, dass es $q \stackrel{a_1}{\rightarrow} q_1$ in A gibt. So wurde gezeigt, dass es eine Stütze für y gibt.
+\paragraph*{Induktionsschritt} 
+Nun gelte die Induktionsannahme für eine geringere Tiefe als h. Weiter sei $y=x_0a_1x_1a_2...a_nx_n$ mit der Tiefe h und der Stütze $K \stackrel{x_0}{\rightsquigarrow} K_0^{\prime} \stackrel{a_1}{\rightarrow} K_1\stackrel{x_1}{\rightsquigarrow} K_1^{\prime} \dashrightarrow ... \dashrightarrow K_{n-1} \stackrel{a_n}{\dashrightarrow} K_n \stackrel{x_n}{\rightsquigarrow} K_n^\prime \stackrel{K_0^{\prime}} {\Rightarrow} K^\prime$, wobei $K_i^\prime = K_i$, wenn $x_i= \epsilon$ und jedes nichtleere $x_i$ hat eine geringere Tiefe als h. Sei $(q^\prime, p) \in K^\prime$. Da es aufgrund von Anmerkung \ref{rem3} $K_n^\prime \stackrel{K_0^\prime} {\Rightarrow} K^\prime$ gibt, existiert ein Paar $(q_n^\prime, q_0^\prime) \in K_n^\prime$ in $\tilde{A}$ mit $(q_0^\prime, p) \in K_0^\prime$ und $q_n^\prime \stackrel{q_0^\prime}{\Rightarrow} q^\prime$. Wenn $x_n \neq \epsilon$ existiert aufgrund der Induktionsannahme, da $(q_n^\prime, q_0^\prime) \in K_n^\prime$, eine Stütze $q_n \stackrel{x_n}{\rightsquigarrow} q_n^\prime$ mit $(q_n, q_0^\prime \in K_n$. Auf gleiche Weise gilt für alle $i=n-1,...2,1$: Es existieren $q_i^\prime$ und $q_i$ ($q_i^\prime=q_i$, wenn $x_i= \epsilon$), sodass es $q_i \stackrel{x_i}{\rightsquigarrow} q_i^\prime \stackrel{a_{i+1}}{\dashrightarrow}q_{i+1}$ in A gibt,
+
+\begin{tabular}{l p{8cm}}
+mit $(q_i^\prime, q_0^\prime) \in K_i^\prime$ & (Aufgrund von Anmerkung \ref{rem2}, da $K_i^\prime \stackrel{a_{i+1}}{\dashrightarrow} K_{i+1}$ in $\tilde{A}$ und $(q_{i+1}, q_0^\prime) \in K_{i+1}$)\\
+
+ und $(q_i^\prime, q_0^\prime) \in K_i$ & (Aufgrund der Induktionsannahme, da $K_i \stackrel{x_i}{\rightsquigarrow} K_i^\prime$ in $\tilde{A}$ und $(q_i^\prime, q_0^\prime) \in K_i^\prime$).
+  \end{tabular}\\
+ Das gilt speziell auch für $q_1 \stackrel{x_1}{q_1^\prime}$ mit $(q_1, q_0^\prime) \in K_1$. Weiterhin gibt es $(q_0^\prime \stackrel{a_1}{\rightarrow} q_1$, da $K_0^\prime \stackrel{a_1} {\rightarrow} K_1$ und $(q_0^\prime, p) \in K_0^\prime$ (Anmerkung \ref{rem1}).
+ 
+ Schließlich folgt aus der Induktionsannahme, da $(q_0^\prime, p) \in K_0^\prime$ und $K\stackrel{x_0}{rightsquigarrow} K_0^\prime$, wenn $x_0 \neq \epsilon$ existiert ein Zustand $q \in Q$, sodass $q \stackrel{x_0}{\rightsquigarrow} q_0^\prime$ in $\tilde{A}$ mit $(q,p) \in K$. Somit haben wir eine Stütze nach \autoref{Support} (2) konstruiert und der Beweis ist abgeschlossen.
+  \end{proof}
+Um den Beweis von \autoref{lemma_Deter} zu vervollständigen muss noch bewiesen werden, dass eine akzeptierende Berechnung für y in A gibt, dies auch in $\tilde{A}$ zutrifft. 
+
+Sei $y \in L(A)$. Dann gibt es eine Stütze $q \stackrel{y} {\rightsquigarrow} q^\prime$, wobei $q\in I, q^\prime \in F$. Dann folgt aus \autoref{lemma_deter1} für $(q_0, \top) \in K=I \times \{\top\}$, dass eine Stütze $K \stackrel{y}{\rightsquigarrow}K^\prime$ in $\tilde{A}$ mit $(q^\prime, \top) \in K^\prime $. $q^\prime \in F$ impliziert $K^\prime \in F^\prime$
+Andersherum sei $y \in L(\tilde{A})$. Dann hat y eine Stütze $\tilde{K}\stackrel{y}{\rightsquigarrow}K^\prime$ in $\tilde{A}$ mit $K^\prime \in \tilde{F}$. Das heißt es existiert ein $q^\prime \in F$, sodass $(q^\prime, \top) \in K^\prime$. Aufgrund von \autoref{lemma_deter2} gibt es eine Stütze $q \stackrel{y} {\rightsquigarrow} q^\prime$ in A mit $(q^\prime, \top) \in \tilde{K}$ und daraus folgt $q \in I$. Somit definiert $q\stackrel{y}{\rightsquigarrow}q^\prime$ eine akzeptierende Berechnung für y in A.
+Damit ist der Beweis abgeschlossen. 
 \end{proof}
 \subsection{Äquivalenz von OPG und OPA}

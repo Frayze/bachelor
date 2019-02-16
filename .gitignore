@@ -4,4 +4,6 @@
 *.dvi
 *.out
 *.synctex.gz
+sections/*.log
+sections/*.synctex.gz
 *.tkz
