@@ -1,13 +1,13 @@
 import model.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+
         //Setting up a test automat
-        List<Character> terminals = new ArrayList<>();
+        List<Character> terminals = new ArrayList();
         terminals.add('n');
         terminals.add('+');
         terminals.add('*');
@@ -26,9 +26,10 @@ public class Main {
 
         State i_state = states.get(0);
 
-        List<State>  f_states = new ArrayList<>();
+        List<State>  f_states = new ArrayList();
         f_states.add(states.get(1));
         f_states.add(states.get(3));
+
 
         OP_Automat opa = new OP_Automat(terminals, opm, states, i_state, f_states);
 

@@ -1,0 +1,145 @@
+%---------------------------------------------------------------------------
+%
+%                          Vorlage der Arbeitsgruppe
+%             Computer Vision and Pattern Recognition Group (CVPR)
+%                           der Universität Münster
+%                         http://cvpr.uni-muenster.de
+%
+%---------------------------------------------------------------------------
+% Geeignet für:
+%  - Seminararbeiten
+%  - Bachelorarbeiten
+%  - Masterarbeiten
+%---------------------------------------------------------------------------
+% Autoren:
+%  - Daniel Tenbrinck
+%  - Fabian Gigengack
+%  - Michael Schmeing
+%  - Lucas Franek
+%  - Andreas Nienkötter
+%---------------------------------------------------------------------------
+% Version:
+%  - 1.0.3 (05.10.2016)
+%	 - Ersetzung von veralteten Befehlen durch Aktuelle
+%	 - Einige ausführlichere Beispiele
+%    - Einführung von listings
+%    - Aktuelle Version der Eidesstattlichen Erklärung
+%  - 1.0.2 (09.09.2011)
+%    - Titelblatt um Matrikelnummer und Studiengang ergänzt
+%  - 1.0.1 (05.07.2011)
+%---------------------------------------------------------------------------
+% 
+% "THE BEER-WARE LICENSE" (Revision 42):
+% The above mentioned authors wrote this file. As long as you retain this
+% notice you can do whatever you want with this stuff. If we meet some day,
+% and you think this stuff is worth it, you can buy us a beer in return.
+%  --------------------------------------------------------------------------
+
+\documentclass[a4paper, twoside, 12pt, ngerman]{scrbook} % Layout-Einstellungen für das Dokument
+
+\usepackage[utf8]{inputenc} % UTF-8 Codierung
+\usepackage[ngerman]{babel} % Deutsche Beschriftung
+
+\usepackage{graphicx} % Um Bilder einzufügen
+\usepackage{subfigure} % Um mehrere Bilder in eine figure einzufügen
+\usepackage{amssymb, amsmath} % Für Mengensymbole und über Gleichheitszeichen schreiben
+\usepackage{verbatim} % Um Quellcode in das Dokument einzufügen.
+\usepackage{xcolor} % Für Farben
+\usepackage[linkbordercolor=blue]{hyperref} % Für Links im Dokument
+\usepackage{algorithmic} % Für Pseudo-Code
+\usepackage{algorithm} % Wrapper für Pseudo-Code
+\usepackage[font={small}, labelfont=bf]{caption} % kleine Bildunterschriften
+\usepackage{geometry} % Für Feinanpassungen des Layouts
+%\usepackage{algorithm}
+%\usepackage[noend]{algpseudocode}
+
+\usepackage{listings} % Für Code-Listings
+\usepackage[most]{tcolorbox} % Für Defintionsboxen
+\usepackage{lipsum,cleveref}% Für Defintionsboxen
+
+\usepackage{tikz} %zum Zeichnen der BDDs 
+\usetikzlibrary{positioning}%zum Zeichnen der BDDs 
+
+% BState definieren für den Pseudocode
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+\tikzset{%
+  zeroarrow/.style = {-stealth,dashed},
+  onearrow/.style = {-stealth,solid},
+  c/.style = {circle,draw,solid,minimum width=2em,
+        minimum height=2em},
+  r/.style = {rectangle,draw,solid,minimum width=2em,
+        minimum height=2em}
+}
+
+
+
+\newtcbtheorem[auto counter,number within=chapter,list inside=mytheorems,
+  crefname={definition}{definitions},Crefname={Definition}{Definitions}% only for cleveref
+  ]{mydef}{Definition}{%
+  enhanced jigsaw,breakable,oversize,interior hidden,colframe=black,
+  boxrule=0.6pt,left=0mm,right=0mm,top=0mm,bottom=0mm,arc=0pt,outer arc=0pt,boxsep=1mm,
+  terminator sign colon,description delimiters parenthesis,separator sign none,
+  detach title,coltitle=black,fonttitle=\bfseries,
+  enlarge top by=1.2\baselineskip,enlarge top at break by=0mm,pad at break=0mm,
+  overlay unbroken and first={\node[anchor=base west,inner sep=1mm,outer sep=0.6pt,yshift=4pt]
+    at (frame.north west) {\tcbtitle};},
+  }{def}
+  
+  \newtcbtheorem[auto counter,number within=chapter,list inside=mytheorems,
+  crefname={definition}{definitions},Crefname={Theorem}{Theorme}% only for cleveref
+  ]{mytheo}{Theorem}{%
+  enhanced jigsaw,breakable,oversize,interior hidden,colframe=black,
+  boxrule=0.6pt,left=0mm,right=0mm,top=0mm,bottom=0mm,arc=0pt,outer arc=0pt,boxsep=1mm,
+  terminator sign colon,description delimiters parenthesis,separator sign none,
+  detach title,coltitle=black,fonttitle=\bfseries,
+  enlarge top by=1.2\baselineskip,enlarge top at break by=0mm,pad at break=0mm,
+  overlay unbroken and first={\node[anchor=base west,inner sep=1mm,outer sep=0.6pt,yshift=4pt]
+    at (frame.north west) {\tcbtitle};},
+  }{def}
+
+
+\renewcommand{\lstlistingname}{Quelltext} %Ändert die Überschrift von Listing nach Quelltext
+
+% Einstellungen für Abstand an den Rändern
+\geometry{a4paper,left=35mm,right=35mm,top=20mm,bottom=20mm, includeheadfoot}
+
+\begin{document}
+\pagenumbering{roman}
+
+% Titelblatt
+\begin{titlepage}
+\include{chapter/Titelblatt}
+\end{titlepage}
+
+% Abstract und Danksagung
+\include{chapter/Abstract}
+
+% Inhaltsverzeichnis
+\tableofcontents
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+% Die Hauptkapitel der Arbeit
+\include{chapter/Einleitung}
+\include{chapter/Methodik}
+\include{chapter/Schnittstelle}
+\include{chapter/Implementierung}
+\include{chapter/Ergebnisse}
+\include{chapter/Diskussion}
+\include{chapter/Fazit}
+
+% Abbildungs- und Tabellenverzeichnis
+\listoffigures
+
+% Literaturverzeichnis
+\bibliographystyle{unsrtdin}
+\bibliography{Quellen}
+
+% Eidesstattliche Erklärung
+\include{chapter/EidesstattlicheErklaerung}
+
+\end{document}

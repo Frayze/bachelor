@@ -17,7 +17,7 @@ public class OP_Matrix {
 
     public OP_Matrix(List<Character> terminals) {
 
-        this.symbols = new ArrayList<>(terminals);
+        this.symbols = new ArrayList(terminals);
         this.endsymbol = '#';
         this.symbols.add(endsymbol);
 
