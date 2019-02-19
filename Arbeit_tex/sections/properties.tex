@@ -1,22 +1,25 @@
-\section{(Abschluss-) Eigenschaften von OPLs}
+\section{Eigenschaften von OPLs}
 In diesem Abschnitt geht es um die wichtigsten Eigenschaften von Operatorpräzedenzautomaten, wie die Äquivalenz zwischen OPG und OPA, der Äquivalenz von deterministischen und nichtdeterministischen OPAs und den Abschlusseigenschaften, sowie eine Einordnung von anderen Automatenklassen wie endliche Automaten und Visibly-Pushdown Automaten. Weiterhin werden zu allen Eigenschaften die Beweise geführt.
 \subsection{Äquivalenz von OPG und OPA}
 Eine wesentliche Eigenschaft vieler Sprachklassen ist die Äquivalenz ihrer Grammatiken mit den Automaten. Mit dem vorgestellten OPA haben die OPL nun einen Automaten, der genau die Grammatik erkennt. Die Äquivalenz wird in beiden Richtungen gezeigt.
 
 \subsubsection{Von OPGs zu OPAs}
 \begin{lemma}
-Sei $G=(N,\Sigma, P, S)$ eine OPG. Dann kann ein OPA A konstruiert werden, sodass $L(G)=L(A)$. Weiterhin sei m die Summer der rechten Seite von Produktionsregeln in G. Dann hat A $O(m^2)$ Zustände.
+Sei $G=(N,\Sigma, P, S)$ eine OPG. Dann kann ein OPA A konstruiert werden, sodass $L(G)=L(A)$. Weiterhin sei m die Summer der rechten Seite von Produktionsregeln in G. Dann hat A genau $O(m^2)$ Zustände.
 \end{lemma}
 \begin{proof}
-Zunächst wird der nichtdeterministische OPA $A=(\Sigma, M, Q, I,F, \delta)$ aus einer gegebenen Grammatik mit derselben OPM konstruiert.\\
-Ohne Beschränkung der Allgemeinheit wird angenommen, dass die Grammatik G keine leeren oder umbenennenden Regeln hat. Der OPA A wird nun so konstruiert, dass eine akzeptierende Berechnung dem Aufbauen eines Bottom-Up Ableitungsbaums in G gleicht. Der Automat führt eine Pushtransition aus, wenn das erste Terminal einer neuen rechten Regelseite gelesen wird. Eine Shift-transition  wird ausgeführt bei Terminalsymbolen innerhalb der rechten Seite einer Regel und schätzt nichtdeterministisch das Nichtterminal der linken Seite. Jeder Zustand enthält dabei zwei Informationen: Die erste Komponente repräsentiert dabei das Präfix der rechten Seite unter Konstruktion, während die zweite genutzt wird um die rechte Seite, die vorher unter Konstruktion war, wiederherzustellen, wenn alle verschachtelten rechten Seiten fertiggestellt wurden.\\
-Genau definiert wird die Konstruktion folgendermaßen: Sei \\
-\centering
+Zunächst wird der nichtdeterministische OPA $A=(\Sigma, M, Q, I,F, \delta)$ aus einer gegebenen Grammatik mit derselben OPM konstruiert.
+Ohne Beschränkung der Allgemeinheit wird angenommen, dass die Grammatik G keine leeren oder umbenennenden Regeln hat. Der OPA A wird nun so konstruiert, dass eine akzeptierende Berechnung dem Aufbauen eines Bottom-Up Ableitungsbaums in G gleicht. Der Automat führt eine Pushtransition aus, wenn das erste Terminal einer neuen rechten Regelseite gelesen wird. Eine Shift-transition  wird ausgeführt bei Terminalsymbolen innerhalb der rechten Seite einer Regel und schätzt nichtdeterministisch das Nichtterminal der linken Seite. Jeder Zustand enthält dabei zwei Informationen: Die erste Komponente repräsentiert dabei das Präfix der rechten Seite unter Konstruktion, während die zweite genutzt wird um die rechte Seite, die vorher unter Konstruktion war, wiederherzustellen, wenn alle verschachtelten rechten Seiten fertiggestellt wurden.
+Genau definiert wird die Konstruktion folgendermaßen: Sei 
+\begin{center}
 $\mathbb{P}={\alpha\in (N\cup\Sigma)*\Sigma|\exists a\rightarrow\alpha\beta\in P}$
-die Menge der Präfixe, die auf ein Terminalsymbol enden, der rechten Regelseiten in G. Weiter sei\\
-\centering
+\end{center}
+die Menge der Präfixe (die auf ein Terminalsymbol enden) der rechten Regelseiten in G. Weiter sei
+\begin{center}
 $\mathbb{Q}=\{\epsilon\}\cup\mathbb{P}\cup N$,\\
 $Q=\mathbb{Q} \times (\{\epsilon\} \cup \mathbb{P})$, $I={(\epsilon, \epsilon)}$ und $F=S\times \{\epsilon\} \cup \{(\epsilon, \epsilon|\epsilon\in L(G)\}$
+\end{center}
+
 Anmerkung: $|\mathbb{Q}|=1+|\mathbb{P}|+|N|$ ist $O(m)$, also hat Q $O(m^2)$ Zustände\\
 Die Transitionen sind folgendermaßen definiert für $a\in \Sigma, \quad \alpha, \alpha_1, \alpha_2\in\mathbb{Q}$ und $\beta, \beta_1, \beta_2 \in \mathbb{P} \cup \{\epsilon\}$:
 \begin{itemize}
@@ -43,9 +46,101 @@ A\rightarrow \beta_1\alpha_1 \in P & if; \alpha_1 \in N,\\
 \beta_2 & if; \beta_2 \in N. \\
 \end{cases}$
 \end{itemize}
+Die entstandenen Zustände von $\delta_{shift}$ und $\delta_{shift}$ sind eindeutig, während $\delta:{pop}$ mehrere Zustände produzieren könnte, abhängig von wiederholten rechten Regelseiten. Die Zustände, die von push und shift Transisitionen erreicht werden haben ihre erste Komponente in $\mathbb{P}$. Wenn der Zustand $(\alpha, \beta)$ nach einer push Transition erreicht wird, dann ist $\alpha$ das Präfix der rechten Regelseite, die gerade in Konstruktion ist und $\beta$ das Präfix, was vorher in Konstruktion war. In diesem Fall ist $\alpha$ entweder ein Terminalsymbol oder ein Nichtterminal gefolgt von einem Terminal.
+
+Wenn der Zustand $(\alpha, \beta)$ nach einer Shift-Transition erreicht wird, dann ist $\alpha$ die Konkatenation der ersten Komponente des vorherigen Zustands und dem gelesenen Terminal und $\beta$ ändert sich nicht vom vorigen Zustand.
+
+Die Zustände, die von Pop-Transitionen erreicht werden, haben die erste Komponente in N: if $(A, \gamma)$ so ein Zustand ist, dann ist A die linke Regelseite und $\gamma$ das Präfix, was vorher unter Konstruktion war.
+
+Soviel zur Konstruktion des Automaten. Die Äquivalenz zwischen G und A leitet sich nun aus den folgenden beiden Lemmas ab.
+\begin{lemma}
+Sei x der Rumpf einer Kette und $\beta, \gamma \in \mathbb{P \cup \{ \epsilon\} }$. Dann gilt für alle $h \geq 1$: Aus $(\beta, \gamma) \stackrel{x}{\rightsquigarrow} q$ folgt die Existenz von $A\in N$, sodass $A\stackrel{*}{\Rightarrow}x$ in G und $q=(A, \beta)$
+\end{lemma}
+\begin{proof}
+Beweis durch Induktion der Tiefe $h=d(x)$.
+\paragraph*{Induktionsanfang: (h=1)}
+Wenn h=1 ist, dann ist $x=a_1a_2...a_n$ der Rumpf einer einfachen Kette mit einer Stütze wie in \autoref{Support} (1) mit $q_0 = (\beta, \gamma)$ und $q_n+1=q$. Weiter folgt aus der Definition der Push- und Shiftfunktionen, dass $q_i=(a_1...a_i, \beta)$ für alle $1 \leq i \leq n$ und aufgrund der Definition der Popfunktion ($\beta \notin N$, aufgrund der Induktionssannahme) ist $q=(A, \beta)$, mit $A \rightarrow a_1...a_n=x$ in P. Die so konstruierte Stütze hat die Form 
+\begin{center}
+$(\beta, \gamma) \stackrel{a_1}{\rightarrow} (a_1, \beta) \dashrightarrow ... \dashrightarrow (a_1...a_{n-1}, \beta) \stackrel{a_n}{\dashrightarrow} (a_1...a_n, \beta) \stackrel{(\beta, \gamma)} {\Rightarrow} (A,\beta)$.
+\end{center}
+Somit ist $A\stackrel{*}{\Rightarrow}x$ in G und der Induktionsanfang ist abgeschlossen.
+\paragraph{Induktionsschritt}
+Für h>1 ist $x=x_0a_1x_1...a_nx_n$ der Rumpf einer zusammengesetzten Kette mit einer Stütze wie in \autoref{Support} (2) mit $q_0=(\beta, \gamma)$ und $q_{n+1}=q$. Weiterhin sei $q_i=(\beta, \gamma)$ für alle $0 \neq i \neq n$ (Genauer ist $\beta_0 = \beta$ und $\gamma_0 = \gamma$). Aus der Induktionssannahme folgt nun für jeden nichtleere Rumpf $x_i$ einer Kette mit einer geringeren Tiefe als h, existiert $X_i \in N$, sodass es $X_i \stackrel{*}{\Rightarrow} x_i$ in G gibt und $q_i=(X_i, \beta)$ ist. Somit kann die Stütze wie folgt konstruiert werden:
+ \begin{eqnarray*}
+(\beta, \gamma) \stackrel{x_0}{\rightsquigarrow} q_0^{\prime} \stackrel{a_1}{\rightarrow} (\beta_1, \gamma_1) \stackrel{x_1}{\rightsquigarrow} q_1^{\prime} \dashrightarrow ... \dashrightarrow q_{n-1} \stackrel{a_n}{\dashrightarrow} (\beta_n, \gamma_n) \stackrel{x_n}{\rightsquigarrow} q_n^{\prime} \stackrel {q_0^{\prime}} {\Rightarrow} q
+\end{eqnarray*}\\
+mit 
+\begin{eqnarray*}
+q_i^\prime = \begin{cases}
+(\beta_i, \gamma_i) & if \; x_i = \epsilon \\
+(X_i, \beta_i) & sonst
+\end{cases}
+\end{eqnarray*}
+Nun wird aufgrund der Definition der Push- und Shiftfunktionen klar, dass für alle $i \neq 0,\; \beta_i = X_0a_1...X_{i-1}a_i$ gilt, egal ob $x_i$ leer ist oder nicht $(X_i=\epsilon$, wenn $x_i=\epsilon)$. Um jetzt den Zustand q, der mit der finalen Pop-Transition $\delta_{pop}(q_n^\prime, q_0^\prime)$ erreicht wird zu berechnen, müssen vier verschiedene Fälle betrachtet werden (Sind $x_0, x_n$ leer oder nicht?), was genau in der Definition von $\delta_{pop}$ abgebildet ist. In allen Fällen hat q aber die Form $(A, \beta)$ mit $A \rightarrow X_0a_1X_1...X_na_nX_n$ in G.\\
+ Somit ist der Beweis abgeschlossen.
+\end{proof}
+
+\begin{lemma}.
+Sei x der Rumpf einer Kette und $A \in N$. Dann folgt aus $A \stackrel{*}{\Rightarrow} x$ in G, dass $(\beta, \gamma) \stackrel{x}{\rightsquigarrow}(A, \beta)$ für jedes $\beta, \gamma \in \mathbb{P} \cup \{\epsilon\}$.
+\end{lemma}
+\begin{proof}
+Beweis durch Induktion auf die Tiefe h der Kette. 
+\paragraph*{Induktionsanfang: (h=1)}
+Wenn h=1 ist, dann ist x der Rumpf einer einfachen Kette und somit bedeutet $A \stackrel{*} {\Rightarrow} x$, dass $A \rightarrow x$ eine Produktion ist. Somit kann aufgrund der Definition von $\delta$ ($\beta \notin N$ aufgrund der Annahme) eine Stütze wie in \autoref{Support} (1) mit $q_0=(\beta, \gamma), \; q_{n+1}=q$ und $q_i=(a_1...a_i, \beta)$ für alle $i=1,2,...n$.
+\paragraph*{Induktionsschritt:}
+Wenn h > 1 ist, dann ist x der Rumpf einer zusammengesetzten Kette mit $x=x_0a_1x_1...a_nx_n$. Weiter folgt aus $A\stackrel{*}{\Rightarrow}x$ in G die Existenz von $X_0, X_1, ...,X_n \in \{\epsilon\}\cup N$ ($X_i = \epsilon, \; if \; x_i=\epsilon$), sodass $A\rightarrow X_0a_1X_1...a_nX_n$ und $X_i \stackrel{*}{\Rightarrow}x_i$. Der erste Schritt der Berechnung hängt davon ab, ob $x_0$ leer ist oder nicht. In beiden Fällen hat der Pfad jedoch die Form
+\begin{eqnarray*}
+(\beta, \gamma) \stackrel{x_0}{\rightsquigarrow} q_0^\prime \stackrel{a_1}{\rightarrow} (X_0a_1, \beta), \quad mit \quad q_0^\prime= = \begin{cases}
+(\beta, \gamma) & if \; x_0 = \epsilon \\
+(X_0, \beta) & sonst \\
+\end{cases}
+\end{eqnarray*}
+Die Berechnung hängt auch weiter davon ab ob $x_1, x_2,...x_{n-1}$ leer oder nicht sind. Jedoch gilt aufgrund der Induktionsannahme und der Definition von $\delta_{shift}$, dass der Automat nach dem Lesen von $a_i$ den Zustand $(X_0a_1...X_{i-1}a_i, \beta)$ für jedes $i=1,...,n$ erreicht mit dem Pfad 
+\begin{multline*}
+(\beta, \gamma) \stackrel{x_0}{\rightsquigarrow} q_0^\prime \stackrel{a_1}{\rightarrow} (X_0a_1, \beta) \stackrel{x_1}{\rightsquigarrow}q_1 \stackrel{a_2}{\dashrightarrow}(X_0a_1X_1a_2, \beta) \stackrel{x_2}{\rightsquigarrow} q_2^\prime \stackrel{a_3}{\dashrightarrow}... \\
+...\stackrel{a_n}{\dashrightarrow} (X_0a_1...X_{n-1}a_n, \beta)
+\end{multline*}
+Wenn $x_n \neq \epsilon$ geht die Berechnung weiter mit dem letzten Schritt
+\begin{eqnarray*}
+(X_0a_1...X_{n-1}a_n, \beta) \stackrel{x_n}{\rightsquigarrow} (X_n, X_0a_1...X_{n-1}a_n).
+\end{eqnarray*}
+Damit endet die Berechnung nun mit einer Pop-Transition. Die vier Fälle, die durch leere $x_0, x_n$ entstehen sind durch die Defintion von $\delta_{pop}$ abgedeckt. In allen Fällen wurde aber eine Stütze für der auf den Zustand $(A, \beta)$ endet konstruiert und der Beweis ist abgeschlossen.
+\end{proof}
+Somit wurde in beide Richtungen gezeigt, dass die Konstruktion des Automaten genau die Ketten der Grammatik repräsentiert und es für jede Stütze eine Ableitung in G gibt. Damit ist der Beweis abgeschlossen 
 \end{proof}
 
 
+\subsubsection{Von OPAs zu OPGs}
+Die Konstruktion einer äquivalenten Grammatik G aus einem OPA A ist deutlich einfacher als andersrum, was aus der Struktur, die durch OPMs vorgegeben ist resultiert.
+\begin{lemma}
+Für einen OPA A kann eine äquivalente Grammatik G konstruiert werden, sodass L(G)=L(A) gilt.
+\end{lemma}
+\begin{proof}
+Die Konstruktion setzt das Prinzip der Stützen einfach und direkt in die Grammatik um.
+Für einen gegebenen Automaten $A=(\Sigma, M, Q, I, F, \delta)$ wird nun die Grammatik $G=(\Sigma, N, P, S)$ konstruiert:
+\begin{itemize}
+\item Die Nichtterminale N sind 4-Tupel $(a,q,p,b)\in \Sigma \times Q \times Q \times \Sigma$ und werden als $(^bp,q^b)$ beschrieben. \\
+Die Regeln in P werden wie folgt konstruiert:
+\item
+Für jeden Support \autoref{Support}(1) einer einfachen Kette wird die Regel 
+\begin{equation}
+(^{a_0} q_0, q_{n+1} \phantom{}^{a_{n+1}})\rightarrow a_1a_2...a_n
+\end{equation}
+hinzugefügt. Wenn $a_0=a_{n+1}=\#, \; q_0 \in I$ und $q_{n+1} \in F$, dann ist $(^\#q_0,q_{n+1}^\#)$ in S.
+\item
+Für jeden Support \autoref{Support}(2) einer zusammengesetzten Kette wird die Regel 
+\begin{equation}
+(^{a_0}q_0, q_{n+1} \phantom{}^{a_{n+1}})\rightarrow \Delta_0a_1\Delta_1a_2...a_n\Delta_n
+\end{equation}
+hinzugefügt, wobei für alle $0 \leq i \leq n, \quad \Delta_i = (^a_i q_i, q_i^{\prime a_{i+1}})$, wenn $x_i$ der Kette nicht leer ist, sonst $\Delta_i = \epsilon$. Wenn $a_0=a_{n+1}=\#, \; q_0 \in I$ und $q_{n+1} \in F$, dann ist $(^\#q_0,q_{n+1}^\#)$ in S.
+\item
+Wenn der Automat $\epsilon$ akzeptiert, wird eine Regel $S\rightarrow \epsilon$ hinzugefügt. S darf nicht in anderen Regeln verwendet werden.
+\end{itemize}
+Durch die Definition der Zustände ist $|N|$ maximal $O(|\Sigma|^2 * |Q|^2)$.
+Für die Konstruktion wurden die Stützen direkt in Regeln übersetzt. Die Äquivalenz sollte daher offensichtlich sein.
+
+
+\end{proof}
 
 \subsection{Deterministischer vs. Nichtdeterminstischer OPA}
 Die vorherige Definition von OPAs war nichtdeterministisch. Eine vorteilhafte Eigenschaft von OPAs ist nun die Äquivalenz der deterministischen und nichtdeterministischen Version. Dadurch unterscheidet sich diese Familie der Automaten wesentlich von den Kellerautomaten. \\
@@ -54,12 +149,13 @@ In diesem Abschnitt geht es um die Definition und die Konstruktion eines solchen
 Ein OPA $A=(\Sigma, M, Q, I, F, \delta)$ ist deterministisch, wenn gilt:
 \begin{itemize}
 \item
-I besteht aus nur einem Element \footnote{Hier wird nicht zwischen einem einzelnen Element und einer Menge mit nur einem Element unterschieden.}
+I besteht aus nur einem Element 
 \item
 $\delta: Q \times \{Q \cup \Sigma\} \rightarrow Q\}$ \\
 ($\delta$ bildet auf Q ab, anstatt auf $\mathcal{P}(Q)$)
 \end{itemize}
 \end{definition}
+Anmerkung: Bei dem Startzustand wird nicht zwischen dem einzelnen Element und einer Singleton-Menge unterschieden.\\
 Bei der Konstruktion eines deterministischen OPA aus einem nichtdeterministischen wird folgende Grundidee verwendet: Es muss sichergestellt werden, dass die Pop-Moves von verschiedene Läufen des nichtdeterministischen Automaten nicht mit falschen initialen und finalen Zuständen vermischt werden. Dazu werden Informationen zu dem Pfad, die der Automat seit dem Push-Move, also dem Beginn einer Kette, genommen hat, gesammelt. Dazu wird jeder Zustand des deterministischen Automaten als Menge von Zustandspaaren defininiert. Der deterministische Automat simuliert den nichtdeterministischen Lauf mithilfe des ersten Zustand des Paares und speichert den Zustand, von dem aus der Push-Move ausging im zweiten Zustand. Die deterministischen Pop-Moves werden anhand  der nichtdeterministischen Pop-Moves die für den ersten Zustand und dem Zustand, der vor dem letzten Push-Move erreicht wurde (Was dem obersten Stackeintrag entspricht), definiert sind simuliert.\\
 Das wird nun in einem Lemma formal ausgedrückt und bewiesen.
 \begin{lemma}
@@ -173,5 +269,13 @@ Andersherum sei $y \in L(\tilde{A})$. Dann hat y eine Stütze $\tilde{K}\stackre
 Damit ist der Beweis abgeschlossen. 
 \end{proof}
 \subsection{Abgeschlossenheit}
+Die folgenden Eigenschaften werden auf Ebene der Grammatiken geführt. Dazu müssen zunächst noch ein paar Definitionen getätigt werden.
+\begin{definition}
+Eine OPG G ist frei, wenn sie in homogener Normalform ist und für alle Nichtterminale A,B $\neq$ S gilt $\mathbb{L}_G(A) = \mathbb{L}_G(B) \wedge \mathbb{R}_G(A)=\mathbb{R}_G(B)$ impliziert $A=B$. Für eine OPM M ist $\mathbb{F}(M)=\{F|F ist frei \wedge OPM(F) \subseteq M\}$ die Klasse der freien präzedenzkompatiblen OPGs.
+\end{definition}
 
+\begin{lemma}
+Für alle OPM M und $k \geq 1$ existiert eine eindeutige freie OPG $G_{M,k}$, sodass $OPM(G_{M,k})=M$ und für alle $G \in C_{M,k}$ gilt $L(G)\subseteq L(G_{M,k}$
+\end{lemma}
+Eine solche Grammatik $G_{M,k}$ wird als Max-Grammatik bezeichnet.
 \subsection{Visibly Pushdown Sprache als Teilklasse}

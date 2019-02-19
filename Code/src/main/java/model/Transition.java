@@ -1,7 +1,9 @@
 package model;
 
+import org.javatuples.Triplet;
+
+import java.util.Set;
+
 public class Transition {
-    private OP_Automat opa;
-    private OP_Matrix opm;
 
 }

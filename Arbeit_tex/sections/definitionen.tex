@@ -8,7 +8,7 @@ Eine Grammatik heisst \textit{reduziert}, wenn jede Regel aus P benutzt werden k
 Eine Regel ist in \textit{Operatorform}, wenn ihre rechte Seite keine benachbarten Nichtterminale hat. Entsprechend heisst eine Grammatik, die nur solche Regeln beinhaltet \textit{Operatorgrammatik} (OG). Jede kfG $G=(N,\Sigma, P, S)$ kann in eine äquivalente Operatorgrammatik $G'=(N', \Sigma, P', S)$ umgewandelt werden [siam 25, 38].Die folgenden Definitionen gelten für Operatorpräzedenzgrammatiken (OPGs). \\
 \begin{definition}
 
-Für eine OG G und ein Nichtterminal A sinddie \textit{linken und rechten Terminalmengen}  definiert als 
+Für eine OG G und ein Nichtterminal A sind die \textit{linken und rechten Terminalmengen}  definiert als 
 $$ \mathcal{L} \textsubscript{G}(A) = \{ a \in \Sigma | A \overset{*}{\Rightarrow} Ba \alpha \}, \;
  \mathcal{R} \textsubscript{G}(A) = \{ a \in \Sigma | A \overset{*}{\Rightarrow} \alpha aB \}$$
 mit $B \in N \cup \{\epsilon\}$
@@ -128,11 +128,13 @@ Das Konzept für einfache und zusammengesetzte Ketten wird nun in Form von \text
 Sei A ein OPA. Eine Stütze für eine einfache Kette $^{a_0} \left[ a_1a_2...a_n\right]^{a_{n+1}}$ ist ein beliebiger Pfad in A der Form 
 \begin{eqnarray}
 q_0  \stackrel{a_1}{\rightarrow} q_1 \dashrightarrow ... \dashrightarrow q_{n-1} \stackrel{a_n}{\dashrightarrow} q_n \stackrel {q_0} {\Rightarrow} q_{n+1}
+\label{simpSupport}
 \end{eqnarray}
 
 Eine Stütze für eine zusammengesetzte Kette $^{a_0}\left[x_0a_1x_1a_2...a_nx_n\right]^{a_{n+1}}$ ist ein beliebiger Pfad in A der Form
 \begin{eqnarray}
 q_0 \stackrel{x_0}{\rightsquigarrow} q_0^{\prime} \stackrel{a_1}{\rightarrow} q_1\stackrel{x_1}{\rightsquigarrow} q_1^{\prime} \dashrightarrow ... \dashrightarrow q_{n-1} \stackrel{a_n}{\dashrightarrow} q_n \stackrel{x_n}{\rightsquigarrow} q_n^{\prime} \stackrel {q_0^{\prime}} {\Rightarrow} q_{n+1}
+\label{compSupport}
 \end{eqnarray}
 wobei für jedes $0\leq i \leq n$ gilt: 
 \begin{itemize}
