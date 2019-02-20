@@ -278,4 +278,40 @@ Eine OPG G ist frei, wenn sie in homogener Normalform ist und für alle Nichtter
 Für alle OPM M und $k \geq 1$ existiert eine eindeutige freie OPG $G_{M,k}$, sodass $OPM(G_{M,k})=M$ und für alle $G \in C_{M,k}$ gilt $L(G)\subseteq L(G_{M,k}$
 \end{lemma}
 Eine solche Grammatik $G_{M,k}$ wird als Max-Grammatik bezeichnet.
-\subsection{Visibly Pushdown Sprache als Teilklasse}
+
+\subsection{OPL im Vergleich mit anderen Sprachen}
+In diesem Abschnitt geht es um eine Einordnung in die verschiedenen wichtigen Sprachklassen. Sie sind offensichtlich eine Unterklasse der deterministisch-kontextfreien Sprachen (DCF), da die OPGs aufbauend aus einer kontextfreien Grammatik definiert werden und durch die Relationen, bzw. die Konfliktfreiheit der Matrix eingeschränkt sind. Eine typische DCF-Sprache, die aber nicht von OPGs erkannt wird ist
+\begin{align*}
+L_1=\{a^nba^n|n \geq 0 \}.
+\end{align*}
+Nachdem D. Knuth die LR(k)-Grammatiken eingeführt, die genau DCF erkennen und mit denen man effiziente Bottom-Up Parser konstruieren kann, ist das Interesse an OPGs fast erloschen. Dies änderte sich etwas mit der Einführung des OPA und den vorteilhaften Eigenschaften die diese Sprachklasse bietet.
+\subsubsection{Reguläre Sprachen}
+Eine interessante Eigenschaft betrifft die regulären Sprachen, die eine Untermenge der OPLs sind.
+\begin{lemma}
+Sei $L\subseteq\Sigma^*$ eine reguläre Sprache. Dann existiert eine Grammatik für L in der Familie $C_{M,2}$ der präzedenzkompatiblen Grammatiken mit einer Präzedenzmatrix, sodass $\forall a,b\in \Sigma: M_{ab}=\lessdot$
+\end{lemma}
+Dies folgt aus der Darstellung von regulären Sprachen als kontextfreie Grammatik in der alle Regeln die Form $A\rightarrow aB, \; a \in \Sigma, B \in N$. Daher ergibt sich die Beschränkung der rechten Seiten auf 2.
+
+\subsubsection{Visibly Pushdown Sprachen}
+Eine weitere interessante Sprachklasse sind die Visibly Pushdown (VP) Sprachen.
+\begin{definition}[Visibly Pushdown Automat]
+Ein VP Alphabet is ein Tripel $\hat{\Sigma}=(\Sigma_c, \Sigma_r, \Sigma_i)$ wobei die drei Teilalphabete disjunkt sind und \textit{calls, returns} und \textit{internals} genannt werden und $\Sigma=\Sigma_c \cup \Sigma_r \cup \Sigma_i$. Ein Visibly Pushdown Automat (VPA) ist ein Kellerautomat $A=(Q, \Sigma, \Gamma, \delta, q_0, F)$ mit dem VP Alphabet $\hat{\Sigma}$ und der Transitionsfunktion die zwischen folgenden Fällen unterscheidet:
+\begin{itemize}
+\item
+pop transition: $\delta(p,a,X) \ni (q, \epsilon), \quad a \in \Sigma_r$
+\item
+pop on empty stack: $\delta(p, a, \bot) \ni (q, \bot), \quad a \in \Sigma_r$
+\item
+internal transition: $\delta(p,a,X) \ni (q, X), \quad a \in \Sigma_i$
+\item
+push transition: $\delta(p, a, X) \ni (q, XY), \quad a \in \Sigma_c$
+\end{itemize}
+\end{definition}
+Eine Sprache über $\Sigma=\Sigma_c \cup \Sigma_r \cup \Sigma_i$ ist eine VPL, wenn sie von einem VPA mit VP alphabet $\hat{\Sigma}$ erkannt wird.
+
+\begin{lemma}
+Für jeden VPA A kann eine OPG G konstruiert werden, sodass $L(G)=L(A)$.
+\end{lemma}
+\begin{proof}
+
+\end{proof}
