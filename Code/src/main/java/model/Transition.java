@@ -4,6 +4,6 @@ import org.javatuples.Triplet;
 
 import java.util.Set;
 
-public class Transition {
+public abstract class Transition {
 
 }
