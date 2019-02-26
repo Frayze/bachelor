@@ -12,6 +12,14 @@ public class OPA_Configuration {
         this.input = input;
     }
 
+    public void printConfig(){
+    System.out.println("Configuration: ");
+    System.out.print(stack);
+    System.out.print(state);
+    System.out.print(input);
+    }
+
+
     public Stack getStack() {
         return stack;
     }

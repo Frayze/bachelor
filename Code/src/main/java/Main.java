@@ -8,15 +8,28 @@ public class Main {
 
         //Setting up a test automat
         List<Character> terminals = new ArrayList();
-        terminals.add('n');
         terminals.add('+');
         terminals.add('*');
         terminals.add('(');
         terminals.add(')');
+        terminals.add('n');
 
         OP_Matrix opm = new OP_Matrix(terminals);
-        opm.setEntry('n', Relation.yield, '+');
-        opm.setEntry('(', Relation.equal, ')');
+        opm.setEntry('+', Relation.takes, '+'); opm.setEntry('+', Relation.yield, '*');
+        opm.setEntry('*', Relation.takes, '+'); opm.setEntry('*', Relation.takes, '*');
+        opm.setEntry('(', Relation.yield, '+'); opm.setEntry('(', Relation.yield, '*');
+        opm.setEntry(')', Relation.takes, '+'); opm.setEntry(')', Relation.takes, '*');
+        opm.setEntry('n', Relation.takes, '+'); opm.setEntry('n', Relation.takes, '*');
+
+        opm.setEntry('+', Relation.yield, '('); opm.setEntry('+', Relation.takes, ')');
+        opm.setEntry('*', Relation.yield, '('); opm.setEntry('*', Relation.takes, ')');
+        opm.setEntry('(', Relation.yield, '('); opm.setEntry('(', Relation.equal, ')');
+                                                        opm.setEntry(')', Relation.takes, ')');
+                                                        opm.setEntry('n', Relation.takes, ')');
+
+        opm.setEntry('+', Relation.yield, 'n');
+        opm.setEntry('*', Relation.yield, 'n');
+        opm.setEntry('(', Relation.yield, 'n');
 
         List<State> states = new ArrayList<State>();
         states.add(new State("q0"));
@@ -36,16 +49,30 @@ public class Main {
         trans.add(new Push_Transition(states.get(1), '+', states.get(0)));
         trans.add(new Push_Transition(states.get(1), '*', states.get(0)));
 
+        trans.add(new Push_Transition(states.get(0), '(', states.get(2)));
+        trans.add(new Push_Transition(states.get(2), '(', states.get(2)));
+
+        trans.add(new Push_Transition(states.get(2), 'n', states.get(3)));
+        trans.add(new Push_Transition(states.get(3), '*', states.get(2)));
+        trans.add(new Push_Transition(states.get(3), '+', states.get(2)));
+
+        trans.add(new Shift_Transition(states.get(3), ')', states.get(3)));
+
         trans.add(new Pop_Transition(states.get(1), states.get(0), states.get(1)));
         trans.add(new Pop_Transition(states.get(1), states.get(1), states.get(1)));
 
-        Transition pp1= new Push_Transition(states.get(0), 'n', states.get(1));
+        trans.add(new Pop_Transition(states.get(3), states.get(0), states.get(3)));
+        trans.add(new Pop_Transition(states.get(3), states.get(1), states.get(3)));
+        trans.add(new Pop_Transition(states.get(3), states.get(2), states.get(3)));
+        trans.add(new Pop_Transition(states.get(3), states.get(3), states.get(3)));
 
         OP_Automat opa = new OP_Automat(terminals, opm, states, i_state, f_states, trans);
 
         opa.printAutomat();
-        System.out.println(pp1 instanceof Pop_Transition);
+
         opa.getTransitions().printTransitions();
 
+        Computation comp = new Computation(opa, "n+n*(n+n)");
+        comp.compute();
     }
 }

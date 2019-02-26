@@ -1,5 +1,7 @@
 package model;
 
+import sun.awt.Symbol;
+
 import java.util.*;
 
 
@@ -26,23 +28,24 @@ public class Transitions {
     }
 
     public void printTransitions(){
-        Iterator it = transitions.iterator();
-        System.out.println("\nTransitions:");
+        Iterator<Transition> it = transitions.iterator();
+        System.out.println("\n\n Transitions: \n" );
 
         while (it.hasNext()){
-            System.out.println((Transition)it.next().);
-            if(it.next() instanceof Push_Transition){
-                System.out.println(((Push_Transition) it.next()).getOrigin() + " + " + ((Push_Transition) it.next()).getInput()
-                        + " -> " + ((Push_Transition) it.next()).getDestination() + " (Push)");
+           Transition temp = it.next();
+           if(temp instanceof Push_Transition){
+                System.out.println(temp.getOrigin() + " + " + temp.getInput()
+                        + " -> " +  temp.getDestination() + " (Push)");
             }
-            if(it.next() instanceof Shift_Transition){
-                System.out.println(((Shift_Transition) it.next()).getOrigin() + " + " + ((Shift_Transition) it.next()).getInput()
-                        + " -> " + ((Shift_Transition) it.next()).getDestination() + " (Shift)");
+            if(temp instanceof Shift_Transition){
+                System.out.println( temp.getOrigin() + " + " + temp.getInput()
+                        + " -> " + temp.getDestination() + " (Shift)");
             }
-            if(it.next() instanceof Pop_Transition){
-                System.out.println(((Pop_Transition) it.next()).getOrigin() + " + " + ((Pop_Transition) it.next()).getInput()
-                        + " -> " + ((Pop_Transition) it.next()).getDestination() + " (Pop)");
+            else if(temp instanceof Pop_Transition){
+                System.out.println(temp.getOrigin() + " + " + temp.getInput()
+                        + " -> " + temp.getDestination() + " (Pop)");
             }
+
         }
     }
 }

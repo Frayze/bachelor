@@ -3,6 +3,8 @@ import model.*;
 import java.util.LinkedList;
 import java.util.List;
 
+import static java.lang.System.exit;
+
 public class Computation {
     private OP_Automat opa;
     private Stack stack;
@@ -18,35 +20,35 @@ public class Computation {
 
     public void compute(){
         run.add(createInitial());
-
+        System.out.println("\nInitial Configuration successfull");
         while
         (!(getLastConfig().getStack().isEmpty() &&
         getLastConfig().getInput().equals("#") &&
         opa.getAccepting().contains(getLastConfig().getState()))) {
             nextConfig();
-
         }
-
+        System.out.println("Computation successfull");
     }
 
     private OPA_Configuration createInitial(){
         return new OPA_Configuration(stack, opa.getInitial(), orig_input + "#");
     }
 
-    private OPA_Configuration nextConfig(){
-        OPA_Configuration config;
+    private void nextConfig(){
+        OPA_Configuration config = null;
+        //System.out.println(opa.getMatrix().getEntry(stack.getTopSymbol(), getActualInput().charAt(0)));
         //Finds the entry in the OPM to decide which move has to be made. Depends on the Topstacksymbol and first Input symbol
         switch(opa.getMatrix().getEntry(stack.getTopSymbol(), getActualInput().charAt(0))){
             case equal:
                 // Finds all defined transitions based on the actual state and actual input
-                for (Transition trans: opa.getTransitions().findSpecificTransition(getActualState(), getActualInput())
+                for (Transition trans: opa.getTransitions().findSpecificTransition(getActualState(), getActualInput().charAt(0))
                      ) {
                     //Chooses the Transition with a fitting type
                     if(trans instanceof Shift_Transition){
                         stack.changeTopSymbol(getActualInput().charAt(0));
-                        State r = trans.getDestination();
+                        State q = trans.getDestination();
                         String temp_input = getActualInput().substring(1);
-                        config = new OPA_Configuration(stack, r, temp_input);
+                        config = new OPA_Configuration(stack, q, temp_input);
                         System.out.println("\nCreated new Configuration From Shift- Move");
                         break;
 
@@ -54,6 +56,7 @@ public class Computation {
                     }
 
                 }
+                break;
             case takes:
                 // Finds all defined transitions based on the actual state and top stack state
                 for(Transition trans: opa.getTransitions().findSpecificTransition(getActualState(), stack.getTopState())) {
@@ -68,7 +71,8 @@ public class Computation {
 
             case yield:
                 // Finds all defined transitions based on the actual state and actual input
-                for(Transition trans: opa.getTransitions().findSpecificTransition(getActualState(), getActualInput())){
+                //System.out.println(opa.getTransitions().findSpecificTransition(getActualState(), getActualInput()));
+                for(Transition trans: opa.getTransitions().findSpecificTransition(getActualState(), getActualInput().charAt(0))){
                     //Chooses the Transition with a fitting type
                     if(trans instanceof  Push_Transition){
                         stack.addToStack( getActualInput().charAt(0), getActualState());
@@ -77,12 +81,12 @@ public class Computation {
                         config = new OPA_Configuration(stack, q, temp_input);
                         System.out.println("\nCreated new Configuration From Push- Move");
                     }
-                }
 
-            default:
+                }
                 break;
     }
-    return null;
+    if(config != null){run.add(config); config.printConfig();}
+    else {System.out.println("Error while creating Configuration"); exit(0);}
     }
     private OPA_Configuration getLastConfig(){
         return run.get(run.size() - 1);
@@ -95,4 +99,6 @@ public class Computation {
     private String getActualInput(){
         return getLastConfig().getInput();
     }
+
+
 }

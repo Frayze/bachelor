@@ -22,11 +22,14 @@ public class Stack {
     }
 
     public void changeTopSymbol(Character c){
-        stack.peek().setAt0(c);
+        Pair<Character, State> tmp = new Pair<Character, State>(c, stack.peek().getValue1());
+        stack.pop();
+        stack.push(tmp);
     }
 
     public Character getTopSymbol(){
-        return stack.peek().getValue0();
+        if(stack.empty()) return '#';
+        else return stack.peek().getValue0();
     }
 
     public State getTopState(){
