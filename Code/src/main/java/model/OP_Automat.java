@@ -40,6 +40,7 @@ public class OP_Automat {
         this.initial = initial;
         this.accepting = accepting;
 
+
     }
 
     public boolean checkConsistency(){

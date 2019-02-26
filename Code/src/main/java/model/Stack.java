@@ -13,6 +13,9 @@ public class Stack {
     public void addToStack(Pair<Character, State> elem){
         stack.push(elem);
     }
+    public void addToStack(Character c, State q){
+        stack.push(new Pair<Character, State>(c, q));
+    }
 
     public void removeFromStack(){
         stack.pop();
@@ -24,5 +27,8 @@ public class Stack {
 
     public State getTopState(){
         return stack.peek().getValue1();
+    }
+    public boolean isEmpty(){
+        return stack.isEmpty();
     }
 }
