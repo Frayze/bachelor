@@ -21,6 +21,10 @@ public class Stack {
         stack.pop();
     }
 
+    public void changeTopSymbol(Character c){
+        stack.peek().setAt0(c);
+    }
+
     public Character getTopSymbol(){
         return stack.peek().getValue0();
     }

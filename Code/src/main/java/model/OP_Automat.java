@@ -31,7 +31,8 @@ public class OP_Automat {
                            OP_Matrix matrix,
                            List<State> states,
                            State initial,
-                           List<State> accepting
+                           List<State> accepting,
+                           Transitions transitions
                            //,
     ){
         this.terminals = terminals;
@@ -39,6 +40,7 @@ public class OP_Automat {
         this.states = states;
         this.initial = initial;
         this.accepting = accepting;
+        this.transitions = transitions;
 
 
     }
@@ -95,6 +97,7 @@ public class OP_Automat {
         for(State q: this.accepting){
             System.out.print(q.getName() + ", ");
         }
+
     }
 
     /*
@@ -140,5 +143,21 @@ public class OP_Automat {
 
     public void setAccepting(List<State> accepting) {
         this.accepting = accepting;
+    }
+
+    public Transitions getTransitions() {
+        return transitions;
+    }
+
+    public void setTransitions(Transitions transitions) {
+        this.transitions = transitions;
+    }
+
+    public Stack getStack() {
+        return stack;
+    }
+
+    public void setStack(Stack stack) {
+        this.stack = stack;
     }
 }

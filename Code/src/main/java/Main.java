@@ -31,8 +31,21 @@ public class Main {
         f_states.add(states.get(3));
 
 
-        OP_Automat opa = new OP_Automat(terminals, opm, states, i_state, f_states);
+        Transitions trans = new Transitions();
+        trans.add(new Push_Transition(states.get(0), 'n', states.get(1)));
+        trans.add(new Push_Transition(states.get(1), '+', states.get(0)));
+        trans.add(new Push_Transition(states.get(1), '*', states.get(0)));
+
+        trans.add(new Pop_Transition(states.get(1), states.get(0), states.get(1)));
+        trans.add(new Pop_Transition(states.get(1), states.get(1), states.get(1)));
+
+        Transition pp1= new Push_Transition(states.get(0), 'n', states.get(1));
+
+        OP_Automat opa = new OP_Automat(terminals, opm, states, i_state, f_states, trans);
 
         opa.printAutomat();
+        System.out.println(pp1 instanceof Pop_Transition);
+        opa.getTransitions().printTransitions();
+
     }
 }
