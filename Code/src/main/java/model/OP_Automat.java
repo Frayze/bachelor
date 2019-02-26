@@ -21,8 +21,10 @@ public class OP_Automat {
     private List<State> accepting;
 
     // Transition function
-
+    private Transitions transitions;
     // private Transition transition;
+
+    private Stack stack;
 
 
     public OP_Automat(List<Character> terminals,

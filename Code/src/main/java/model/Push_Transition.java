@@ -1,8 +1,17 @@
 package model;
 
 public class Push_Transition extends Transition {
-    private State origin;
-    private Character input;
-    private State destination;
 
+    private Character input;
+
+    public Push_Transition(State origin, Character input, State destination){
+        super(origin, destination);
+        this.input = input;
+
+    }
+
+    @Override
+    public Character getInput() {
+        return input;
+    }
 }

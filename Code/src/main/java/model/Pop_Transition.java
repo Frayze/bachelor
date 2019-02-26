@@ -1,7 +1,16 @@
 package model;
 
 public class Pop_Transition extends Transition {
-    private State origin;
+
     private State input;
-    private State destination;
+
+    public Pop_Transition(State origin, State input, State destination){
+        super(origin, destination);
+        this.input = input;
+    }
+
+    @Override
+    public State getInput() {
+        return input;
+    }
 }
