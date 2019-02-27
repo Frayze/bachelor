@@ -1,8 +1,12 @@
 package model;
 
 public class State {
+
     private String name;
 
+    /**
+     * Basic definition for the state.
+     */
     public State(String name){
         this.name = name;
     }

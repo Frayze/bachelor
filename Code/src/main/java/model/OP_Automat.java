@@ -2,11 +2,12 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class OP_Automat {
 
     // List of terminal Symbols
-    private List<Character> terminals;
+    private Set<Character> terminals;
 
     // The Operator Precedence Matrix for the Automat.
     private OP_Matrix matrix;
@@ -22,18 +23,24 @@ public class OP_Automat {
 
     // Transition function
     private Transitions transitions;
-    // private Transition transition;
-
-    private Stack stack;
 
 
-    public OP_Automat(List<Character> terminals,
-                           OP_Matrix matrix,
-                           List<State> states,
-                           State initial,
-                           List<State> accepting,
-                           Transitions transitions
-                           //,
+    /**
+     * Standardconstructor
+     * @param terminals
+     * @param matrix
+     * @param states
+     * @param initial
+     * @param accepting
+     * @param transitions
+     */
+    public OP_Automat(Set<Character> terminals,
+                      OP_Matrix matrix,
+                      List<State> states,
+                      State initial,
+                      List<State> accepting,
+                      Transitions transitions
+                      //,
     ){
         this.terminals = terminals;
         this.matrix = matrix;
@@ -45,12 +52,20 @@ public class OP_Automat {
 
     }
 
+    /**
+     * Main Function to test for Consistency. Calls some partially tests
+     * @return
+     */
     public boolean checkConsistency(){
         return this.matrix.checkMatrixSize() &&
                this.checkSpecialStates();
     }
 
 
+    /**
+     * Checks for Special States
+     * @return
+     */
     private boolean checkSpecialStates(){
         if(this.initial == null ){
             System.out.println("No Initial State set");
@@ -79,6 +94,9 @@ public class OP_Automat {
         return true;
     }
 
+    /**
+     * Print Method for Testing purposes
+     */
     public void printAutomat(){
         System.out.println("Terminal Symbols: ");
         for(Character c : this.terminals){
@@ -104,12 +122,12 @@ public class OP_Automat {
     Getter and Setter Functions
      */
 
-    public List<Character> getTerminals() {
+    public Set<Character> getTerminals() {
         return terminals;
     }
 
     // Maybe an unwanted Funtion
-    public void setTerminals(List<Character> terminals) {
+    public void setTerminals(Set<Character> terminals) {
         this.terminals = terminals;
     }
 
@@ -129,9 +147,7 @@ public class OP_Automat {
         this.states = states;
     }
 
-    public State getInitial() {
-        return initial;
-    }
+    public State getInitial() { return initial; }
 
     public void setInitial(State initial) {
         this.initial = initial;
@@ -145,19 +161,10 @@ public class OP_Automat {
         this.accepting = accepting;
     }
 
-    public Transitions getTransitions() {
-        return transitions;
-    }
+    public Transitions getTransitions() { return transitions; }
 
     public void setTransitions(Transitions transitions) {
         this.transitions = transitions;
     }
 
-    public Stack getStack() {
-        return stack;
-    }
-
-    public void setStack(Stack stack) {
-        this.stack = stack;
-    }
 }

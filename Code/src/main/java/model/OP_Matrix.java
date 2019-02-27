@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class OP_Matrix {
 
@@ -15,8 +16,7 @@ public class OP_Matrix {
      * @param terminals
      */
 
-    public OP_Matrix(List<Character> terminals) {
-
+    public OP_Matrix(Set<Character> terminals) {
         this.symbols = new ArrayList(terminals);
         this.endsymbol = '#';
         this.symbols.add(endsymbol);

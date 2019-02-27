@@ -1,7 +1,6 @@
 package model;
 
 public class OPA_Configuration {
-
     Stack stack;
     State state;
     String input;
@@ -12,6 +11,9 @@ public class OPA_Configuration {
         this.input = input;
     }
 
+    /**
+     * Printmethod for testing purpose
+     */
     public void printConfig(){
     System.out.println("Configuration: ");
     System.out.print(stack);
