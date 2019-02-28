@@ -1,7 +1,7 @@
 \section{Eigenschaften von OPLs}
 In diesem Abschnitt geht es um die wichtigsten Eigenschaften von Operatorpräzedenzautomaten, wie die Äquivalenz zwischen OPG und OPA, der Äquivalenz von deterministischen und nichtdeterministischen OPAs und den Abschlusseigenschaften, sowie eine Einordnung von anderen Automatenklassen wie endliche Automaten und Visibly-Pushdown Automaten. Weiterhin werden zu allen Eigenschaften die Beweise geführt.
 \subsection{Äquivalenz von OPG und OPA}
-Eine wesentliche Eigenschaft vieler Sprachklassen ist die Äquivalenz ihrer Grammatiken mit den Automaten. Mit dem vorgestellten OPA haben die OPL nun einen Automaten, der genau die Grammatik erkennt. Die Äquivalenz wird in beiden Richtungen gezeigt.
+Eine wesentliche Eigenschaft vieler Sprachklassen ist die Äquivalenz ihrer Grammatiken mit den Automaten. Mit dem vorgestellten OPA haben die OPL nun einen Automaten, der genau die Grammatik erkennt. Die Äquivalenz wird in beiden Richtungen gezeigt. \cite{mso, precedence_automata}
 
 \subsubsection{Von OPGs zu OPAs}
 \begin{lemma}
@@ -144,7 +144,7 @@ Für die Konstruktion wurden die Stützen direkt in Regeln übersetzt. Die Äqui
 
 \subsection{Deterministischer vs. Nichtdeterminstischer OPA}
 Die vorherige Definition von OPAs war nichtdeterministisch. Eine vorteilhafte Eigenschaft von OPAs ist nun die Äquivalenz der deterministischen und nichtdeterministischen Version. Dadurch unterscheidet sich diese Familie der Automaten wesentlich von den Kellerautomaten. \\
-In diesem Abschnitt geht es um die Definition und die Konstruktion eines solchen deterministischen OPAs und um die Lemmata, die nötig sind um die Korrektheit zu beweisen.
+In diesem Abschnitt geht es um die Definition und die Konstruktion eines solchen deterministischen OPAs und um die Lemmata, die nötig sind um die Korrektheit zu beweisen. \cite{precedence_automata}
 \begin{definition}[Deterministischer OPA]
 Ein OPA $A=(\Sigma, M, Q, I, F, \delta)$ ist deterministisch, wenn gilt:
 \begin{itemize}
@@ -166,7 +166,7 @@ Aus einem nichtdeterminischen OPA A mit s Zuständen kann ein äquivalenter dete
 Sei $A=(\Sigma, M, Q, I, F, \delta)$ ein nichtdeterministischer OPA. Der deterministsiche OPA $\tilde{A}=(\Sigma, M, \tilde{Q}, \tilde{I}, \tilde{F}, \tilde{\delta}$ wird wie folgt definiert:
 \begin{itemize}
 \item
-$\tilde{Q} = \mathcal{P}(Q \times (Q \cup \{\top\}))$, wobei $\top \notin Q$ für den Basis der Berechnungen (leerer Stack) steht. \footnote{Zustände in $\tilde{Q}$ werden mit K bezeichnet}
+$\tilde{Q} = \mathcal{P}(Q \times (Q \cup \{\top\}))$, wobei $\top \notin Q$ für den Basis der Berechnungen (leerer Stack) steht. Zustände in $\tilde{Q}$ werden mit K bezeichnet
 \item
 $\tilde{I}=I\times \{\top \}$ ist der Startzustand
 \item
@@ -269,7 +269,7 @@ Andersherum sei $y \in L(\tilde{A})$. Dann hat y eine Stütze $\tilde{K}\stackre
 Damit ist der Beweis abgeschlossen. 
 \end{proof}
 \subsection{Abgeschlossenheit}
-Die folgenden Eigenschaften werden auf Ebene der Grammatiken geführt. Dazu müssen zunächst noch ein paar Definitionen getätigt werden.
+Die folgenden Eigenschaften werden auf Ebene der Grammatiken geführt. Dazu müssen zunächst noch ein paar Definitionen getätigt werden. \cite{algebraic_properties}
 \begin{definition}
 Eine OPG G ist frei, wenn sie in homogener Normalform ist und für alle Nichtterminale A,B $\neq$ S gilt $\mathcal{L}_G(A) = \mathcal{L}_G(B) \wedge \mathcal{R}_G(A)=\mathcal{R}_G(B)$ impliziert $A=B$. Für eine OPM M ist $\mathcal{F}(M)=\{F|F \; ist \; frei \; \wedge \; OPM(F) \subseteq M\}$ die Klasse der freien präzedenzkompatiblen OPGs.
 \end{definition}
@@ -286,14 +286,14 @@ L_1=\{a^nba^n|n \geq 0 \}.
 \end{align*}
 Nachdem D. Knuth die LR(k)-Grammatiken eingeführt, die genau DCF erkennen und mit denen man effiziente Bottom-Up Parser konstruieren kann, ist das Interesse an OPGs fast erloschen. Dies änderte sich etwas mit der Einführung des OPA und den vorteilhaften Eigenschaften die diese Sprachklasse bietet.
 \subsubsection{Reguläre Sprachen}
-Eine interessante Eigenschaft betrifft die regulären Sprachen, die eine Untermenge der OPLs sind.
+Eine interessante Eigenschaft betrifft die regulären Sprachen, die eine Untermenge der OPLs sind.\cite{op_vpl_property}
 \begin{lemma}
 Sei $L\subseteq\Sigma^*$ eine reguläre Sprache. Dann existiert eine Grammatik für L in der Familie $C_{M,2}$ der präzedenzkompatiblen Grammatiken mit einer Präzedenzmatrix, sodass $\forall a,b\in \Sigma: M_{ab}=\lessdot$
 \end{lemma}
 Dies folgt aus der Darstellung von regulären Sprachen als kontextfreie Grammatik in der alle Regeln die Form $A\rightarrow aB, \; a \in \Sigma, B \in N$. Daher ergibt sich die Beschränkung der rechten Seiten auf 2.
 
 \subsubsection{Visibly Pushdown Sprachen}
-Eine weitere interessante Sprachklasse sind die Visibly Pushdown (VP) Sprachen.
+Eine weitere interessante Sprachklasse sind die Visibly Pushdown (VP) Sprachen. \cite{vpl}
 \begin{definition}[Visibly Pushdown Automat]
 Ein VP Alphabet is ein Tripel $\hat{\Sigma}=(\Sigma_c, \Sigma_r, \Sigma_i)$ wobei die drei Teilalphabete disjunkt sind und \textit{calls, returns} und \textit{internals} genannt werden und $\Sigma=\Sigma_c \cup \Sigma_r \cup \Sigma_i$. Ein Visibly Pushdown Automat (VPA) ist ein Kellerautomat $A=(Q, \Sigma, \Gamma, \delta, q_0, F)$ mit dem VP Alphabet $\hat{\Sigma}$ und der Transitionsfunktion die zwischen folgenden Fällen unterscheidet:
 \begin{itemize}
@@ -308,13 +308,13 @@ push transition: $\delta(p, a, X) \ni (q, XY), \quad a \in \Sigma_c$
 \end{itemize}
 \end{definition}
 Eine Sprache über $\Sigma=\Sigma_c \cup \Sigma_r \cup \Sigma_i$ ist eine VPL, wenn sie von einem VPA mit VP alphabet $\hat{\Sigma}$ erkannt wird.
-
+Mit diesen Sprachklassen kann man sich ebenso ausführlich beschäftigen, wie mit den OPLs. Für diese Arbeit ist allerdings folgende Eigenschaft interessant\cite{op_vpl_property}
 \begin{lemma}
 Für jeden VPA A kann eine OPG G konstruiert werden, sodass $L(G)=L(A)$.
 \end{lemma}
 \begin{proof}
 Zunächst wird ein Verfahren zur Konstruktion der Grammatik beschrieben, dann wird gezeigt, dass es sich dabei um eine OPG handelt und letzlich die Äquivalenz zu A.
-Für die Konstruktion wird zunächst Ergebnisse aus der Umgebung der Balancierten Sprachen und Visibly Pushdown Sprachen verwendet. Dabei werden die Buchstaben c,r und s für calls, returns und internals verwendet. Ein String in $\{c, r\}^*$ heisst \textit{richtig geklammert}, wenn man ihn mit der Regel $cr \rightarrow \epsilon$ zu $\epsilon$ reduzieren kann. Sei $\mathcal{p}$ die Mappingfunktion von $\{\Sigma_c, \cup \Sigma_r \cup \Sigma_i\}$ auf $\{c,r\}$ als $\mathcal{p}(c_j)=c, \forall c_j\in \Sigma_c$, $\mathcal{p}(r_j)=r, \forall r_j\in \Sigma_r$ und $\mathcal{p}(s_j)=\epsilon, \forall s_j\in \Sigma_i$ definiert. Dann nennt man einen String \textit{richtig balanciert}, wenn $\mathcal{p}(x)$ richtig geklammert ist und \textit{richtig geschlossen} wenn zusätzlich $first(x) \in \Sigma_c$ und $last(x)\in \Sigma_r$ gilt.
+Für die Konstruktion wird zunächst Ergebnisse aus der Umgebung der Balancierten Sprachen und Visibly Pushdown Sprachen verwendet. Dabei werden die Buchstaben c,r und s für calls, returns und internals verwendet. Ein String in $\{c, r\}^*$ heisst \textit{richtig geklammert}, wenn man ihn mit der Regel $cr \rightarrow \epsilon$ zu $\epsilon$ reduzieren kann. Sei $\rho$ die Mappingfunktion von $\{\Sigma_c, \cup \Sigma_r \cup \Sigma_i\}$ auf $\{c,r\}$ als $\rho(c_j)=c, \forall c_j\in \Sigma_c$, $\rho(r_j)=r, \forall r_j\in \Sigma_r$ und $\rho(s_j)=\epsilon, \forall s_j\in \Sigma_i$ definiert. Dann nennt man einen String \textit{richtig balanciert}, wenn $\rho(x)$ richtig geklammert ist und \textit{richtig geschlossen} wenn zusätzlich $first(x) \in \Sigma_c$ und $last(x)\in \Sigma_r$ gilt.
 \begin{lemma}
 \label{factorize}
 Jedes Wort $x\in L(A)$ kann zerlegt werden als $x=yc_0z$ oder $x=y$ mit $c_0\in \Sigma_c$, sodass
@@ -330,17 +330,57 @@ $z=v_1c_1v_2c_2...c_{r-1}v_r, \; r\geq 0$, wobei $c_j \in \Sigma_c$ und $v_j \in
 \label{schema_tree}
 \end{figure}
 \end{lemma}
-Die Gültigkeit des Lemmas wird in [sd] bewiesen.\\
+Die Gültigkeit des Lemmas wird in \cite{op_vpl_property} bewiesen.\\
 Bei der Konstruktion der Grammatik G wird für einen String x, der wie in \autoref{factorize} zerlegt wird, ein Syntaxbaum wie in \autoref{schema_tree}  konstruiert. Zum Beispiel steht dabei das äußere linke s in \autoref{schema_tree} für den Substring $u_1$ im Lemma, $csr$ korrespondiert zu $w_1$ usw. 
 In der Abbildung steht Y für ein Nichtterminal, dass einen String generiert, bei dem der Automat mit einem leeren Stack startet und endet.
 Von Nichtterminalen $B_1, B_2$ werden richtig balancierte Strings abgeleitet. Nichtterminale X leiten Strings ab, sodass bei einem nichtleeren Stack $\bot Z_u^+$ kein Z gepoppt wird und am ende einen String in $\bot Z_u^+$ enthalten ist. Die Nichtterminale der Grammatik (außer S) werden entweder als Paar $(q_i, q_j) , (p_i, p_j)$ oder als Tripel $(q_i, Z, q_j), (p_i, Z, q_j)$ mit $Z \in \Gamma$ beschrieben. Die Idee ist nun, dass Nichtterminale der Form $(t_i...t_j)$ einen Terminalstring u generieren, genau dann wenn es eine Berechnung des Automaten  von Zustand $t_i$ zu $t_j$ gibt, der den String einliest und den initialen Stack nicht poppt. Weiterhin steht $(q_i, q_j)$ für Nichtterminale, die den Stack unverändert lassen, Nichtterminale $(p_i, p_j)$ erhöhen wenn überhaupt die Anzahl an $Z_u$s und Nichtterminale $(q_i, Z, q_j)$ oder $(p_i, Z, p_j)$ bedeuten, dass die Berechnung mit Z oben auf dem Stack startet und endet, während ein richtig ausbalancierter String w gelesen wurde. Nun werden die Regeln für G aus den Transitionen in A abgeleitet: \\
-Für die Ableitungen muss zwischen vielen Fällen unterschieden werden. 
-Im einfacheren Sonderfall ist das Eingabewort x genau gleich y. Darum startet die Ableitung mit einer Regel vom Typ $S \rightarrow Y$, die in diesem Fall genau als $S \rightarrow (q_0, q_F)$ konstruiert werden kann für alle $q_F \in F$. Die Berechnung von x in A startet in $q_0$ und endet in einem $q_F$ mit dem leeren Stack. 
+Für die Ableitungen muss zwischen vielen Fällen unterschieden werden. Diese Fälle sind in \autoref{table1} dargestellt.
+\begin{table}
+\scriptsize
+\begin{tabular}{|l l l|}
+\hline
+Fall & Transitionen & Regeln in G \\
+\hline \hline
+$S \rightarrow Yc_0X$	& $\delta(q_i, c_0)	\ni (p_j, Z_U)$ & $S \rightarrow (q_0, q_i)c_0(p_i, p_f), \forall p_f \in Q_F$	\\
+$S \rightarrow Y$	&	& $S \rightarrow (q_0, q_f), \forall q_f in Q_F$	\\
+$S \rightarrow Yc_0$	& $\delta(q_i, c_0)	\ni (p_f, Z_U), q_f in Q_F$	& $S \rightarrow (q_0, q_f)c_0, \forall p_f \in Q_F$	\\
+$S \rightarrow c_0Xs$	& $\delta(q_0, c_0)	\ni (p_j, Z_U)$	&$S \rightarrow c_0(q, p_j, p_f), \forall p_f \in Q_F$\\
+$S \rightarrow c_0$	& $\delta(q_0, c_0)	\ni (p_f, Z_U), p_f \in Q_F$	&$S\rightarrow c_0$	\\
+	\hline
+$Y \rightarrow s$	& $\delta(q_0,s) \ni q_i$	& $(q_0, q_i) \rightarrow s$	\\
+$Y \rightarrow r$	&$\delta(q_0,r, \bot) \ni q_i$	&	$(q_0, q_i) \rightarrow r$\\
+$Y \rightarrow Ys$	&$\delta(q_i,s) \ni q_j$	& $(q_0, q_j) \rightarrow (q_0, q_i)s$	\\
+$Y \rightarrow Yr$	&$\delta(q_i,r, \bot) \ni q_j$	&$(q_0, q_j) \rightarrow (q_0, q_i)r$	\\
+$Y \rightarrow cBr$	&$\delta(q_0, c) \ni (q_t, Z), \; \delta(q_k,r, Z) \ni q_h$	& $(q_0, q_h) \rightarrow c(q_t, Z, q_k)r$	\\
+$Y \rightarrow cr$	&$\delta(q_0, c) \ni (q_t, Z), \; \delta(q_t,r, Z) \ni q_h$	&$(q_0, q_h) \rightarrow cr$	\\
+$Y \rightarrow YcBr$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(q_0, q_n) \rightarrow (q_0, q_i)c(q_j, Z, q_m)r$	\\
+$Y \rightarrow Ycr$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_j,r, Z) \ni q_n$	& $(q_0, q_n) \rightarrow (q_0, q_i)cr$	\\
+	\hline
+$B_1 \rightarrow B_1cB_1r$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(q, q_n) \rightarrow (q, q_i)c(q_j, Z, q_m)r, \forall q \in Q_q$ \\
+$B_1 \rightarrow B_1cr$	&$\delta(q_j, c) \ni (q_j, Z), \; \delta(q_j,r, Z) \ni q_n$	& $(q, q_n) \rightarrow(q, q_n)cr, \forall q \in Q_q$ \\
+$B_1 \rightarrow cB_1r$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(q_i, q_n) \rightarrow c(q_j, Z, q_m)r$ \\
+$B_1 \rightarrow cr$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_j,r, Z) \ni q_n$	& $(q_i, q_n) \rightarrow cr$ \\
+$B_1 \rightarrow B_1cB_1r$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(q_i, W, q_n) \rightarrow (q, q_i)c(q_j, Z, q_m)r, \forall q \in Q_q, W \in \Gamma$ \\
+$B_1 \rightarrow cB_1r$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(q, W, q_n) \rightarrow c(q_j, Z, q_m)r, \forall q \in Q_q, W \in \Gamma$ \\
+$B_1 \rightarrow B_1cr$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_j,r, Z) \ni q_n$	& $(q, W, q_n) \rightarrow (q, q_i)cr, \forall q \in Q_q, W \in \Gamma$ \\
+$B_1 \rightarrow B_1s$	&$\delta(q_h, s) \ni q_m$ & $(q, W, q_m) \rightarrow (q, q_h)s, \forall q \in Q_q, W \in \Gamma$ \\
+$B_1 \rightarrow s$	&$\delta(q_j, s) \ni q_m$ & $(q_j, W, q_m) \rightarrow s, \forall W \in \Gamma$ \\
+\hline
+$B_2 \rightarrow B_2cB_2r$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(p, q_n) \rightarrow (p, q_i)c(q_j, Z, q_m)r, \forall p \in Q_p$ \\
+$B_2 \rightarrow B_2cr$	&$\delta(q_j, c) \ni (q_j, Z), \; \delta(q_j,r, Z) \ni q_n$	& $(p, q_n) \rightarrow(p, q_n)cr, \forall p \in Q_p$ \\
+$B_2 \rightarrow cB_2r$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(q_i, q_n) \rightarrow c(q_j, Z, q_m)r$ \\
+$B_2 \rightarrow cr$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_j,r, Z) \ni q_n$	& $(q_i, q_n) \rightarrow cr$ \\
+$B_2 \rightarrow B_2cB_2r$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(q_i, W, q_n) \rightarrow (p, q_i)c(q_j, Z, q_m)r, \forall p \in Q_p, W \in \Gamma$ \\
+$B_2 \rightarrow cB_2r$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_m,r, Z) \ni q_n$	& $(p, W, q_n) \rightarrow c(q_j, Z, q_m)r, \forall p \in Q_p, W \in \Gamma$ \\
+$B_2 \rightarrow B_2cr$	&$\delta(q_i, c) \ni (q_j, Z), \; \delta(q_j,r, Z) \ni q_n$	& $(p, W, q_n) \rightarrow (p, q_i)cr, \forall p \in Q_p, W \in \Gamma$ \\
+$B_2 \rightarrow B_2s$	&$\delta(q_h, s) \ni q_m$ & $(q, W, q_m) \rightarrow (p, q_h)s, \forall p \in Q_p, W \in \Gamma$ \\
+$B_2 \rightarrow s$	&$\delta(q_j, s) \ni q_m$ & $(q_j, W, q_m) \rightarrow s, \forall W \in \Gamma$ \\
+\hline
 
-Wenn x allerdings mit ungeschlossenen calls endet, ist die Startregel von der Form $S \rightarrow Yc_0X.$ Das bedeutet, dass A den Substring y einliest, der in $q_0$ beginnt und in einem $q_i$ mit leeren Stack endet. Dann wird $c_0$ gelesen und $Z_u$ auf den Stack gepusht mit einer Transition zu einem $p_j$. 
+\end{tabular}
 
+\caption{Übersicht der Regelgeneration}
+\label{table1}
+\end{table}
 
-
-
-Alle weiteren Fälle und Regelbildungen sind in der folgenden Tabelle aufgeführt.
 \end{proof}

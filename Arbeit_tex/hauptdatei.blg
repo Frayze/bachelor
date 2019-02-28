@@ -4,47 +4,48 @@ The top-level auxiliary file: hauptdatei.aux
 A level-1 auxiliary file: sections/motivation.aux
 A level-1 auxiliary file: sections/definitionen.aux
 A level-1 auxiliary file: sections/properties.aux
+A level-1 auxiliary file: sections/implementation.aux
 A level-1 auxiliary file: sections/conclusion.aux
 The style file: unsrt.bst
 Database file #1: sample.bib
-You've used 1 entry,
+You've used 10 entries,
             1791 wiz_defined-function locations,
-            454 strings with 3889 characters,
-and the built_in function-call counts, 149 in all, are:
-= -- 11
-> -- 4
+            497 strings with 5063 characters,
+and the built_in function-call counts, 1536 in all, are:
+= -- 123
+> -- 80
 < -- 0
-+ -- 2
-- -- 1
-* -- 5
-:= -- 33
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 1
++ -- 31
+- -- 21
+* -- 59
+:= -- 285
+add.period$ -- 31
+call.type$ -- 10
+change.case$ -- 8
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 8
-empty$ -- 15
-format.name$ -- 1
-if$ -- 29
+cite$ -- 10
+duplicate$ -- 84
+empty$ -- 151
+format.name$ -- 21
+if$ -- 335
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 1
-pop$ -- 3
+int.to.str$ -- 10
+missing$ -- 12
+newline$ -- 53
+num.names$ -- 10
+pop$ -- 36
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 3
+skip$ -- 30
 stack$ -- 0
 substring$ -- 0
-swap$ -- 1
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 1
-width$ -- 2
-write$ -- 12
+while$ -- 10
+width$ -- 12
+write$ -- 103

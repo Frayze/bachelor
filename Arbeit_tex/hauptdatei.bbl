@@ -1,10 +1,58 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{precedence_automata}
-Matteo~Pradella Violetta~Lonati, Dino~Mandrioli.
+Violetta Lonati, Dino Mandrioli, and Matteo Pradella.
 \newblock Precedence automata and languages.
 \newblock {\em Computer science – theory and applications. 6th international
   computer science symposium in Russia, CSR 2011, St. Petersburg, Russia, June
   14–18, 2011. Proceedings}, 2010.
+
+\bibitem{mso}
+Violetta Lonati, Federica~Panella Dino~Mandrioli, and Matteo Pradella.
+\newblock Operator precedence languages: Their automata-theoretic and logic
+  characterization.
+\newblock {\em SIAM Journal on Computing}, 2015.
+
+\bibitem{op_vpl_property}
+Stefano Crespi-Reghizzi and Dino Mandrioli.
+\newblock Operator precedence and the visibly pushdown property.
+\newblock {\em Journal of Computer and System Sciences}, 2012.
+
+\bibitem{algebraic_properties}
+Stefano Crespi-Reghizzi, Dino Mandrioli, and David~F. Martin.
+\newblock Algebraic properties of operator precedence languages.
+\newblock {\em Information and control}, 1978.
+
+\bibitem{vpl}
+Rajeev Alur and P.Madhusudan.
+\newblock Visibly pushdown languages.
+\newblock {\em ACM Symposium on Theory of Computing}, 2004.
+
+\bibitem{modelchecking}
+Michele Chiari, Dino Mandrioli, and Matteo Pradella.
+\newblock Temporal logic and model checking for operator precedence languages.
+\newblock {\em 9th Symposium on Games, Automata, Logics and Formal
+  Verification}, 2018.
+
+\bibitem{old_app}
+Stefano~Crespi Reghizzi and Dino Mandrioli.
+\newblock Algebraic properties of structured context-free languages: old
+  approaches and novel developments.
+\newblock {\em WORDS}, 2009.
+
+\bibitem{floyd_original}
+Robert~W. Floyd.
+\newblock Syntactic analysis and operator precedence.
+\newblock {\em Journal of the ACM}, 1963.
+
+\bibitem{og}
+Michael~A. Harrison.
+\newblock {\em Introduction to Formal Language Theory}.
+\newblock Addison-Wesley Longman Publishing Co, 1978.
+
+\bibitem{salomaa1973formal}
+A.~Salomaa.
+\newblock {\em Formal Languages}.
+\newblock Acm monograph series. Academic Press, 1973.
 
 \end{thebibliography}

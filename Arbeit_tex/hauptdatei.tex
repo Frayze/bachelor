@@ -16,6 +16,7 @@
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{varioref}
+\usepackage{pdfpages}
 
 
 \usetikzlibrary{quotes,babel,arrows,automata,positioning,trees,graphs,shapes,calc,decorations.pathreplacing}
@@ -43,11 +44,39 @@
 %\includeonly{sections/definitionen}
 
 \begin{document}
-\maketitle
-\newpage
+\begin{titlepage}
+    \begin{center}
+    \large Bachelorarbeit zum Thema:\\
+    \vspace{0.5cm}
+    \huge \textbf{\textbf{Operatorpräzedenzsprachen und ihre Automaten}} \\
+    \vspace{1cm}
+    \normalsize
+    vorgelegt am: \today \\
+    \vspace{2.5cm}
+    \large \textbf{Westfälische Wilhelmsuniversität Münster}\\
+    \vspace{0.5cm} 
+    Institut für Informatik
+    \vspace{2cm}
+    \end{center}
+ \normalsize{
+    \begin{tabular}{ll}
+    	Name: & Jonas Kremer \\
+    	Matrikelnummer: & 430666 \\
+    	Email: & j\_krem04@uni-muenster.de \\
+    	Studiengang: & Bsc. Informatik\\
+    	Fachsemester: & 7 (WS. 18/19)\\
+    	Arbeitsgruppe: & Softwareentwicklung und Verifikation \\
+      	Erstgutachter: & Prof. Dr. Markus Müller-Olm \\
+      	Zweitgutachter: & Jens Gutsfeld \\
+    \end{tabular}\\
+    }
+\end{titlepage}
 \setcounter{tocdepth}{2}
 \tableofcontents
+\thispagestyle{empty}
 \newpage
+
+\nocite{*}
 
 \include{sections/motivation}
 
@@ -60,11 +89,11 @@
 
 \include{sections/conclusion}
 
+\thispagestyle{empty}
 \bibliographystyle{unsrt}
 \bibliography{sample}
 
-\appendix
 
-\section*{Anhang}
+\includepdf{sections/plagiat}
 
 \end{document}
