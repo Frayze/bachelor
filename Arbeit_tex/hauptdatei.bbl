@@ -5,7 +5,7 @@ Violetta Lonati, Dino Mandrioli, and Matteo Pradella.
 \newblock Precedence automata and languages.
 \newblock {\em Computer science – theory and applications. 6th international
   computer science symposium in Russia, CSR 2011, St. Petersburg, Russia, June
-  14–18, 2011. Proceedings}, 2010.
+  14–18, 2011. Proceedings}, 2011.
 
 \bibitem{mso}
 Violetta Lonati, Federica~Panella Dino~Mandrioli, and Matteo Pradella.
@@ -54,5 +54,15 @@ Michael~A. Harrison.
 A.~Salomaa.
 \newblock {\em Formal Languages}.
 \newblock Acm monograph series. Academic Press, 1973.
+
+\bibitem{formallanguage}
+John Hopcroft and Jeffrey Ullman.
+\newblock {\em Introduction to AUtomata and Formal Languages}.
+\newblock Addison-Wesley, 1979.
+
+\bibitem{McNaughton}
+Robert McNaughton.
+\newblock Parenthesis grammars.
+\newblock {\em J. ACM}, 14(3):490--500, July 1967.
 
 \end{thebibliography}

@@ -18,16 +18,19 @@
 \usepackage{varioref}
 \usepackage{pdfpages}
 
-
 \usetikzlibrary{quotes,babel,arrows,automata,positioning,trees,graphs,shapes,calc,decorations.pathreplacing}
 
 %\theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
 \newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Satz}[section]
 
 \theoremstyle{remark}
 \newtheorem{example}{Beispiel}
+\theoremstyle{corollary}
+\newtheorem{corollary}{Korollar}[section]
+
 
 \newcommand{\tief}[1]{\textsubscript{#1}}
 \newcommand{\hoch}[1]{\textsuperscript{#1}}
@@ -45,6 +48,7 @@
 
 \begin{document}
 \begin{titlepage}
+\thispagestyle{empty}
     \begin{center}
     \large Bachelorarbeit zum Thema:\\
     \vspace{0.5cm}
@@ -53,7 +57,7 @@
     \normalsize
     vorgelegt am: \today \\
     \vspace{2.5cm}
-    \large \textbf{Westfälische Wilhelmsuniversität Münster}\\
+    \large \textbf{Westfälische Wilhelms-Universität Münster}\\
     \vspace{0.5cm} 
     Institut für Informatik
     \vspace{2cm}
@@ -71,11 +75,11 @@
     \end{tabular}\\
     }
 \end{titlepage}
+
+\thispagestyle{empty}
 \setcounter{tocdepth}{2}
 \tableofcontents
-\thispagestyle{empty}
 \newpage
-
 \nocite{*}
 
 \include{sections/motivation}
@@ -92,7 +96,6 @@
 \thispagestyle{empty}
 \bibliographystyle{unsrt}
 \bibliography{sample}
-
 
 \includepdf{sections/plagiat}
 
