@@ -1,6 +1,4 @@
-package model;
-
-import sun.awt.Symbol;
+package model.automaton;
 
 import java.util.*;
 

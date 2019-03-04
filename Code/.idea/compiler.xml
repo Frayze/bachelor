@@ -16,11 +16,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Code" />
+        <module name="OPAutomat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Code" target="1.8" />
+      <module name="OPAutomat" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

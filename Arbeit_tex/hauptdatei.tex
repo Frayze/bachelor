@@ -17,6 +17,7 @@
 \usepackage{hyperref}
 \usepackage{varioref}
 \usepackage{pdfpages}
+\usepackage{float}
 
 \usetikzlibrary{quotes,babel,arrows,automata,positioning,trees,graphs,shapes,calc,decorations.pathreplacing}
 
@@ -78,6 +79,7 @@
 
 \thispagestyle{empty}
 \setcounter{tocdepth}{2}
+
 \tableofcontents
 \newpage
 \nocite{*}
@@ -94,9 +96,14 @@
 \include{sections/conclusion}
 
 \thispagestyle{empty}
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+
+
 \bibliographystyle{unsrt}
 \bibliography{sample}
-
+\newpage
+\addcontentsline{toc}{section}{Eidesstaatliche Erklärung}
 \includepdf{sections/plagiat}
+
 
 \end{document}

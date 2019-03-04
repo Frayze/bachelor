@@ -1,4 +1,8 @@
-import model.*;
+package model.computation;
+
+import model.automaton.*;
+import model.computation.OPA_Configuration;
+import model.computation.Stack;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -90,7 +94,7 @@ public class Computation {
                 //System.out.println(opa.getTransitions().findSpecificTransition(getActualState(), getActualInput()));
                 for(Transition trans: opa.getTransitions().findSpecificTransition(getActualState(), getActualInput().charAt(0))){
                     //Chooses the Transition with a fitting type
-                    if(trans instanceof  Push_Transition){
+                    if(trans instanceof Push_Transition){
                         stack.addToStack( getActualInput().charAt(0), getActualState());
                         State q = trans.getDestination();
                         String temp_input = getActualInput().substring(1);

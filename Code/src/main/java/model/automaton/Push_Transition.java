@@ -1,4 +1,4 @@
-package model;
+package model.automaton;
 
 public class Push_Transition extends Transition {
 

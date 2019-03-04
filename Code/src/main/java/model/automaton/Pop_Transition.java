@@ -1,4 +1,4 @@
-package model;
+package model.automaton;
 
 public class Pop_Transition extends Transition {
 

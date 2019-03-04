@@ -1,4 +1,6 @@
-import model.*;
+import model.automaton.*;
+import model.computation.Computation;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -41,7 +43,7 @@ public class Main {
 
         State i_state = states.get(0);
 
-        List<State>  f_states = new ArrayList();
+        Set<State>  f_states = new HashSet<State>();
         f_states.add(states.get(1));
         f_states.add(states.get(3));
 
@@ -68,7 +70,14 @@ public class Main {
         trans.add(new Pop_Transition(states.get(3), states.get(2), states.get(3)));
         trans.add(new Pop_Transition(states.get(3), states.get(3), states.get(3)));
 
-        OP_Automat opa = new OP_Automat(terminals, opm, states, i_state, f_states, trans);
+        OP_Automat opa = new OP_Automat.Builder()
+                .withTerminalSet('+', '*', '(', ')', 'n')
+                .basedOnMatrix(opm)
+                .hasStates(new HashSet(states))
+                .startsAtState(i_state)
+                .acceptsAtStates(f_states)
+                .withTransitions(trans)
+                .build();
 
         opa.printAutomat();
 

@@ -1,4 +1,4 @@
-package model;
+package model.automaton;
 
 /**
  * Simple Enumeration for precedence relations

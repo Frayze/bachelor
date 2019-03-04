@@ -1,5 +1,6 @@
-package model;
+package model.computation;
 
+import model.automaton.State;
 import org.javatuples.Pair;
 
 /**
@@ -68,4 +69,14 @@ public class Stack {
     public boolean isEmpty(){
         return stack.isEmpty();
     }
+
+    public String toString(){
+        String tmp = "#";
+        for (Pair<Character, State> p: this.stack
+             ) {
+            tmp = tmp.concat("[" + p.getValue0() + "," + p.getValue1() + "] ");
+        }
+        return tmp;
+    }
+
 }

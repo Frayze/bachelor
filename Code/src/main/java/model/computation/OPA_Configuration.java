@@ -1,4 +1,7 @@
-package model;
+package model.computation;
+
+import model.automaton.State;
+import model.computation.Stack;
 
 public class OPA_Configuration {
     Stack stack;
@@ -16,9 +19,9 @@ public class OPA_Configuration {
      */
     public void printConfig(){
     System.out.println("Configuration: ");
-    System.out.print(stack);
-    System.out.print(state);
-    System.out.print(input);
+    System.out.print(stack); System.out.print("   ");
+    System.out.print(state); System.out.print("   ");
+    System.out.println(input);
     }
 
 
