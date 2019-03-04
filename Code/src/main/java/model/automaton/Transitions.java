@@ -1,11 +1,12 @@
 package model.automaton;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * This class will gather all different kinds of Transitions.
  */
-public class Transitions {
+public class Transitions implements Serializable {
     Set<Transition> transitions;
 
     public Transitions(){
@@ -34,6 +35,9 @@ public class Transitions {
         transitions.add(tr);
     }
 
+    public void addAll(Transition... trs){
+       for(Transition t: trs) transitions.add(t);
+    }
     /**
      * Print-Function for Testing purposes
      */

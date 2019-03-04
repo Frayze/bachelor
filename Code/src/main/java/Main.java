@@ -1,4 +1,5 @@
 import model.automaton.*;
+import auxilary.OPA_WriterReader;
 import model.computation.Computation;
 
 import java.util.ArrayList;
@@ -11,79 +12,85 @@ public class Main {
     public static void main(String[] args) {
 
         //Setting up a test automat
-        Set<Character> terminals = new HashSet<Character>();
-        terminals.add('+');
-        terminals.add('*');
-        terminals.add('(');
-        terminals.add(')');
-        terminals.add('n');
+        OP_Matrix opm = new OP_Matrix('+', '*', '(', ')', 'n')
+                .setEntry('+', Relation.takes, '+')
+                .setEntry('+', Relation.yield, '*')
+                .setEntry('+', Relation.yield, '(')
+                .setEntry('+', Relation.takes, ')')
+                .setEntry('+', Relation.yield, 'n')
 
-        OP_Matrix opm = new OP_Matrix(terminals);
-        opm.setEntry('+', Relation.takes, '+'); opm.setEntry('+', Relation.yield, '*');
-        opm.setEntry('*', Relation.takes, '+'); opm.setEntry('*', Relation.takes, '*');
-        opm.setEntry('(', Relation.yield, '+'); opm.setEntry('(', Relation.yield, '*');
-        opm.setEntry(')', Relation.takes, '+'); opm.setEntry(')', Relation.takes, '*');
-        opm.setEntry('n', Relation.takes, '+'); opm.setEntry('n', Relation.takes, '*');
 
-        opm.setEntry('+', Relation.yield, '('); opm.setEntry('+', Relation.takes, ')');
-        opm.setEntry('*', Relation.yield, '('); opm.setEntry('*', Relation.takes, ')');
-        opm.setEntry('(', Relation.yield, '('); opm.setEntry('(', Relation.equal, ')');
-                                                        opm.setEntry(')', Relation.takes, ')');
-                                                        opm.setEntry('n', Relation.takes, ')');
+                .setEntry('*', Relation.takes, '+')
+                .setEntry('*', Relation.takes, '*')
+                .setEntry('*', Relation.yield, '(')
+                .setEntry('*', Relation.takes, ')')
+                .setEntry('*', Relation.yield, 'n')
 
-        opm.setEntry('+', Relation.yield, 'n');
-        opm.setEntry('*', Relation.yield, 'n');
-        opm.setEntry('(', Relation.yield, 'n');
+                .setEntry('(', Relation.yield, '+')
+                .setEntry('(', Relation.yield, '*')
+                .setEntry('(', Relation.yield, '(')
+                .setEntry('(', Relation.equal, ')')
+                .setEntry('(', Relation.yield, 'n')
 
-        List<State> states = new ArrayList<State>();
-        states.add(new State("q0"));
-        states.add(new State("q1"));
-        states.add(new State("q2"));
-        states.add(new State("q3"));
+                .setEntry(')', Relation.takes, '+')
+                .setEntry(')', Relation.takes, '*')
+                .setEntry(')', Relation.takes, ')')
 
-        State i_state = states.get(0);
+                .setEntry('n', Relation.takes, '+')
+                .setEntry('n', Relation.takes, '*')
+                .setEntry('n', Relation.takes, ')');
 
-        Set<State>  f_states = new HashSet<State>();
-        f_states.add(states.get(1));
-        f_states.add(states.get(3));
-
+        State q_0 = new State("q_0");
+        State q_1 = new State("q_1");
+        State q_2 = new State("q_2");
+        State q_3 = new State("q_3");
 
         Transitions trans = new Transitions();
-        trans.add(new Push_Transition(states.get(0), 'n', states.get(1)));
-        trans.add(new Push_Transition(states.get(1), '+', states.get(0)));
-        trans.add(new Push_Transition(states.get(1), '*', states.get(0)));
+        trans.addAll(
+                new Push_Transition(q_0, 'n', q_1),
 
-        trans.add(new Push_Transition(states.get(0), '(', states.get(2)));
-        trans.add(new Push_Transition(states.get(2), '(', states.get(2)));
+                new Push_Transition(q_1, '+', q_0),
+                new Push_Transition(q_1, '*', q_0),
 
-        trans.add(new Push_Transition(states.get(2), 'n', states.get(3)));
-        trans.add(new Push_Transition(states.get(3), '*', states.get(2)));
-        trans.add(new Push_Transition(states.get(3), '+', states.get(2)));
+                new Push_Transition(q_0, '(', q_2),
+                new Push_Transition(q_2, '(',q_2),
 
-        trans.add(new Shift_Transition(states.get(3), ')', states.get(3)));
+                new Push_Transition(q_2, 'n', q_3),
 
-        trans.add(new Pop_Transition(states.get(1), states.get(0), states.get(1)));
-        trans.add(new Pop_Transition(states.get(1), states.get(1), states.get(1)));
+                new Push_Transition(q_3, '*', q_2),
+                new Push_Transition(q_3, '+', q_2),
 
-        trans.add(new Pop_Transition(states.get(3), states.get(0), states.get(3)));
-        trans.add(new Pop_Transition(states.get(3), states.get(1), states.get(3)));
-        trans.add(new Pop_Transition(states.get(3), states.get(2), states.get(3)));
-        trans.add(new Pop_Transition(states.get(3), states.get(3), states.get(3)));
+                new Shift_Transition(q_3, ')', q_3),
+
+                new Pop_Transition(q_1, q_0, q_1),
+                new Pop_Transition(q_1, q_1, q_1),
+
+                new Pop_Transition(q_3, q_0, q_3),
+                new Pop_Transition(q_3, q_1, q_3),
+                new Pop_Transition(q_3, q_2, q_3),
+                new Pop_Transition(q_3, q_3, q_3)
+        );
 
         OP_Automat opa = new OP_Automat.Builder()
                 .withTerminalSet('+', '*', '(', ')', 'n')
                 .basedOnMatrix(opm)
-                .hasStates(new HashSet(states))
-                .startsAtState(i_state)
-                .acceptsAtStates(f_states)
+                .hasStates(q_0, q_1, q_2, q_3)
+                .startsAtState(q_0)
+                .acceptsAtStates(q_1, q_3)
                 .withTransitions(trans)
                 .build();
 
         opa.printAutomat();
 
-        opa.getTransitions().printTransitions();
+        new Computation(opa, "(n+n*(n+n))*(n+n)").compute();
+        new Computation(opa, "n*(n+n*n)").compute();
 
-        Computation comp = new Computation(opa, "n+n*(n+n)");
-        comp.compute();
+        OPA_WriterReader rw = new OPA_WriterReader();
+
+        rw.saveOPA(opa, "src/main/resources/opa_1.txt");
+
+        OP_Automat opa1 = rw.readOPA("src/main/resources/opa_1.txt");
+
+
     }
 }

@@ -1,13 +1,14 @@
 package model.automaton;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class OP_Matrix {
+public class OP_Matrix implements Serializable {
+
 
     List<Character> symbols;
-    Character endsymbol;
     private int size;
     private Relation[][] matrix;
 
@@ -18,8 +19,7 @@ public class OP_Matrix {
 
     public OP_Matrix(Set<Character> terminals) {
         this.symbols = new ArrayList(terminals);
-        this.endsymbol = '#';
-        this.symbols.add(endsymbol);
+        this.symbols.add('#');
 
         this.size = symbols.size();
 
@@ -27,13 +27,39 @@ public class OP_Matrix {
 
 
         for(Character c: symbols){
-            if(c.equals(this.endsymbol)) this.setEntry(this.endsymbol, Relation.equal, this.endsymbol);
+            if(c.equals('#')) this.setEntry('#', Relation.equal, '#');
             else{
-                this.setEntry(this.endsymbol, Relation.yield, c);
-                this.setEntry(c, Relation.takes, this.endsymbol);
+                this.setEntry('#', Relation.yield, c);
+                this.setEntry(c, Relation.takes, '#');
             }
         }
     }
+
+    /**
+     * Constructor can also be created with varArg Characters
+     * @param terminals
+     */
+    public OP_Matrix(Character... terminals) {
+        this.symbols = new ArrayList();
+        this.symbols.add('#');
+        for(Character c:terminals){
+            symbols.add(c);
+        }
+
+        this.size = symbols.size();
+
+        this.matrix = new Relation[size][size];
+
+
+        for(Character c: symbols){
+            if(c.equals('#')) this.setEntry('#', Relation.equal, '#');
+            else{
+                this.setEntry('#', Relation.yield, c);
+                this.setEntry(c, Relation.takes, '#');
+            }
+        }
+    }
+
 
     /**
      * Returns the Precedence Relation of two terminal symbols: a [precedence relation] b
@@ -63,19 +89,20 @@ public class OP_Matrix {
     }
 
     /**
-     * Set the precedence relation for two terminal symbols: a [precedence relation] b
+     * Set the precedence relation for two terminal symbols: a [precedence relation] b. Returns OP_Matrix for
+     * Builder-Like Initialization
      * @param a
      * @param rel
      * @param b
      */
-    public void setEntry(char a, Relation rel, char b){
+    public OP_Matrix setEntry(char a, Relation rel, char b){
         if(!symbols.contains(a)){
             System.out.println("Character "+ a + " not part of Terminal List");
-            return;
+            return null;
         }
         if(!symbols.contains(b)){
             System.out.println("Character "+ b + " not part of Terminal List");
-            return;
+            return null;
         }
 
         int a_i = 0;
@@ -86,6 +113,7 @@ public class OP_Matrix {
             if(this.symbols.get(i).equals(b)) b_i = i;
         }
         this.matrix[a_i][b_i] = rel;
+        return this;
     }
 
     /**

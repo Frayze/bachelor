@@ -1,6 +1,8 @@
 package model.automaton;
 
-public class Push_Transition extends Transition {
+import java.io.Serializable;
+
+public class Push_Transition extends Transition implements Serializable {
 
     private Character input;
 

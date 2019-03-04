@@ -18,7 +18,6 @@ public class OPA_Configuration {
      * Printmethod for testing purpose
      */
     public void printConfig(){
-    System.out.println("Configuration: ");
     System.out.print(stack); System.out.print("   ");
     System.out.print(state); System.out.print("   ");
     System.out.println(input);

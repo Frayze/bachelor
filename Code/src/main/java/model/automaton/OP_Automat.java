@@ -1,11 +1,12 @@
 package model.automaton;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class OP_Automat {
+public class OP_Automat implements Serializable {
 
     // List of terminal Symbols
     private Set<Character> terminals;
@@ -185,6 +186,7 @@ public class OP_Automat {
         for(State q: this.accepting){
             System.out.print(q.getName() + ", ");
         }
+        transitions.printTransitions();
 
     }
 

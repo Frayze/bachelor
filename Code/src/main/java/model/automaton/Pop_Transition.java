@@ -1,6 +1,8 @@
 package model.automaton;
 
-public class Pop_Transition extends Transition {
+import java.io.Serializable;
+
+public class Pop_Transition extends Transition implements Serializable {
 
     private State input;
 

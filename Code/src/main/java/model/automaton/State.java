@@ -1,6 +1,8 @@
 package model.automaton;
 
-public class State {
+import java.io.Serializable;
+
+public class State implements Serializable {
 
     private String name;
 

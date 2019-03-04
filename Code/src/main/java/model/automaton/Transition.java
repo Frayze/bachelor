@@ -1,11 +1,13 @@
 package model.automaton;
 
 
+import java.io.Serializable;
+
 /**
  * Abstract Class for Transitions
  * A Transition is a Triple defined by: Q X (Q U Sigma) X Q
  */
-public abstract class Transition {
+public abstract class Transition implements Serializable {
 
     private State origin;
 
