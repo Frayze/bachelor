@@ -48,15 +48,15 @@ public class Transitions implements Serializable {
         while (it.hasNext()){
            Transition temp = it.next();
            if(temp instanceof Push_Transition){
-                System.out.println(temp.getOrigin() + " + " + temp.getInput()
+                System.out.println(temp.getOrigin() + ", " + temp.getInput()
                         + " -> " +  temp.getDestination() + " (Push)");
             }
             if(temp instanceof Shift_Transition){
-                System.out.println( temp.getOrigin() + " + " + temp.getInput()
+                System.out.println( temp.getOrigin() + ", " + temp.getInput()
                         + " -> " + temp.getDestination() + " (Shift)");
             }
             else if(temp instanceof Pop_Transition){
-                System.out.println(temp.getOrigin() + " + " + temp.getInput()
+                System.out.println(temp.getOrigin() + ", " + temp.getInput()
                         + " -> " + temp.getDestination() + " (Pop)");
             }
 

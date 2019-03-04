@@ -18,7 +18,7 @@ public class OP_Automat implements Serializable {
     private Set<State> states;
 
     // Initial state of the Automat
-    private State initial;
+    private Set<State> initial;
 
     //Accepting States
     private Set<State> accepting;
@@ -77,10 +77,17 @@ public class OP_Automat implements Serializable {
             return this;
         }
 
-        private State initial;
+        private Set<State> initial;
 
-        public Builder startsAtState(State initial){
+        public Builder startsAtStates(Set<State> initial){
             this.initial = initial;
+            return this;
+        }
+
+        public Builder startsAtStates(State... st){
+            this.initial = new HashSet<State>();
+            for (State s: st
+            ) initial.add(s);
             return this;
         }
 
@@ -180,8 +187,10 @@ public class OP_Automat implements Serializable {
         System.out.println("\nStates: ");
         for(State q: this.states) System.out.print(q.getName() + ", ");
 
-        System.out.println("\nInitial State: " + this.getInitial().getName());
-
+        System.out.println("\nInitial State: ");
+        for(State q: this.initial){
+            System.out.print(q.getName() + ", ");
+        }
         System.out.print("Accepting States: ");
         for(State q: this.accepting){
             System.out.print(q.getName() + ", ");
@@ -219,9 +228,9 @@ public class OP_Automat implements Serializable {
         this.states = states;
     }
 
-    public State getInitial() { return initial; }
+    public Set<State> getInitial() { return initial; }
 
-    public void setInitial(State initial) {
+    public void setInitial(Set<State> initial) {
         this.initial = initial;
     }
 

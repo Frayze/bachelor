@@ -4,13 +4,17 @@ import model.automaton.State;
 import org.javatuples.Pair;
 
 /**
- * Simple definition for the stack. Extends the Basic functions with some OPA related functions
+ * Simple definition for the OPStack. Extends the Basic functions with some OPA related functions
  */
-public class Stack {
+public class OP_Stack {
 
     private java.util.Stack<Pair<Character, State>> stack;
 
-    public Stack(){
+    public OP_Stack(OP_Stack copy){
+        this.stack = new java.util.Stack<Pair<Character, State>>();
+        stack.addAll(copy.stack);
+    }
+    public OP_Stack(){
     stack = new java.util.Stack<Pair<Character, State>>();
     }
 
@@ -49,7 +53,7 @@ public class Stack {
     }
 
     /**
-     * Get TopSymbol or the '#' if the stack is empty
+     * Get TopSymbol or the '#' if the OPStack is empty
      * @return
      */
     public Character getTopSymbol(){
@@ -78,5 +82,7 @@ public class Stack {
         }
         return tmp;
     }
+
+
 
 }

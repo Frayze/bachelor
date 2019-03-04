@@ -12,84 +12,101 @@ public class Main {
     public static void main(String[] args) {
 
         //Setting up a test automat
-        OP_Matrix opm = new OP_Matrix('+', '*', '(', ')', 'n')
-                .setEntry('+', Relation.takes, '+')
-                .setEntry('+', Relation.yield, '*')
-                .setEntry('+', Relation.yield, '(')
-                .setEntry('+', Relation.takes, ')')
-                .setEntry('+', Relation.yield, 'n')
+        OP_Matrix opm = new OP_Matrix('s', 'r', 'w', 'u')
+                .setEntry('s', Relation.yield, 's')
+                .setEntry('s', Relation.equal, 'r')
+                .setEntry('s', Relation.yield, 'w')
+
+                .setEntry('r', Relation.takes, 's')
+                .setEntry('r', Relation.takes, 'r')
+                .setEntry('r', Relation.takes, 'w')
+                .setEntry('r', Relation.takes, 'u')
+
+                .setEntry('w', Relation.yield, 's')
+                .setEntry('w', Relation.takes, 'r')
+                .setEntry('w', Relation.yield, 'w')
+                .setEntry('w', Relation.equal, 'u')
+
+                .setEntry('u', Relation.takes, 's')
+                .setEntry('u', Relation.takes, 'r')
+                .setEntry('u', Relation.takes, 'w')
+                .setEntry('u', Relation.takes, 'u');
 
 
-                .setEntry('*', Relation.takes, '+')
-                .setEntry('*', Relation.takes, '*')
-                .setEntry('*', Relation.yield, '(')
-                .setEntry('*', Relation.takes, ')')
-                .setEntry('*', Relation.yield, 'n')
 
-                .setEntry('(', Relation.yield, '+')
-                .setEntry('(', Relation.yield, '*')
-                .setEntry('(', Relation.yield, '(')
-                .setEntry('(', Relation.equal, ')')
-                .setEntry('(', Relation.yield, 'n')
-
-                .setEntry(')', Relation.takes, '+')
-                .setEntry(')', Relation.takes, '*')
-                .setEntry(')', Relation.takes, ')')
-
-                .setEntry('n', Relation.takes, '+')
-                .setEntry('n', Relation.takes, '*')
-                .setEntry('n', Relation.takes, ')');
 
         State q_0 = new State("q_0");
         State q_1 = new State("q_1");
         State q_2 = new State("q_2");
-        State q_3 = new State("q_3");
+        State q_a = new State("0");
+        State q_b = new State("1");
+        State q_c = new State("2");
+
+
 
         Transitions trans = new Transitions();
         trans.addAll(
-                new Push_Transition(q_0, 'n', q_1),
+                new Push_Transition(q_0, 's', q_a),
+                new Push_Transition(q_a, 's', q_a),
+                new Push_Transition(q_b, 's', q_a),
+                new Push_Transition(q_c, 's', q_a),
 
-                new Push_Transition(q_1, '+', q_0),
-                new Push_Transition(q_1, '*', q_0),
+                new Push_Transition(q_a, 'w', q_b),
+                new Push_Transition(q_b, 'w', q_c),
+                new Push_Transition(q_a, 'w', q_2),
+                new Push_Transition(q_2, 'w', q_2),
+                new Push_Transition(q_b, 'w', q_2),
+                new Push_Transition(q_c, 'w', q_2),
 
-                new Push_Transition(q_0, '(', q_2),
-                new Push_Transition(q_2, '(',q_2),
+                new Shift_Transition(q_2, 'u', q_2),
+                new Shift_Transition(q_a, 'r', q_1),
 
-                new Push_Transition(q_2, 'n', q_3),
+                new Pop_Transition(q_0, q_0, q_0),
+                new Pop_Transition(q_0, q_a, q_0),
+                new Pop_Transition(q_0, q_b, q_0),
 
-                new Push_Transition(q_3, '*', q_2),
-                new Push_Transition(q_3, '+', q_2),
+                new Pop_Transition(q_a, q_0, q_0),
+                new Pop_Transition(q_a, q_a, q_0),
+                new Pop_Transition(q_a, q_b, q_0),
+                new Pop_Transition(q_a, q_c, q_0),
 
-                new Shift_Transition(q_3, ')', q_3),
+                new Pop_Transition(q_1, q_0, q_0),
+                new Pop_Transition(q_1, q_a, q_a),
+                new Pop_Transition(q_1, q_b, q_b),
+                new Pop_Transition(q_1, q_c, q_c),
 
-                new Pop_Transition(q_1, q_0, q_1),
-                new Pop_Transition(q_1, q_1, q_1),
+                new Pop_Transition(q_2, q_2, q_2),
+                new Pop_Transition(q_2, q_a, q_a),
+                new Pop_Transition(q_2, q_b, q_b),
+                new Pop_Transition(q_2, q_c, q_c),
 
-                new Pop_Transition(q_3, q_0, q_3),
-                new Pop_Transition(q_3, q_1, q_3),
-                new Pop_Transition(q_3, q_2, q_3),
-                new Pop_Transition(q_3, q_3, q_3)
+                new Pop_Transition(q_b, q_a, q_a),
+                new Pop_Transition(q_c, q_b, q_b)
         );
 
         OP_Automat opa = new OP_Automat.Builder()
-                .withTerminalSet('+', '*', '(', ')', 'n')
+                .withTerminalSet('s','w','u', 'r')
                 .basedOnMatrix(opm)
-                .hasStates(q_0, q_1, q_2, q_3)
-                .startsAtState(q_0)
-                .acceptsAtStates(q_1, q_3)
+                .hasStates(q_0, q_1, q_2, q_a, q_b, q_c)
+                .startsAtStates(q_0)
+                .acceptsAtStates(q_0)
                 .withTransitions(trans)
                 .build();
 
         opa.printAutomat();
 
-        new Computation(opa, "(n+n*(n+n))*(n+n)").compute();
-        new Computation(opa, "n*(n+n*n)").compute();
+        new Computation(opa, "s w u r s w w u s w r w s").compute();
 
         OPA_WriterReader rw = new OPA_WriterReader();
 
-        rw.saveOPA(opa, "src/main/resources/opa_1.txt");
+        rw.saveOPA(opa, "src/main/resources/opa_2.txt");
 
         OP_Automat opa1 = rw.readOPA("src/main/resources/opa_1.txt");
+
+        new Computation(opa1, "(n+n)*n+(n+n+n*n)").compute();
+
+
+
 
 
     }

@@ -25,7 +25,6 @@ public class OP_Matrix implements Serializable {
 
         this.matrix = new Relation[size][size];
 
-
         for(Character c: symbols){
             if(c.equals('#')) this.setEntry('#', Relation.equal, '#');
             else{

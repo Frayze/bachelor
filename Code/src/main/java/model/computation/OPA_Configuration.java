@@ -1,15 +1,15 @@
 package model.computation;
 
 import model.automaton.State;
-import model.computation.Stack;
 
 public class OPA_Configuration {
-    Stack stack;
+    OP_Stack OPStack;
     State state;
     String input;
+    int run_pos;
 
-    public OPA_Configuration(Stack stack, State q, String input){
-        this.stack = stack;
+    public OPA_Configuration(OP_Stack OPStack, State q, String input){
+        this.OPStack = new OP_Stack(OPStack);
         this.state = q;
         this.input = input;
     }
@@ -18,18 +18,18 @@ public class OPA_Configuration {
      * Printmethod for testing purpose
      */
     public void printConfig(){
-    System.out.print(stack); System.out.print("   ");
+    System.out.print(OPStack); System.out.print("   ");
     System.out.print(state); System.out.print("   ");
     System.out.println(input);
     }
 
 
-    public Stack getStack() {
-        return stack;
+    public OP_Stack getOPStack() {
+        return OPStack;
     }
 
-    public void setStack(Stack stack) {
-        this.stack = stack;
+    public void setOPStack(OP_Stack OPStack) {
+        this.OPStack = OPStack;
     }
 
     public State getState() {

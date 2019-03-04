@@ -10,35 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fb96d91-3a1e-4ea8-9fc4-5471cb56d528" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/sections/S.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/sections/automaton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/sections/bsp_opa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/sections/computation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/sections/plagiat.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/sections/vpl_graph.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/sections/wwu_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/sections/wwu_logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Arbeit_tex/siam_smjcat44_1026.bib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/auxilary/OPA_WriterReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/myfile.opa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/myfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/opa_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Material/Bachelorarbeit_Patrick.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Material/Jonas BA korrektur.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Material/hauptdatei_korrigiert.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/OP_Automat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/OP_Automat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/OP_Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/OP_Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/Pop_Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/Pop_Transition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/Push_Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/Push_Transition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/Relation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/Shift_Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/Shift_Transition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/Transition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/automaton/Transitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/automaton/Transitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/computation/Computation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/computation/Computation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/computation/OPA_Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/computation/OPA_Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/computation/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/computation/OP_Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/opa_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/opa_1.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,22 +31,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="283">
+              <caret line="105" column="48" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="-645">
+              <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2785#2804#0" expanded="true" />
+                <element signature="e#6850#6851#0" expanded="true" />
+                <element signature="e#6896#6897#0" expanded="true" />
+                <element signature="e#6933#6934#0" expanded="true" />
+                <element signature="e#6982#6983#0" expanded="true" />
+                <element signature="e#7020#7021#0" expanded="true" />
+                <element signature="e#7069#7070#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,10 +70,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/OP_Automat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="188" column="39" lean-forward="true" selection-start-line="188" selection-start-column="39" selection-end-line="188" selection-end-column="39" />
+            <state relative-caret-position="-242">
+              <caret line="190" column="33" selection-start-line="190" selection-start-column="33" selection-end-line="190" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5705#5706#0" expanded="true" />
+                <element signature="e#5743#5744#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,15 +84,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/OP_Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="92" column="34" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
+            <state relative-caret-position="210">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4223#4224#0" expanded="true" />
                 <element signature="e#4253#4254#0" expanded="true" />
+                <element signature="e#4308#4309#0" expanded="true" />
                 <element signature="e#4346#4347#0" expanded="true" />
+                <element signature="e#4385#4386#0" expanded="true" />
                 <element signature="e#4414#4415#0" expanded="true" />
+                <element signature="e#4464#4465#0" expanded="true" />
                 <element signature="e#4500#4501#0" expanded="true" />
+                <element signature="e#4528#4529#0" expanded="true" />
                 <element signature="e#4555#4556#0" expanded="true" />
+                <element signature="e#4592#4593#0" expanded="true" />
                 <element signature="e#4624#4625#0" expanded="true" />
               </folding>
             </state>
@@ -109,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Pop_Transition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="-2">
               <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
             </state>
           </provider>
@@ -118,7 +117,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Transition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="-287">
               <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
             </state>
           </provider>
@@ -127,80 +126,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/computation/OPA_Configuration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="-210">
+              <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="uml://JAVA/model">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>model</OriginalElement>
-              <nodes>
-                <node x="42.70555555555555" y="14.635416666666742">model.automaton</node>
-                <node x="0.0" y="386.63541666666674">model.computation.Computation</node>
-                <node x="12.955555555555549" y="126.63541666666674">model.computation.Stack</node>
-                <node x="200.70555555555555" y="232.63541666666674">model.computation.OPA_Configuration</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="model.computation.OPA_Configuration" target="model.computation.Stack">
-                  <point x="-46.25" y="-52.0" />
-                  <point x="246.95555555555555" y="207.63541666666674" />
-                  <point x="276.2888888888889" y="207.63541666666674" />
-                  <point x="105.33333333333331" y="28.0" />
-                </edge>
-                <edge source="model.computation.Computation" target="model.automaton">
-                  <point x="-109.60000000000002" y="-64.0" />
-                  <point x="27.399999999999977" y="366.63541666666674" />
-                  <point x="2.4555555555555486" y="366.63541666666674" />
-                  <point x="2.4555555555555486" y="106.63541666666674" />
-                  <point x="142.45555555555555" y="106.63541666666674" />
-                  <point x="14.25" y="16.0" />
-                </edge>
-                <edge source="model.computation.Stack" target="model.automaton">
-                  <point x="0.0" y="-28.0" />
-                  <point x="42.75" y="16.0" />
-                </edge>
-                <edge source="model.automaton" target="model.automaton">
-                  <point x="-71.25" y="16.0" />
-                  <point x="56.95555555555555" y="66.63541666666674" />
-                  <point x="22.70555555555555" y="66.63541666666674" />
-                  <point x="22.70555555555555" y="41.30208333333343" />
-                  <point x="-85.5" y="10.666666666666686" />
-                </edge>
-                <edge source="model.computation.Computation" target="model.computation.OPA_Configuration">
-                  <point x="109.60000000000002" y="-64.0" />
-                  <point x="246.60000000000002" y="366.63541666666674" />
-                  <point x="339.4555555555555" y="366.63541666666674" />
-                  <point x="46.25" y="52.0" />
-                </edge>
-                <edge source="model.computation.Computation" target="model.computation.Stack">
-                  <point x="-54.799999999999955" y="-64.0" />
-                  <point x="82.20000000000005" y="366.63541666666674" />
-                  <point x="120.37222222222222" y="366.63541666666674" />
-                  <point x="120.37222222222222" y="207.63541666666674" />
-                  <point x="65.62222222222222" y="207.63541666666674" />
-                  <point x="-105.33333333333333" y="28.0" />
-                </edge>
-                <edge source="model.computation.OPA_Configuration" target="model.automaton">
-                  <point x="46.25" y="-52.0" />
-                  <point x="339.4555555555555" y="106.63541666666674" />
-                  <point x="199.45555555555555" y="106.63541666666674" />
-                  <point x="71.25" y="16.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="195.91666666666669" y="363.99999999999994" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Fields</Category>
-                <Category>Inner Classes</Category>
-              </Categories>
-              <SCOPE>Project Files</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/computation/OP_Stack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-437">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -208,14 +144,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Transitions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="38" column="49" lean-forward="true" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+            <state relative-caret-position="433">
+              <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#202#203#0" expanded="true" />
-                <element signature="e#257#258#0" expanded="true" />
                 <element signature="e#1051#1052#0" expanded="true" />
-                <element signature="e#1101#1102#0" expanded="true" />
+                <element signature="e#1107#1108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -269,8 +203,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/model/OP_Automat.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Transition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/computation/Stack.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/computation/Computation.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/automaton/Pop_Transition.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/automaton/Push_Transition.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/automaton/Relation.java" />
@@ -278,11 +210,14 @@
         <option value="$PROJECT_DIR$/src/main/java/model/automaton/State.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/automaton/Transition.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/auxilary/OPA_WriterReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/computation/OPA_Configuration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/computation/Stack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/computation/OP_Stack.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/automaton/OP_Matrix.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/automaton/Transitions.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/automaton/OP_Automat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/automaton/Transitions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/computation/OPA_Configuration.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/computation/Computation.java" />
       </list>
     </option>
   </component>
@@ -316,7 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -385,18 +320,18 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551720869627" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551741710012" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Arbeit_tex/sections/computation.png" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
@@ -523,7 +458,8 @@
       <option name="presentableId" value="Default" />
       <updated>1544104442012</updated>
       <workItem from="1551704759376" duration="5702000" />
-      <workItem from="1551711896041" duration="8350000" />
+      <workItem from="1551711896041" duration="8430000" />
+      <workItem from="1551724524248" duration="17151000" />
     </task>
     <task id="LOCAL-00001" summary="First working Repository">
       <created>1544104548950</created>
@@ -553,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551191411121</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Builder Pattern fertig und Beispiele aufgeräumt + Serialisierung">
+      <created>1551721055869</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1551721055869</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -571,12 +514,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14149000" />
+    <option name="totallyTimeSpent" value="31380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1347" y="263" width="1299" height="743" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3048683" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3104549" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -585,8 +528,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32736155" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39739415" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.32736155" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -607,34 +550,6 @@
       <window_info anchor="right" id="PlantUML" order="8" weight="0.31843576" />
       <window_info anchor="right" id="Database" order="9" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2857143" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32899022" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32899022" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32960895" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -684,7 +599,62 @@
     <MESSAGE value="Model implementation of the Transitions" />
     <MESSAGE value="whyyyyyyyyyy" />
     <MESSAGE value="Builder Pattern fertig und Beispiele aufgeräumt + Serialisierung" />
-    <option name="LAST_COMMIT_MESSAGE" value="Builder Pattern fertig und Beispiele aufgeräumt + Serialisierung" />
+    <MESSAGE value="Working nOPA &lt;3 &lt;3 &lt;3 &lt;3 &lt;3 &lt;3 &lt;3 &lt;3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working nOPA &lt;3 &lt;3 &lt;3 &lt;3 &lt;3 &lt;3 &lt;3 &lt;3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java</url>
+          <line>188</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java</url>
+          <line>165</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java</url>
+          <line>151</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/OPAutomat.iml">
@@ -838,13 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/computation/Stack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="72" column="8" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Push_Transition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -897,13 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Transition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/model">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -922,6 +878,20 @@
               <point x="246.95555555555555" y="207.63541666666674" />
               <point x="276.2888888888889" y="207.63541666666674" />
               <point x="105.33333333333331" y="28.0" />
+            </edge>
+            <edge source="model.computation.Computation" target="model.computation.Stack">
+              <point x="-54.799999999999955" y="-64.0" />
+              <point x="82.20000000000005" y="366.63541666666674" />
+              <point x="120.37222222222222" y="366.63541666666674" />
+              <point x="120.37222222222222" y="207.63541666666674" />
+              <point x="65.62222222222222" y="207.63541666666674" />
+              <point x="-105.33333333333333" y="28.0" />
+            </edge>
+            <edge source="model.computation.OPA_Configuration" target="model.automaton">
+              <point x="46.25" y="-52.0" />
+              <point x="339.4555555555555" y="106.63541666666674" />
+              <point x="199.45555555555555" y="106.63541666666674" />
+              <point x="71.25" y="16.0" />
             </edge>
             <edge source="model.computation.Computation" target="model.automaton">
               <point x="-109.60000000000002" y="-64.0" />
@@ -948,22 +918,8 @@
               <point x="339.4555555555555" y="366.63541666666674" />
               <point x="46.25" y="52.0" />
             </edge>
-            <edge source="model.computation.Computation" target="model.computation.Stack">
-              <point x="-54.799999999999955" y="-64.0" />
-              <point x="82.20000000000005" y="366.63541666666674" />
-              <point x="120.37222222222222" y="366.63541666666674" />
-              <point x="120.37222222222222" y="207.63541666666674" />
-              <point x="65.62222222222222" y="207.63541666666674" />
-              <point x="-105.33333333333333" y="28.0" />
-            </edge>
-            <edge source="model.computation.OPA_Configuration" target="model.automaton">
-              <point x="46.25" y="-52.0" />
-              <point x="339.4555555555555" y="106.63541666666674" />
-              <point x="199.45555555555555" y="106.63541666666674" />
-              <point x="71.25" y="16.0" />
-            </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="195.91666666666669" y="363.99999999999994" />
+          <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="196.0" y="364.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
@@ -974,38 +930,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/OP_Matrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4223#4224#0" expanded="true" />
+            <element signature="e#4253#4254#0" expanded="true" />
+            <element signature="e#4308#4309#0" expanded="true" />
+            <element signature="e#4346#4347#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4414#4415#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4500#4501#0" expanded="true" />
+            <element signature="e#4528#4529#0" expanded="true" />
+            <element signature="e#4555#4556#0" expanded="true" />
+            <element signature="e#4592#4593#0" expanded="true" />
+            <element signature="e#4624#4625#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/opa_1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Transitions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1051#1052#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Transition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-287">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Pop_Transition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="-2">
           <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/computation/OPA_Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state relative-caret-position="-210">
+          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/Transitions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/computation/OP_Stack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="38" column="49" lean-forward="true" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#202#203#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-            <element signature="e#1101#1102#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-437">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/OP_Automat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="188" column="39" lean-forward="true" selection-start-line="188" selection-start-column="39" selection-end-line="188" selection-end-column="39" />
+        <state relative-caret-position="-242">
+          <caret line="190" column="33" selection-start-line="190" selection-start-column="33" selection-end-line="190" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5705#5706#0" expanded="true" />
+            <element signature="e#5743#5744#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="105" column="48" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1014,37 +1019,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/computation/Computation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="-645">
+          <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2785#2804#0" expanded="true" />
+            <element signature="e#6850#6851#0" expanded="true" />
+            <element signature="e#6896#6897#0" expanded="true" />
+            <element signature="e#6933#6934#0" expanded="true" />
+            <element signature="e#6982#6983#0" expanded="true" />
+            <element signature="e#7020#7021#0" expanded="true" />
+            <element signature="e#7069#7070#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/opa_1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/automaton/OP_Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="92" column="34" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4253#4254#0" expanded="true" />
-            <element signature="e#4346#4347#0" expanded="true" />
-            <element signature="e#4414#4415#0" expanded="true" />
-            <element signature="e#4500#4501#0" expanded="true" />
-            <element signature="e#4555#4556#0" expanded="true" />
-            <element signature="e#4624#4625#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
         </state>
       </provider>
     </entry>
@@ -1107,6 +1093,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
