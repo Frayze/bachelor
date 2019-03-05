@@ -101,9 +101,6 @@ public class Main {
 
         rw.saveOPA(opa, "src/main/resources/opa_2.txt");
 
-        OP_Automat opa1 = rw.readOPA("src/main/resources/opa_1.txt");
-
-        new Computation(opa1, "(n+n)*n+(n+n+n*n)").compute();
 
 
 

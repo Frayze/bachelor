@@ -56,10 +56,9 @@ public class Computation {
 
         }
 
-
-
-        System.out.println("Computation successfull");
         for(OPA_Configuration c: run) c.printConfig();
+        System.out.println("Computation successfull");
+
     }
 
     /**
